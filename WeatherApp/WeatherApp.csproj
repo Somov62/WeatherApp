@@ -9,9 +9,7 @@
 
   <ItemGroup>
     <Folder Include="Mvvm\" />
-    <Folder Include="Resources\Styles\" />
     <Folder Include="Resources\Images\" />
-    <Folder Include="Views\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Services\" />
     <Folder Include="Models\" />
