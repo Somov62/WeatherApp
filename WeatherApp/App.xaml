@@ -19,6 +19,49 @@
             <DataTemplate DataType="{x:Type viewmodels:LocationsViewModel}">
                 <views:LocationsPage />
             </DataTemplate>
+
+
+            <Style x:Key="ListViewItemContainerStyle1" TargetType="{x:Type ListViewItem}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListViewItem}">
+                            <Grid Margin="5">
+                                <Border
+                                    Name="shadow"
+                                    Background="White"
+                                    CornerRadius="10"
+                                    Visibility="Hidden">
+                                    <Border.Effect>
+                                        <DropShadowEffect
+                                            BlurRadius="5"
+                                            Opacity="0.5"
+                                            RenderingBias="Quality"
+                                            ShadowDepth="1"
+                                            Color="Gray" />
+                                    </Border.Effect>
+                                </Border>
+                                <Border
+                                    Name="border"
+                                    Background="White"
+                                    CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#dddddd" />
+
+                                </Trigger>
+
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="shadow" Property="Visibility" Value="Visible" />
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

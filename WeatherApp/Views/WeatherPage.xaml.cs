@@ -24,5 +24,26 @@ namespace WeatherApp.Views
         {
             InitializeComponent();
         }
+
+        private void ScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            Console.WriteLine();
+        }
+
+        private void ListView_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            Console.WriteLine();
+        }
+
+        private void ListView_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (Keyboard.Modifiers == ModifierKeys.Shift)
+                return;
+
+            var offset = outsideScrollView.VerticalOffset - e.Delta;
+
+            outsideScrollView.ScrollToVerticalOffset(offset);
+
+        }
     }
 }
