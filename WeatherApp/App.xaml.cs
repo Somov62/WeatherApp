@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Interfaces;
+using OpenMeteo;
 using System.Windows;
 
 namespace WeatherApp
@@ -15,7 +11,9 @@ namespace WeatherApp
     {
         public App()
         {
-                   
+            IWeatherProvider weather = new OpenMeteoProvider();
+
+            weather.GetWeather(54.6, 39.7);
         }
 
     }
