@@ -1,6 +1,6 @@
-﻿using Interfaces;
-using OpenMeteo;
-using System.Windows;
+﻿using System.Windows;
+using WeatherApp.Services;
+using WeatherProvider;
 
 namespace WeatherApp
 {
@@ -11,9 +11,8 @@ namespace WeatherApp
     {
         public App()
         {
-            IWeatherProvider weather = new OpenMeteoProvider();
-
-            weather.GetWeather(54.6, 39.7);
+            WeatherService.UseOpenMeteo();
+            ServiceManager.InternetConnectionService.HostName = WeatherService.ProviderDomain;
         }
 
     }

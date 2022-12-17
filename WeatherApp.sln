@@ -5,9 +5,13 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApp", "WeatherApp\WeatherApp.csproj", "{34E9CF7D-1716-4FF1-A61F-0D3620EA4016}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenMeteo", "OpenMeteo\OpenMeteo.csproj", "{4CE026F4-5F72-459C-976A-04592E2B6DFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenMeteo", "OpenMeteo\OpenMeteo.csproj", "{4CE026F4-5F72-459C-976A-04592E2B6DFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{75D5BF33-9065-4FB2-95A8-497A5EA7FBC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherProvider", "WeatherProvider\WeatherProvider.csproj", "{1587CB04-150D-4A26-85D8-500784A80BFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{D33D2F4E-0AA0-4DBE-BEC1-C00C9FFE60A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{65F14271-2323-4251-86C4-FFC6019A03A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +27,18 @@ Global
 		{4CE026F4-5F72-459C-976A-04592E2B6DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CE026F4-5F72-459C-976A-04592E2B6DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CE026F4-5F72-459C-976A-04592E2B6DFE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75D5BF33-9065-4FB2-95A8-497A5EA7FBC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75D5BF33-9065-4FB2-95A8-497A5EA7FBC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75D5BF33-9065-4FB2-95A8-497A5EA7FBC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75D5BF33-9065-4FB2-95A8-497A5EA7FBC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1587CB04-150D-4A26-85D8-500784A80BFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1587CB04-150D-4A26-85D8-500784A80BFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1587CB04-150D-4A26-85D8-500784A80BFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1587CB04-150D-4A26-85D8-500784A80BFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D33D2F4E-0AA0-4DBE-BEC1-C00C9FFE60A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D33D2F4E-0AA0-4DBE-BEC1-C00C9FFE60A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D33D2F4E-0AA0-4DBE-BEC1-C00C9FFE60A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D33D2F4E-0AA0-4DBE-BEC1-C00C9FFE60A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65F14271-2323-4251-86C4-FFC6019A03A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65F14271-2323-4251-86C4-FFC6019A03A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65F14271-2323-4251-86C4-FFC6019A03A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65F14271-2323-4251-86C4-FFC6019A03A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

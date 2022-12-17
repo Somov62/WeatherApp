@@ -4,35 +4,98 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:exct="clr-namespace:WeatherApp.Resources.Controls"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
     xmlns:local="clr-namespace:WeatherApp.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="WeatherPage"
+    Background="{DynamicResource PageBackgroud}"
     d:DesignHeight="450"
     d:DesignWidth="800"
-    Background="{DynamicResource PageBackgroud}"
+    xml:lang="ru-Ru"
     mc:Ignorable="d">
 
-    <ScrollViewer
-        x:Name="outsideScrollView"
-        ScrollChanged="ScrollViewer_ScrollChanged"
-        VerticalScrollBarVisibility="Hidden">
+    <ScrollViewer x:Name="outsideScrollView" VerticalScrollBarVisibility="Hidden">
         <StackPanel>
 
-            <Grid>
+            <DockPanel LastChildFill="False">
+                <Button
+                    Background="White"
+                    Width="35"
+                    Padding="7"
+                    HorizontalAlignment="Right"
+                    Command="{Binding RefreshDataCommand}"
+                    Style="{StaticResource WindowNavButtonStyle}">
+                    <fa:ImageAwesome
+                        Foreground="#333333"
+                        Icon="Refresh"
+                        Spin="{Binding IsRefreshing}"
+                        SpinDuration="2"
+                        Stretch="Fill" />
+                </Button>
+                <TextBlock
+                    Text="{Binding Forecast.EndDate, StringFormat='m'}"
+                    Foreground="White"
+                    FontSize="20"
+                    FontWeight="SemiBold"
+                    VerticalAlignment="Bottom"
+                    DockPanel.Dock="Right" />
+                <TextBlock
+                    Text="{Binding Forecast.StartDate, StringFormat='Прогноз погоды {0:m} - '}"
+                    Foreground="White"
+                    FontSize="20"
+                    FontWeight="SemiBold"
+                    VerticalAlignment="Bottom"
+                    DockPanel.Dock="Right" />
+
+
+            </DockPanel>
+
+            <Grid Margin="0,10,0,0" DataContext="{Binding SelectedForecast}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="6*" />
                     <ColumnDefinition Width="40" />
                     <ColumnDefinition Width="5*" />
                 </Grid.ColumnDefinitions>
                 <Border
-                    MinHeight="350"
                     Background="White"
-                    CornerRadius="10" />
+                    MinHeight="350"
+                    CornerRadius="10">
+                    <Grid
+                        MinWidth="130"
+                        MinHeight="100"
+                        Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding Date, StringFormat='m'}" FontSize="14" />
+
+                        <StackPanel
+                            Orientation="Horizontal"
+                            Grid.Row="1"
+                            VerticalAlignment="Bottom">
+                            <TextBlock Text="{Binding MaxTemperature}" FontSize="40" />
+
+                            <TextBlock
+                                Text="{Binding MinTemperature}"
+                                FontSize="20"
+                                Margin="15,0,0,0"
+                                VerticalAlignment="Bottom" />
+                        </StackPanel>
+
+                        <TextBlock
+                            Text="{Binding Weather}"
+                            Grid.Row="2"
+                            FontSize="14" />
+                    </Grid>
+                </Border>
+
 
                 <Border
                     Grid.Column="2"
-                    MinHeight="350"
                     Background="White"
+                    MinHeight="350"
                     CornerRadius="10" />
             </Grid>
 
@@ -42,17 +105,18 @@
                 Margin="50,30">
 
                 <ListView
+                    ItemsSource="{Binding Forecast.DayForecasts}"
+                    Background="{Binding Backround, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                    BorderThickness="0"
                     HorizontalAlignment="Center"
                     HorizontalContentAlignment="Stretch"
                     exct:ScrollViewerHelper.ShiftWheelScrollsHorizontally="True"
-                    Background="Transparent"
-                    BorderThickness="0"
                     ItemContainerStyle="{DynamicResource ListViewItemContainerStyle1}"
-                    ItemsSource="{Binding WeatherDays}"
+                    MouseWheel="ListView_MouseWheel"
                     ScrollViewer.CanContentScroll="False"
                     ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                    ScrollViewer.ScrollChanged="ListView_ScrollChanged"
-                    ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                    SelectedItem="{Binding SelectedForecast}">
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal" />
@@ -62,11 +126,36 @@
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid
-                                MinWidth="100"
-                                MinHeight="100"
-                                MouseWheel="ListView_MouseWheel">
-                                <TextBlock IsHitTestVisible="True" Text="{Binding}" />
+                            <Grid MouseWheel="ListView_MouseWheel">
+                                <Grid
+                                    MinWidth="130"
+                                    MinHeight="100"
+                                    Margin="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="{Binding Date, StringFormat='m'}" FontSize="14" />
+
+                                    <StackPanel
+                                        Orientation="Horizontal"
+                                        Grid.Row="1"
+                                        VerticalAlignment="Bottom">
+                                        <TextBlock Text="{Binding MaxTemperature}" FontSize="40" />
+
+                                        <TextBlock
+                                            Text="{Binding MinTemperature}"
+                                            FontSize="20"
+                                            Margin="15,0,0,0"
+                                            VerticalAlignment="Bottom" />
+                                    </StackPanel>
+
+                                    <TextBlock
+                                        Text="{Binding Weather}"
+                                        Grid.Row="2"
+                                        FontSize="14" />
+                                </Grid>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -76,8 +165,8 @@
 
             <Border
                 Grid.Row="3"
-                Height="500"
                 Background="White"
+                Height="500"
                 CornerRadius="10" />
         </StackPanel>
     </ScrollViewer>

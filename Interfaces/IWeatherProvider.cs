@@ -1,9 +1,11 @@
-﻿namespace Interfaces
+﻿using Models;
+
+namespace Interfaces
 {
     public interface IWeatherProvider
     {
         public string ProviderDomain { get; }
 
-        public void GetWeather(double longitude, double latitude);
+        public Task<WeatherForecast> GetWeatherAsync(float latitude, float longitude, ForecastMeasuresModel metrics);
     }
 }

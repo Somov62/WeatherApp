@@ -5,16 +5,16 @@ namespace WeatherApp.ViewModels
 {
     internal class MainViewModel : Base.BaseViewModel
     {
-        private readonly WeatherViewModel _weatherPage;
-        private readonly LocationsViewModel _locationsPage;
+        private WeatherViewModel _weatherPage;
+        private LocationsViewModel _locationsPage;
 
 
 
         public MainViewModel()
         {
             NavigationService.ViewChanged += ViewChanged;
-            ToWeatherPageCommand = new ((v) => NavigationService.SetView(_weatherPage ?? new ()));
-            ToLocationsPageCommand = new ((v) => NavigationService.SetView(_locationsPage ?? new ()));
+            ToWeatherPageCommand = new ((v) => NavigationService.SetView(_weatherPage ??= new ()));
+            ToLocationsPageCommand = new ((v) => NavigationService.SetView(_locationsPage ??= new ()));
         }
 
         private void ViewChanged(Base.BaseViewModel actualView)

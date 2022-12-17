@@ -2,7 +2,7 @@
 {
 	public static class ServiceManager
     {
-		private readonly static InternetConnectionService _connectionService = new InternetConnectionService("open-meteo.com");
+		private readonly static InternetConnectionService _connectionService = new InternetConnectionService();
 
 		public static InternetConnectionService InternetConnectionService => _connectionService;
 

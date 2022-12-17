@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
-using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 
@@ -23,7 +22,7 @@ namespace WeatherApp.Services
             }
         }
 
-        public string HostName { get; set; }
+        public string HostName { get; set; } = null!;
 
 
         public bool AutoCheck
@@ -35,7 +34,7 @@ namespace WeatherApp.Services
 
         private System.Timers.Timer _timer = new System.Timers.Timer();
 
-        public InternetConnectionService(string hostname)
+        public InternetConnectionService(string hostname = null!)
         {
             HostName = hostname;
             _timer.Interval = 3000;
@@ -51,17 +50,17 @@ namespace WeatherApp.Services
 
         private async Task<bool> CheckInternetConnection()
         {
+            if (string.IsNullOrEmpty(HostName)) return false;
             Ping ping = new Ping();
             var response = await ping.SendPingAsync(HostName, 3000);
             bool connection = response.Status == IPStatus.Success;
             if (connection != _connection) IsConnectionExists = connection;
-            Console.WriteLine(connection);
             return connection;
         }
 
         public delegate void InternetConnactionChangedHandler(bool actualConnction);
 
-        public event InternetConnactionChangedHandler ConnectionChanged;
+        public event InternetConnactionChangedHandler ConnectionChanged = null!;
 
 
 
