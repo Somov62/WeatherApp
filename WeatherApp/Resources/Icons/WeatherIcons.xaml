@@ -1,0 +1,1968 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ControlTemplate x:Key="clear-day" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon1"
+                Stroke="#FFFBBF24"
+                StrokeThickness="3"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Data>
+                    <PathGeometry Figures="M 32 15.71 V 9.5 m 0 45 v -6.21 m 11.52 -27.81 l 4.39 -4.39 M 16.09 47.91 l 4.39 -4.39 m 0 -23 l -4.39 -4.39 m 31.82 31.78 l -4.39 -4.39 M 15.71 32 H 9.5 m 45 0 h -6.21" />
+                </Path.Data>
+                <Path.RenderTransform>
+                    <RotateTransform x:Name="rotate" CenterX="32" CenterY="32" />
+                </Path.RenderTransform>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="rotate"
+                                    Storyboard.TargetProperty="Angle"
+                                    From="0"
+                                    To="90"
+                                    Duration="0:0:2.5" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+
+            <Ellipse
+                Stroke="#FFFBBF24"
+                StrokeThickness="1"
+                Width="24"
+                Height="24">
+                <Ellipse.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#FFFBBF24" />
+                            <GradientStop Offset="0.45" Color="#FFB526" />
+                            <GradientStop Offset="1" Color="#FF9926" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="clear-night" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon1"
+                Stroke="#72b9d5"
+                StrokeThickness="1"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#86c3db" />
+                            <GradientStop Offset="0.45" Color="#86c3db" />
+                            <GradientStop Offset="1" Color="#5eafcf" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.66 36.2 a 16.66 16.66 0 0 1 -16.78 -16.55 a 16.29 16.29 0 0 1 0.55 -4.15 A 16.56 16.56 0 1 0 48.5 36.1 c -0.61 0.06 -1.22 0.1 -1.84 0.1 Z" />
+                </Path.Data>
+                <Path.RenderTransform>
+                    <RotateTransform x:Name="rotate" CenterX="32" CenterY="32" />
+                </Path.RenderTransform>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="rotate"
+                                    Storyboard.TargetProperty="Angle"
+                                    From="0"
+                                    To="10"
+                                    Duration="0:0:2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="shower" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon1"
+                Stroke="#e6effc"
+                StrokeThickness="1"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#f3f7fe" />
+                            <GradientStop Offset="0.45" Color="#f3f7fe" />
+                            <GradientStop Offset="1" Color="#deeafb" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.5 31.5 h -0.32 a 10.49 10.49 0 0 0 -19.11 -8 a 7 7 0 0 0 -10.57 6 a 7.21 7.21 0 0 0 0.1 1.14 A 7.5 7.5 0 0 0 18 45.5 a 4.19 4.19 0 0 0 0.5 0 v 0 h 28 a 7 7 0 0 0 0 -14 Z" />
+                </Path.Data>
+                <Path.Triggers />
+            </Path>
+
+            <Path
+                Name="polygon2"
+                StrokeThickness="2"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#4286ee" />
+                            <GradientStop Offset="0.45" Color="#4286ee" />
+                            <GradientStop Offset="1" Color="#0950bc" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Data>
+                    <PathGeometry Figures="M 24.39 43.03 l -0.78 4.94" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    BeginTime="0:0:0.4"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:0.5" />
+                                <ThicknessAnimation
+                                    BeginTime="0:0:0.4"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-8, -15, 0, 0"
+                                    To="-13, 2, 0, 0"
+                                    Duration="0:0:1" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+
+            <Path
+                Name="polygon3"
+                StrokeThickness="2"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#4286ee" />
+                            <GradientStop Offset="0.45" Color="#4286ee" />
+                            <GradientStop Offset="1" Color="#0950bc" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Data>
+                    <PathGeometry Figures="M 31.39 43.03 l -0.78 4.94" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon3"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:0.5" />
+                                <ThicknessAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon3"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-8, -15, 0, 0"
+                                    To="-13, 2, 0, 0"
+                                    Duration="0:0:1" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+
+            <Path
+                Name="polygon4"
+                StrokeThickness="2"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#4286ee" />
+                            <GradientStop Offset="0.45" Color="#4286ee" />
+                            <GradientStop Offset="1" Color="#0950bc" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Data>
+                    <PathGeometry Figures="M 38.39 43.03 l -0.78 4.94" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    BeginTime="0:0:0.7"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon4"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:0.5" />
+                                <ThicknessAnimation
+                                    BeginTime="0:0:0.7"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon4"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-8, -15, 0, 0"
+                                    To="-13, 2, 0, 0"
+                                    Duration="0:0:1" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="wind" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon1"
+                StrokeThickness="3"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                StrokeDashArray="12, 10"
+                StrokeDashCap="Round"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#d4d7dd" />
+                            <GradientStop Offset="0.45" Color="#d4d7dd" />
+                            <GradientStop Offset="1" Color="#bec1c6" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Data>
+                    <PathGeometry Figures="M 43.64 20 a 5 5 0 1 1 3.61 8.46 h -35.5" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    RepeatBehavior="Forever"
+                                    SpeedRatio="1"
+                                    Storyboard.TargetName="polygon1"
+                                    Storyboard.TargetProperty="StrokeDashOffset"
+                                    From="-5"
+                                    To="17"
+                                    Duration="0:0:1.3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+            <Path
+                Name="polygon2"
+                StrokeThickness="3"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                StrokeDashArray="12, 10"
+                StrokeDashCap="Round"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#d4d7dd" />
+                            <GradientStop Offset="0.45" Color="#d4d7dd" />
+                            <GradientStop Offset="1" Color="#bec1c6" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Data>
+                    <PathGeometry Figures="M 29.14 44 a 5 5 0 1 0 3.61 -8.46 h -21" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    BeginTime="-0:0:0.7"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="StrokeDashOffset"
+                                    From="-5"
+                                    To="17"
+                                    Duration="0:0:1.3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="cloudy" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon1"
+                Stroke="#e6effc"
+                StrokeThickness="1"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#f3f7fe" />
+                            <GradientStop Offset="0.45" Color="#f3f7fe" />
+                            <GradientStop Offset="1" Color="#deeafb" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.5 31.5 h -0.32 a 10.49 10.49 0 0 0 -19.11 -8 a 7 7 0 0 0 -10.57 6 a 7.21 7.21 0 0 0 0.1 1.14 A 7.5 7.5 0 0 0 18 45.5 a 4.19 4.19 0 0 0 0.5 0 v 0 h 28 a 7 7 0 0 0 0 -14 Z" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimation
+                                    AutoReverse="True"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon1"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-11, -8, 0, 0"
+                                    To="-5, -8, 0, 0"
+                                    Duration="0:0:2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="overcast" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon2"
+                Stroke="#848b98"
+                StrokeThickness="1"
+                Width="70"
+                Height="56"
+                Margin="5,-8,0,0"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#9ca3af" />
+                            <GradientStop Offset="0.45" Color="#9ca3af" />
+                            <GradientStop Offset="1" Color="#6b7280" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 34.23 33.45 a 4.05 4.05 0 0 0 4.05 4 h 16.51 a 4.34 4.34 0 0 0 0.81 -8.61 a 3.52 3.52 0 0 0 0.06 -0.66 a 4.06 4.06 0 0 0 -6.13 -3.48 a 6.08 6.08 0 0 0 -11.25 3.19 a 6.34 6.34 0 0 0 0.18 1.46 h -0.18 a 4.05 4.05 0 0 0 -4.05 4.1 Z" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimation
+                                    AutoReverse="True"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="3.5,-8,0,0"
+                                    To="6.8,-8,0,0"
+                                    Duration="0:0:2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+            <Path
+                Name="polygon1"
+                Stroke="#e6effc"
+                StrokeThickness="1"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#f3f7fe" />
+                            <GradientStop Offset="0.45" Color="#f3f7fe" />
+                            <GradientStop Offset="1" Color="#deeafb" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.5 31.5 h -0.32 a 10.49 10.49 0 0 0 -19.11 -8 a 7 7 0 0 0 -10.57 6 a 7.21 7.21 0 0 0 0.1 1.14 A 7.5 7.5 0 0 0 18 45.5 a 4.19 4.19 0 0 0 0.5 0 v 0 h 28 a 7 7 0 0 0 0 -14 Z" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimation
+                                    AutoReverse="True"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon1"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-11, -8, 0, 0"
+                                    To="-5, -8, 0, 0"
+                                    Duration="0:0:2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="party-cloudy-day" TargetType="Control">
+        <Grid Margin="-3,-12,0,0">
+            <Grid
+                Margin="3,12,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Path
+                    Name="polygon1"
+                    Stroke="#FFFBBF24"
+                    StrokeThickness="3"
+                    Width="56"
+                    Height="56"
+                    Margin="-8,-8,0,0"
+                    StrokeEndLineCap="Round"
+                    StrokeMiterLimit="10"
+                    StrokeStartLineCap="Round">
+                    <Path.Data>
+                        <PathGeometry Figures="M 32 15.71 V 9.5 m 0 45 v -6.21 m 11.52 -27.81 l 4.39 -4.39 M 16.09 47.91 l 4.39 -4.39 m 0 -23 l -4.39 -4.39 m 31.82 31.78 l -4.39 -4.39 M 15.71 32 H 9.5 m 45 0 h -6.21" />
+                    </Path.Data>
+                    <Path.RenderTransform>
+                        <RotateTransform x:Name="rotate" CenterX="32" CenterY="32" />
+                    </Path.RenderTransform>
+                    <Path.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        RepeatBehavior="Forever"
+                                        Storyboard.TargetName="rotate"
+                                        Storyboard.TargetProperty="Angle"
+                                        From="0"
+                                        To="90"
+                                        Duration="0:0:3" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Path.Triggers>
+                </Path>
+
+                <Ellipse
+                    Stroke="#FFFBBF24"
+                    StrokeThickness="1"
+                    Width="24"
+                    Height="24">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#FFFBBF24" />
+                                <GradientStop Offset="0.45" Color="#FFB526" />
+                                <GradientStop Offset="1" Color="#FF9926" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Grid.RenderTransform>
+                    <ScaleTransform ScaleX="0.4" ScaleY="0.4" />
+                </Grid.RenderTransform>
+            </Grid>
+
+            <Path
+                Name="polygon3"
+                Stroke="#e6effc"
+                StrokeThickness="1"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#f3f7fe" />
+                            <GradientStop Offset="0.45" Color="#f3f7fe" />
+                            <GradientStop Offset="1" Color="#deeafb" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.5 31.5 h -0.32 a 10.49 10.49 0 0 0 -19.11 -8 a 7 7 0 0 0 -10.57 6 a 7.21 7.21 0 0 0 0.1 1.14 A 7.5 7.5 0 0 0 18 45.5 a 4.19 4.19 0 0 0 0.5 0 v 0 h 28 a 7 7 0 0 0 0 -14 Z" />
+                </Path.Data>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="party-cloudy-night" TargetType="Control">
+        <Grid Margin="-3,-12,0,0">
+            <Grid
+                Margin="3,12,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Path
+                    Name="polygon1"
+                    Stroke="#72b9d5"
+                    StrokeThickness="1"
+                    Width="56"
+                    Height="56"
+                    Margin="-8,-8,0,0"
+                    StrokeEndLineCap="Round"
+                    StrokeMiterLimit="10"
+                    StrokeStartLineCap="Round">
+                    <Path.Fill>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Path.Fill>
+                    <Path.Data>
+                        <PathGeometry Figures="M 46.66 36.2 a 16.66 16.66 0 0 1 -16.78 -16.55 a 16.29 16.29 0 0 1 0.55 -4.15 A 16.56 16.56 0 1 0 48.5 36.1 c -0.61 0.06 -1.22 0.1 -1.84 0.1 Z" />
+                    </Path.Data>
+                    <Path.RenderTransform>
+                        <RotateTransform x:Name="rotate" CenterX="32" CenterY="32" />
+                    </Path.RenderTransform>
+                    <Path.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        AutoReverse="True"
+                                        RepeatBehavior="Forever"
+                                        Storyboard.TargetName="rotate"
+                                        Storyboard.TargetProperty="Angle"
+                                        From="0"
+                                        To="10"
+                                        Duration="0:0:2" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Path.Triggers>
+                </Path>
+                <Grid.RenderTransform>
+                    <ScaleTransform ScaleX="0.4" ScaleY="0.4" />
+                </Grid.RenderTransform>
+            </Grid>
+
+            <Path
+                Name="polygon3"
+                Stroke="#e6effc"
+                StrokeThickness="1"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#f3f7fe" />
+                            <GradientStop Offset="0.45" Color="#f3f7fe" />
+                            <GradientStop Offset="1" Color="#deeafb" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.5 31.5 h -0.32 a 10.49 10.49 0 0 0 -19.11 -8 a 7 7 0 0 0 -10.57 6 a 7.21 7.21 0 0 0 0.1 1.14 A 7.5 7.5 0 0 0 18 45.5 a 4.19 4.19 0 0 0 0.5 0 v 0 h 28 a 7 7 0 0 0 0 -14 Z" />
+                </Path.Data>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="fog" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon1"
+                Stroke="#e6effc"
+                StrokeThickness="1"
+                Width="64"
+                Height="56"
+                Margin="-8,-16,0,0"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#f3f7fe" />
+                            <GradientStop Offset="0.45" Color="#f3f7fe" />
+                            <GradientStop Offset="1" Color="#deeafb" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.5 31.5 h -0.32 a 10.49 10.49 0 0 0 -19.11 -8 a 7 7 0 0 0 -10.57 6 a 7.21 7.21 0 0 0 0.1 1.14 A 7.5 7.5 0 0 0 18 45.5 a 4.19 4.19 0 0 0 0.5 0 v 0 h 28 a 7 7 0 0 0 0 -14 Z" />
+                </Path.Data>
+            </Path>
+            <Path
+                Name="polygon2"
+                StrokeThickness="3"
+                Width="56"
+                Height="64"
+                Margin="-25,-8,0,0"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#d4d7dd" />
+                            <GradientStop Offset="0.45" Color="#d4d7dd" />
+                            <GradientStop Offset="1" Color="#bec1c6" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Data>
+                    <PathGeometry Figures="M 17 58 h 30" />
+                </Path.Data>
+                <Path.RenderTransform>
+                    <RotateTransform CenterX="32" CenterY="32" />
+                </Path.RenderTransform>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimation
+                                    AutoReverse="True"
+                                    BeginTime="-0:0:0.4"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-25, -8, 0, 0"
+                                    To="-8, -8, 0, 0"
+                                    Duration="0:0:2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+            <Path
+                Name="polygon3"
+                StrokeThickness="3"
+                Width="56"
+                Height="64"
+                Margin="-25,-8,0,0"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#d4d7dd" />
+                            <GradientStop Offset="0.45" Color="#d4d7dd" />
+                            <GradientStop Offset="1" Color="#bec1c6" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Data>
+                    <PathGeometry Figures="M 17 52 h 30" />
+                </Path.Data>
+                <Path.RenderTransform>
+                    <RotateTransform CenterX="32" CenterY="32" />
+                </Path.RenderTransform>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimation
+                                    AutoReverse="True"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon3"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-25, -8, 0, 0"
+                                    To="-8, -8, 0, 0"
+                                    Duration="0:0:2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="drizzle" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon1"
+                Stroke="#e6effc"
+                StrokeThickness="1"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#f3f7fe" />
+                            <GradientStop Offset="0.45" Color="#f3f7fe" />
+                            <GradientStop Offset="1" Color="#deeafb" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.5 31.5 h -0.32 a 10.49 10.49 0 0 0 -19.11 -8 a 7 7 0 0 0 -10.57 6 a 7.21 7.21 0 0 0 0.1 1.14 A 7.5 7.5 0 0 0 18 45.5 a 4.19 4.19 0 0 0 0.5 0 v 0 h 28 a 7 7 0 0 0 0 -14 Z" />
+                </Path.Data>
+                <Path.Triggers />
+            </Path>
+
+            <Path
+                Name="polygon2"
+                StrokeThickness="2"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#4286ee" />
+                            <GradientStop Offset="0.45" Color="#4286ee" />
+                            <GradientStop Offset="1" Color="#0950bc" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Data>
+                    <PathGeometry Figures="M 24.08 45.01 l -0.16 0.98" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:1.25" />
+                                <ThicknessAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-8, -12, 0, 0"
+                                    To="-13, 2, 0, 0"
+                                    Duration="0:0:2.5" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+
+            <Path
+                Name="polygon3"
+                StrokeThickness="2"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#4286ee" />
+                            <GradientStop Offset="0.45" Color="#4286ee" />
+                            <GradientStop Offset="1" Color="#0950bc" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Data>
+                    <PathGeometry Figures="M 31.08 45.01 l -0.16 0.98" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    BeginTime="-0:0:1.25"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon3"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:1.25" />
+                                <ThicknessAnimation
+                                    BeginTime="-0:0:1.25"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon3"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-8, -12, 0, 0"
+                                    To="-13, 2, 0, 0"
+                                    Duration="0:0:2.5" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+
+
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="rain" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon1"
+                Stroke="#e6effc"
+                StrokeThickness="1"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#f3f7fe" />
+                            <GradientStop Offset="0.45" Color="#f3f7fe" />
+                            <GradientStop Offset="1" Color="#deeafb" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.5 31.5 h -0.32 a 10.49 10.49 0 0 0 -19.11 -8 a 7 7 0 0 0 -10.57 6 a 7.21 7.21 0 0 0 0.1 1.14 A 7.5 7.5 0 0 0 18 45.5 a 4.19 4.19 0 0 0 0.5 0 v 0 h 28 a 7 7 0 0 0 0 -14 Z" />
+                </Path.Data>
+                <Path.Triggers />
+            </Path>
+
+            <Path
+                Name="polygon2"
+                StrokeThickness="2"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#4286ee" />
+                            <GradientStop Offset="0.45" Color="#4286ee" />
+                            <GradientStop Offset="1" Color="#0950bc" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Data>
+                    <PathGeometry Figures="M 28.39 43.03 l -0.78 4.94" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:1" />
+                                <ThicknessAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-8, -12, 0, 0"
+                                    To="-13, 2, 0, 0"
+                                    Duration="0:0:2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+
+            <Path
+                Name="polygon3"
+                StrokeThickness="2"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#4286ee" />
+                            <GradientStop Offset="0.45" Color="#4286ee" />
+                            <GradientStop Offset="1" Color="#0950bc" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Data>
+                    <PathGeometry Figures="M 38.39 43.03 l -0.78 4.94" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    BeginTime="-0:0:1"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon3"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:1" />
+                                <ThicknessAnimation
+                                    BeginTime="-0:0:1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon3"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-8, -12, 0, 0"
+                                    To="-13, 2, 0, 0"
+                                    Duration="0:0:2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="slight-snowfall" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon1"
+                Stroke="#e6effc"
+                StrokeThickness="1"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#f3f7fe" />
+                            <GradientStop Offset="0.45" Color="#f3f7fe" />
+                            <GradientStop Offset="1" Color="#deeafb" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.5 31.5 h -0.32 a 10.49 10.49 0 0 0 -19.11 -8 a 7 7 0 0 0 -10.57 6 a 7.21 7.21 0 0 0 0.1 1.14 A 7.5 7.5 0 0 0 18 45.5 a 4.19 4.19 0 0 0 0.5 0 v 0 h 28 a 7 7 0 0 0 0 -14 Z" />
+                </Path.Data>
+            </Path>
+            <Grid x:Name="polygon2" VerticalAlignment="Top">
+                <Path
+                    StrokeThickness="1"
+                    Width="56"
+                    Height="56"
+                    Margin="-8,-8,0,0"
+                    StrokeEndLineCap="Round"
+                    StrokeMiterLimit="10"
+                    StrokeStartLineCap="Round">
+                    <Path.Data>
+                        <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
+                    </Path.Data>
+                    <Path.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Path.Stroke>
+                </Path>
+
+                <Ellipse
+                    StrokeThickness="0.9"
+                    Width="3"
+                    Height="3"
+                    Margin="-2,26,0,0"
+                    VerticalAlignment="Center"
+                    Fill="Transparent">
+                    <Ellipse.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Ellipse.Stroke>
+                </Ellipse>
+
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform x:Name="rotate" CenterX="26" CenterY="37" />
+                    </TransformGroup>
+
+                </Grid.RenderTransform>
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="rotate"
+                                    Storyboard.TargetProperty="Angle"
+                                    From="0"
+                                    To="90"
+                                    Duration="0:0:3" />
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:1.5" />
+                                <ThicknessAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-8, -5, 0, 0"
+                                    To="-11, 10, 0, 0"
+                                    Duration="0:0:3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Grid.Triggers>
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="moderate-snowfall" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon1"
+                Stroke="#e6effc"
+                StrokeThickness="1"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#f3f7fe" />
+                            <GradientStop Offset="0.45" Color="#f3f7fe" />
+                            <GradientStop Offset="1" Color="#deeafb" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.5 31.5 h -0.32 a 10.49 10.49 0 0 0 -19.11 -8 a 7 7 0 0 0 -10.57 6 a 7.21 7.21 0 0 0 0.1 1.14 A 7.5 7.5 0 0 0 18 45.5 a 4.19 4.19 0 0 0 0.5 0 v 0 h 28 a 7 7 0 0 0 0 -14 Z" />
+                </Path.Data>
+            </Path>
+            <Grid
+                x:Name="polygon2"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Path
+                    StrokeThickness="1"
+                    Width="56"
+                    Height="56"
+                    Margin="-8,-8,0,0"
+                    StrokeEndLineCap="Round"
+                    StrokeMiterLimit="10"
+                    StrokeStartLineCap="Round">
+                    <Path.Data>
+                        <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
+                    </Path.Data>
+                    <Path.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Path.Stroke>
+                </Path>
+
+                <Ellipse
+                    StrokeThickness="0.9"
+                    Width="3"
+                    Height="3"
+                    Margin="-2,26,0,0"
+                    VerticalAlignment="Center"
+                    Fill="Transparent">
+                    <Ellipse.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Ellipse.Stroke>
+                </Ellipse>
+
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform x:Name="rotate" CenterX="20" CenterY="37" />
+                    </TransformGroup>
+
+                </Grid.RenderTransform>
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="rotate"
+                                    Storyboard.TargetProperty="Angle"
+                                    From="0"
+                                    To="90"
+                                    Duration="0:0:3" />
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:1.5" />
+                                <ThicknessAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-5, -5, 0, 0"
+                                    To="-8, 10, 0, 0"
+                                    Duration="0:0:3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Grid.Triggers>
+            </Grid>
+            <Grid x:Name="polygon3" VerticalAlignment="Top">
+                <Path
+                    StrokeThickness="1"
+                    Width="56"
+                    Height="56"
+                    Margin="-8,-8,0,0"
+                    StrokeEndLineCap="Round"
+                    StrokeMiterLimit="10"
+                    StrokeStartLineCap="Round">
+                    <Path.Data>
+                        <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
+                    </Path.Data>
+                    <Path.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Path.Stroke>
+                </Path>
+
+                <Ellipse
+                    StrokeThickness="0.9"
+                    Width="3"
+                    Height="3"
+                    Margin="-2,26,0,0"
+                    VerticalAlignment="Center"
+                    Fill="Transparent">
+                    <Ellipse.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Ellipse.Stroke>
+                </Ellipse>
+
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform x:Name="rotate1" CenterX="19" CenterY="37" />
+                    </TransformGroup>
+
+                </Grid.RenderTransform>
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard BeginTime="-0:0:1.5">
+                                <DoubleAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="rotate1"
+                                    Storyboard.TargetProperty="Angle"
+                                    From="0"
+                                    To="90"
+                                    Duration="0:0:3" />
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon3"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:1.5" />
+                                <ThicknessAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon3"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="6, -5, 0, 0"
+                                    To="5, 10, 0, 0"
+                                    Duration="0:0:3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Grid.Triggers>
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="hard-snowfall" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon1"
+                Stroke="#e6effc"
+                StrokeThickness="1"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#f3f7fe" />
+                            <GradientStop Offset="0.45" Color="#f3f7fe" />
+                            <GradientStop Offset="1" Color="#deeafb" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.5 31.5 h -0.32 a 10.49 10.49 0 0 0 -19.11 -8 a 7 7 0 0 0 -10.57 6 a 7.21 7.21 0 0 0 0.1 1.14 A 7.5 7.5 0 0 0 18 45.5 a 4.19 4.19 0 0 0 0.5 0 v 0 h 28 a 7 7 0 0 0 0 -14 Z" />
+                </Path.Data>
+            </Path>
+            <Grid
+                x:Name="polygon2"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Path
+                    StrokeThickness="1"
+                    Width="56"
+                    Height="56"
+                    Margin="-8,-8,0,0"
+                    StrokeEndLineCap="Round"
+                    StrokeMiterLimit="10"
+                    StrokeStartLineCap="Round">
+                    <Path.Data>
+                        <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
+                    </Path.Data>
+                    <Path.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Path.Stroke>
+                </Path>
+
+                <Ellipse
+                    StrokeThickness="0.9"
+                    Width="3"
+                    Height="3"
+                    Margin="-2,26,0,0"
+                    VerticalAlignment="Center"
+                    Fill="Transparent">
+                    <Ellipse.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Ellipse.Stroke>
+                </Ellipse>
+
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform x:Name="rotate" CenterX="19" CenterY="37" />
+                    </TransformGroup>
+
+                </Grid.RenderTransform>
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="rotate"
+                                    Storyboard.TargetProperty="Angle"
+                                    From="0"
+                                    To="90"
+                                    Duration="0:0:3" />
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:1.5" />
+                                <ThicknessAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-10, -5, 0, 0"
+                                    To="-13, 10, 0, 0"
+                                    Duration="0:0:3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Grid.Triggers>
+            </Grid>
+            <Grid
+                x:Name="polygon3"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Path
+                    StrokeThickness="1"
+                    Width="56"
+                    Height="56"
+                    Margin="-8,-8,0,0"
+                    StrokeEndLineCap="Round"
+                    StrokeMiterLimit="10"
+                    StrokeStartLineCap="Round">
+                    <Path.Data>
+                        <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
+                    </Path.Data>
+                    <Path.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Path.Stroke>
+                </Path>
+
+                <Ellipse
+                    StrokeThickness="0.9"
+                    Width="3"
+                    Height="3"
+                    Margin="-2,26,0,0"
+                    VerticalAlignment="Center"
+                    Fill="Transparent">
+                    <Ellipse.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Ellipse.Stroke>
+                </Ellipse>
+
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform x:Name="rotate1" CenterX="20" CenterY="37" />
+                    </TransformGroup>
+
+                </Grid.RenderTransform>
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard BeginTime="-0:0:2">
+                                <DoubleAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="rotate1"
+                                    Storyboard.TargetProperty="Angle"
+                                    From="0"
+                                    To="90"
+                                    Duration="0:0:3" />
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon3"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:1.5" />
+                                <ThicknessAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon3"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="1, -5, 0, 0"
+                                    To="0, 10, 0, 0"
+                                    Duration="0:0:3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Grid.Triggers>
+            </Grid>
+            <Grid
+                x:Name="polygon4"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top">
+                <Path
+                    StrokeThickness="1"
+                    Width="56"
+                    Height="56"
+                    Margin="-8,-8,0,0"
+                    StrokeEndLineCap="Round"
+                    StrokeMiterLimit="10"
+                    StrokeStartLineCap="Round">
+                    <Path.Data>
+                        <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
+                    </Path.Data>
+                    <Path.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Path.Stroke>
+                </Path>
+
+                <Ellipse
+                    StrokeThickness="0.9"
+                    Width="3"
+                    Height="3"
+                    Margin="-2,26,0,0"
+                    VerticalAlignment="Center"
+                    Fill="Transparent">
+                    <Ellipse.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Ellipse.Stroke>
+                </Ellipse>
+
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform x:Name="rotate3" CenterX="23" CenterY="37" />
+                    </TransformGroup>
+
+                </Grid.RenderTransform>
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard BeginTime="-0:0:1">
+                                <DoubleAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="rotate3"
+                                    Storyboard.TargetProperty="Angle"
+                                    From="0"
+                                    To="90"
+                                    Duration="0:0:3" />
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon4"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:1.5" />
+                                <ThicknessAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon4"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="14, -5, 0, 0"
+                                    To="10, 10, 0, 0"
+                                    Duration="0:0:3" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Grid.Triggers>
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+
+    <ControlTemplate x:Key="freezing-drizle" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon1"
+                Stroke="#e6effc"
+                StrokeThickness="1"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#f3f7fe" />
+                            <GradientStop Offset="0.45" Color="#f3f7fe" />
+                            <GradientStop Offset="1" Color="#deeafb" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.5 31.5 h -0.32 a 10.49 10.49 0 0 0 -19.11 -8 a 7 7 0 0 0 -10.57 6 a 7.21 7.21 0 0 0 0.1 1.14 A 7.5 7.5 0 0 0 18 45.5 a 4.19 4.19 0 0 0 0.5 0 v 0 h 28 a 7 7 0 0 0 0 -14 Z" />
+                </Path.Data>
+            </Path>
+            <Grid
+                x:Name="polygon2"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Path
+                    StrokeThickness="1"
+                    Width="56"
+                    Height="56"
+                    Margin="-8,-8,0,0"
+                    StrokeEndLineCap="Round"
+                    StrokeMiterLimit="10"
+                    StrokeStartLineCap="Round">
+                    <Path.Data>
+                        <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
+                    </Path.Data>
+                    <Path.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Path.Stroke>
+                </Path>
+
+                <Ellipse
+                    StrokeThickness="0.9"
+                    Width="3"
+                    Height="3"
+                    Margin="-2,26,0,0"
+                    VerticalAlignment="Center"
+                    Fill="Transparent">
+                    <Ellipse.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Ellipse.Stroke>
+                </Ellipse>
+
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform x:Name="rotate" CenterX="19" CenterY="37" />
+                    </TransformGroup>
+
+                </Grid.RenderTransform>
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="rotate"
+                                    Storyboard.TargetProperty="Angle"
+                                    From="0"
+                                    To="90"
+                                    Duration="0:0:4" />
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:2" />
+                                <ThicknessAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-10, -5, 0, 0"
+                                    To="-13, 10, 0, 0"
+                                    Duration="0:0:4" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Grid.Triggers>
+            </Grid>
+
+            <Grid
+                x:Name="polygon4"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top">
+                <Path
+                    StrokeThickness="1"
+                    Width="56"
+                    Height="56"
+                    Margin="-8,-8,0,0"
+                    StrokeEndLineCap="Round"
+                    StrokeMiterLimit="10"
+                    StrokeStartLineCap="Round">
+                    <Path.Data>
+                        <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
+                    </Path.Data>
+                    <Path.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Path.Stroke>
+                </Path>
+
+                <Ellipse
+                    StrokeThickness="0.9"
+                    Width="3"
+                    Height="3"
+                    Margin="-2,26,0,0"
+                    VerticalAlignment="Center"
+                    Fill="Transparent">
+                    <Ellipse.Stroke>
+                        <LinearGradientBrush>
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Offset="0" Color="#86c3db" />
+                                <GradientStop Offset="0.45" Color="#86c3db" />
+                                <GradientStop Offset="1" Color="#5eafcf" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Ellipse.Stroke>
+                </Ellipse>
+
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform x:Name="rotate3" CenterX="23" CenterY="37" />
+                    </TransformGroup>
+
+                </Grid.RenderTransform>
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard BeginTime="-0:0:2">
+                                <DoubleAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="rotate3"
+                                    Storyboard.TargetProperty="Angle"
+                                    From="0"
+                                    To="90"
+                                    Duration="0:0:4" />
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon4"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:2" />
+                                <ThicknessAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon4"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="14, -5, 0, 0"
+                                    To="10, 10, 0, 0"
+                                    Duration="0:0:4" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Grid.Triggers>
+            </Grid>
+
+            <Path
+                Name="polygon6"
+                StrokeThickness="2"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#4286ee" />
+                            <GradientStop Offset="0.45" Color="#4286ee" />
+                            <GradientStop Offset="1" Color="#0950bc" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Data>
+                    <PathGeometry Figures="M 28.39 43.03 l -0.78 4.94" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard BeginTime="-0:0:0.5">
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon6"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:0.5" />
+                                <ThicknessAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon6"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-5, -12, 0, 0"
+                                    To="-9, 2, 0, 0"
+                                    Duration="0:0:1" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+
+            <Path
+                Name="polygon5"
+                StrokeThickness="2"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Stroke>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#4286ee" />
+                            <GradientStop Offset="0.45" Color="#4286ee" />
+                            <GradientStop Offset="1" Color="#0950bc" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Data>
+                    <PathGeometry Figures="M 38.39 43.03 l -0.78 4.94" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard BeginTime="0">
+                                <DoubleAnimation
+                                    AutoReverse="True"
+                                    DecelerationRatio="1"
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon5"
+                                    Storyboard.TargetProperty="Opacity"
+                                    From="0"
+                                    To="1"
+                                    Duration="0:0:0.5" />
+                                <ThicknessAnimation
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon5"
+                                    Storyboard.TargetProperty="Margin"
+                                    From="-10, -12, 0, 0"
+                                    To="-13, 2, 0, 0"
+                                    Duration="0:0:1" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="thunderstorm" TargetType="Control">
+        <Grid>
+            <Path
+                Name="polygon1"
+                Stroke="#848b98"
+                StrokeThickness="1"
+                Width="56"
+                Height="56"
+                Margin="-8,-8,0,0"
+                VerticalAlignment="Top"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#9ca3af" />
+                            <GradientStop Offset="0.45" Color="#9ca3af" />
+                            <GradientStop Offset="1" Color="#6b7280" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 46.5 31.5 h -0.32 a 10.49 10.49 0 0 0 -19.11 -8 a 7 7 0 0 0 -10.57 6 a 7.21 7.21 0 0 0 0.1 1.14 A 7.5 7.5 0 0 0 18 45.5 a 4.19 4.19 0 0 0 0.5 0 v 0 h 28 a 7 7 0 0 0 0 -14 Z" />
+                </Path.Data>
+            </Path>
+
+            <Path
+                Name="polygon2"
+                Stroke="#f6a823"
+                StrokeThickness="1"
+                Width="56"
+                Height="64"
+                Margin="-8,-8,0,0"
+                StrokeEndLineCap="Round"
+                StrokeMiterLimit="10"
+                StrokeStartLineCap="Round">
+                <Path.Fill>
+                    <LinearGradientBrush>
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#f7b23b" />
+                            <GradientStop Offset="0.45" Color="#f7b23b" />
+                            <GradientStop Offset="1" Color="#f59e0b" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+                <Path.Data>
+                    <PathGeometry Figures="M 30 36 l -4 12 h 4 l -2 10 l 10 -14 h -6 l 4 -8 h -6 Z" />
+                </Path.Data>
+                <Path.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimationUsingKeyFrames
+                                    RepeatBehavior="Forever"
+                                    Storyboard.TargetName="polygon2"
+                                    Storyboard.TargetProperty="Opacity"
+                                    Duration="0:0:4">
+                                    <LinearDoubleKeyFrame KeyTime="0%" Value="0" />
+                                    <LinearDoubleKeyFrame KeyTime="4%" Value="1" />
+                                    <LinearDoubleKeyFrame KeyTime="8%" Value="0" />
+                                    <LinearDoubleKeyFrame KeyTime="12%" Value="1" />
+                                    <LinearDoubleKeyFrame KeyTime="16%" Value="0" />
+                                    <LinearDoubleKeyFrame KeyTime="20%" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Path.Triggers>
+            </Path>
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>
