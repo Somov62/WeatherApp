@@ -1,7 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 
-    <SolidColorBrush x:Key="PageBackgroud" Color="#FFBF8C" />
+    <SolidColorBrush x:Key="PageBackground" Color="#FFBF8C" />
+    <SolidColorBrush x:Key="PageForeground" Color="#000000" />
+    <SolidColorBrush x:Key="WeekendHighlight" Color="#FF3333" />
 
 
     <SolidColorBrush x:Key="WindowNavBtnForeground" Color="Black" />

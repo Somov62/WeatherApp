@@ -43,12 +43,39 @@
     <v:String x:Key="ThunderstormWithHeavyHail">Гроза, град</v:String>
 
     <!--  Дни недели  -->
-    <v:String x:Key="Monday">Пн</v:String>
-    <v:String x:Key="Tuesday">Вт</v:String>
-    <v:String x:Key="Wednesday">Ср</v:String>
-    <v:String x:Key="Thursday">Чт</v:String>
-    <v:String x:Key="Friday">Пт</v:String>
-    <v:String x:Key="Saturday">Сб</v:String>
-    <v:String x:Key="Sunday">Вс</v:String>
+    <v:String x:Key="Monday">Понедельник</v:String>
+    <v:String x:Key="Tuesday">Вторник</v:String>
+    <v:String x:Key="Wednesday">Среда</v:String>
+    <v:String x:Key="Thursday">Четверг</v:String>
+    <v:String x:Key="Friday">Пятница</v:String>
+    <v:String x:Key="Saturday">Суббота</v:String>
+    <v:String x:Key="Sunday">Воскресенье</v:String>
+
+    <v:String x:Key="MondayShort">Пн</v:String>
+    <v:String x:Key="TuesdayShort">Вт</v:String>
+    <v:String x:Key="WednesdayShort">Ср</v:String>
+    <v:String x:Key="ThursdayShort">Чт</v:String>
+    <v:String x:Key="FridayShort">Пт</v:String>
+    <v:String x:Key="SaturdayShort">Сб</v:String>
+    <v:String x:Key="SundayShort">Вс</v:String>
+
+    <!--  Системы измерения  -->
+    <v:String x:Key="Celsius">°C</v:String>
+    <v:String x:Key="Fahrenheit">°F</v:String>
+
+    <v:String x:Key="Kmh">км/ч</v:String>
+    <v:String x:Key="Ms">м/с</v:String>
+    <v:String x:Key="Mph">миль/ч</v:String>
+    <v:String x:Key="Kn">узлы</v:String>
+
+    <v:String x:Key="Mm">мм</v:String>
+    <v:String x:Key="Cm">см</v:String>
+
+    <!--  Ветер  -->
+    <v:String x:Key="West">З</v:String>
+    <v:String x:Key="East">В</v:String>
+    <v:String x:Key="North">С</v:String>
+    <v:String x:Key="South">Ю</v:String>
+
 
 </ResourceDictionary>

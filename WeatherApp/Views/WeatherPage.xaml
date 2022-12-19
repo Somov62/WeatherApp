@@ -7,16 +7,21 @@
     xmlns:exct="clr-namespace:WeatherApp.Resources.Controls"
     xmlns:fa="http://schemas.fontawesome.io/icons/"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Name="page"
     Title="WeatherPage"
     d:DesignHeight="450"
     d:DesignWidth="800"
     xml:lang="ru-RU"
-    Background="{DynamicResource PageBackgroud}"
+    Background="{DynamicResource PageBackground}"
     mc:Ignorable="d">
     <Page.Resources>
         <converters:WeatherCodeToIconConverter x:Key="WeatherCodeToIconConverter" />
         <converters:WeatherLocalizationConverter x:Key="LocalizationConverter" />
         <converters:DaysLocalizationConverter x:Key="DaysLocalizationConverter" />
+        <converters:WeekendHighlightConverter x:Key="WeekendHighlightConverter" />
+        <converters:MeasuresConverter x:Key="MeasuresConverter" />
+        <converters:WindConverter x:Key="WindConverter" />
+        <converters:WindToTextConverter x:Key="WindToTextConverter" />
     </Page.Resources>
 
 
@@ -66,35 +71,104 @@
                     MinHeight="350"
                     Background="White"
                     CornerRadius="10">
-                    <Grid
-                        MinWidth="130"
-                        MinHeight="100"
-                        Margin="10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
-                            <RowDefinition />
-                            <RowDefinition Height="auto" />
-                        </Grid.RowDefinitions>
-                        <TextBlock FontSize="14" Text="{Binding Date, StringFormat='m'}" />
+                    <DockPanel Margin="30,20" LastChildFill="False">
+                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                            <TextBlock
+                                DockPanel.Dock="Top"
+                                FontSize="20"
+                                Text="{Binding Date, Converter={StaticResource DaysLocalizationConverter}, StringFormat='\{0} - '}" />
+                            <TextBlock
+                                DockPanel.Dock="Top"
+                                FontSize="20"
+                                Text="{Binding Date, StringFormat='m'}" />
+                        </StackPanel>
+                        <TextBlock
+                            DockPanel.Dock="Top"
+                            FontSize="22"
+                            Text="Location" />
 
                         <StackPanel
                             Grid.Row="1"
-                            VerticalAlignment="Bottom"
+                            Margin="0,0,0,10"
+                            DockPanel.Dock="Top"
                             Orientation="Horizontal">
-                            <TextBlock FontSize="40" Text="{Binding MaxTemperature}" />
-
+                            <TextBlock
+                                Margin="0,0,0,-5"
+                                VerticalAlignment="Bottom"
+                                FontSize="45"
+                                Text="{Binding MaxTemperature, StringFormat='\{0}°'}" />
+                            <StackPanel Margin="12,-15,0,0" VerticalAlignment="Bottom">
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    FontSize="14"
+                                    Text="Ночью" />
+                                <TextBlock
+                                    Margin="-2,-2,0,0"
+                                    FontSize="20"
+                                    Text="{Binding MinTemperature, StringFormat='\{0}°'}" />
+                            </StackPanel>
+                            <Control
+                                Margin="50,15,0,0"
+                                VerticalAlignment="Bottom"
+                                Template="{StaticResource wind}" />
                             <TextBlock
                                 Margin="15,0,0,0"
                                 VerticalAlignment="Bottom"
-                                FontSize="20"
-                                Text="{Binding MinTemperature}" />
+                                FontSize="30"
+                                Text="{Binding WindSpeed}" />
+                            <TextBlock
+                                Margin="5,13,0,0"
+                                VerticalAlignment="Bottom"
+                                FontSize="22"
+                                Text="{Binding ElementName=page, Path=DataContext.Forecast.Measures.Windspeed, Converter={StaticResource MeasuresConverter}}" />
+
+                            <StackPanel Margin="10,0,0,-1" VerticalAlignment="Bottom">
+                                <TextBlock FontSize="14" Text="Порывы до" />
+                                <TextBlock
+                                    Margin="0,-2,0,0"
+                                    HorizontalAlignment="Center"
+                                    FontSize="20"
+                                    Text="{Binding WindGusts}" />
+                            </StackPanel>
+
+                            <Path
+                                Margin="20,30,0,0"
+                                VerticalAlignment="Center"
+                                Data="M 10 0 L -5 6 L -1.5 0 L -5 -6 Z"
+                                Fill="Gray"
+                                Stroke="Gray"
+                                StrokeEndLineCap="Round"
+                                StrokeLineJoin="Round"
+                                StrokeStartLineCap="Round"
+                                StrokeThickness="3">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        <RotateTransform Angle="{Binding WindDirection, Converter={StaticResource WindConverter}}" />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+
+                            <TextBlock
+                                Margin="5,13,0,0"
+                                VerticalAlignment="Bottom"
+                                FontSize="22"
+                                Text="{Binding Path=WindDirection, Converter={StaticResource WindToTextConverter}}" />
                         </StackPanel>
 
                         <TextBlock
                             Grid.Row="2"
-                            FontSize="14"
+                            DockPanel.Dock="Top"
+                            FontSize="20"
                             Text="{Binding Weather, Converter={StaticResource LocalizationConverter}}" />
-                    </Grid>
+
+                        <Border
+                            Height="2"
+                            Margin="40,0"
+                            Background="Blue"
+                            CornerRadius="1"
+                            DockPanel.Dock="Bottom" />
+                    </DockPanel>
                 </Border>
 
 
@@ -137,7 +211,6 @@
                             <DataTemplate>
                                 <RadioButton
                                     Name="rb"
-                                    Background="Red"
                                     Command="{Binding DataContext.SelectForecastCommand, ElementName=panel}"
                                     CommandParameter="{Binding}"
                                     GroupName="g1"
@@ -160,7 +233,10 @@
 
                                         <StackPanel>
                                             <TextBlock FontSize="16" Text="{Binding Date, StringFormat='m'}" />
-                                            <TextBlock FontSize="25" Text="{Binding Date, Converter={StaticResource DaysLocalizationConverter}}" />
+                                            <TextBlock
+                                                FontSize="25"
+                                                Foreground="{Binding Date, Converter={StaticResource WeekendHighlightConverter}}"
+                                                Text="{Binding Date, Converter={StaticResource DaysLocalizationConverter}, ConverterParameter='a'}" />
                                         </StackPanel>
 
                                         <StackPanel

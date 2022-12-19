@@ -26,7 +26,7 @@
     <Window.DataContext>
         <viewmodel:MainViewModel />
     </Window.DataContext>
-    <Border Background="{DynamicResource PageBackgroud}" CornerRadius="20">
+    <Border Background="{DynamicResource PageBackground}" CornerRadius="20">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
@@ -40,7 +40,7 @@
 
             <Border
                 Grid.ColumnSpan="2"
-                Background="{DynamicResource PageBackgroud}"
+                Background="{DynamicResource PageBackground}"
                 CornerRadius="20, 20, 0, 0"
                 MouseDown="Border_MouseDown" />
             <StackPanel
