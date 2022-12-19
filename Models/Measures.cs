@@ -40,8 +40,8 @@ namespace Models
         HeavySnowShowers = 86,
 
         Thunderstorm = 95,
-        ThunderstormWithSlightHail = 95,
-        ThunderstormWithHeavyHail = 95,
+        ThunderstormWithSlightHail = 96,
+        ThunderstormWithHeavyHail = 99,
     }
 
     public enum TemperatureMeasure

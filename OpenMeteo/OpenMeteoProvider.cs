@@ -63,7 +63,7 @@ namespace OpenMeteo
             userModel.Measures = measures;
 
             userModel.DayForecasts = new List<DayForecastModel>();
-            for (int i = 0; i < apiModel?.Daily?.Time?.Count; i++)
+            for (int i = 3; i < 4; i++)
             {
                 userModel.DayForecasts.Add(
                     new DayForecastModel()

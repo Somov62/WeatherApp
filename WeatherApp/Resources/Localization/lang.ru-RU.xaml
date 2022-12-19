@@ -1,0 +1,44 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <v:String x:Key="lang">ru-Ru</v:String>
+
+    <!--  Расшифровка кодов погоды  -->
+    <v:String x:Key="NoData">Нет данных</v:String>
+
+    <v:String x:Key="ClearSky">Ясно</v:String>
+    <v:String x:Key="MainlyClear">Преимущественно ясно</v:String>
+    <v:String x:Key="PartlyCloudly">Облачно с проянениями</v:String>
+    <v:String x:Key="Overcast">Пасмурно</v:String>
+
+    <v:String x:Key="Fog">Туман</v:String>
+    <v:String x:Key="DepositingRimeFog">Изморось</v:String>
+
+    <v:String x:Key="LightDrizzle">Мелкая морось</v:String>
+    <v:String x:Key="ModerateDrizzle">Морось</v:String>
+    <v:String x:Key="DenseDrizzle">Сильная морось</v:String>
+
+    <v:String x:Key="LightFreezingDrizzle">Ледяная морось</v:String>
+    <v:String x:Key="DenseFreezingDrizzle">Сильная ледяная морось</v:String>
+
+    <v:String x:Key="SlightRain">Небольшой дождь</v:String>
+    <v:String x:Key="ModerateRain">Дождь</v:String>
+    <v:String x:Key="HeavyRain">Сильный дождь</v:String>
+
+    <v:String x:Key="SlightSnowfall">Небольшой снег</v:String>
+    <v:String x:Key="ModerateSnowfall">Снег</v:String>
+    <v:String x:Key="HeavySnowfall">Сильный снегопад</v:String>
+    <v:String x:Key="SnowGrains">Ледяная крупа</v:String>
+
+    <v:String x:Key="SlightRainShowers">Небольшой ливень</v:String>
+    <v:String x:Key="ModerateRainShowers">Ливень</v:String>
+    <v:String x:Key="ViolentRainShowers">Сильные ливень</v:String>
+
+    <v:String x:Key="SlightSnowShowers">Снег с дождем</v:String>
+    <v:String x:Key="HeavySnowShowers">Сильный снег с дождем</v:String>
+
+    <v:String x:Key="Thunderstorm">Гроза</v:String>
+    <v:String x:Key="ThunderstormWithSlightHail">Гроза с крупой</v:String>
+    <v:String x:Key="ThunderstormWithHeavyHail">Гроза, град</v:String>
+</ResourceDictionary>

@@ -1600,7 +1600,7 @@
     </ControlTemplate>
 
 
-    <ControlTemplate x:Key="freezing-drizle" TargetType="Control">
+    <ControlTemplate x:Key="freezing-drizzle" TargetType="Control">
         <Grid>
             <Path
                 Name="polygon1"
