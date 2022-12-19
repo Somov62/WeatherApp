@@ -150,8 +150,8 @@
                             </Path>
 
                             <TextBlock
-                                Margin="5,13,0,0"
-                                VerticalAlignment="Bottom"
+                                Margin="5,20,0,0"
+                                VerticalAlignment="Center"
                                 FontSize="22"
                                 Text="{Binding Path=WindDirection, Converter={StaticResource WindToTextConverter}}" />
                         </StackPanel>
