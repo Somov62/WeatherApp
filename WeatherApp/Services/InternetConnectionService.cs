@@ -9,7 +9,6 @@ namespace WeatherApp.Services
 {
     public class InternetConnectionService
     {
-
         private bool _connection;
 
         public bool IsConnectionExists

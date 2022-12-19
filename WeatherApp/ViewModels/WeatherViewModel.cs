@@ -13,12 +13,14 @@ namespace WeatherApp.ViewModels
     internal class WeatherViewModel : Base.BaseViewModel
     {
         public RelayCommand RefreshDataCommand { get; }
+        public RelayCommand SelectForecastCommand { get; }
 
         public WeatherViewModel()
         {
             Title = "WeatherPage";
 
             RefreshDataCommand = new RelayCommand(async(o) => await RefreshData());
+            SelectForecastCommand = new RelayCommand((f) =>  SelectedForecast = f as DayForecastModel); 
         }
 
         private WeatherForecast _forecast;

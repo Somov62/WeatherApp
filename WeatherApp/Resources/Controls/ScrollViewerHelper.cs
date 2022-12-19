@@ -29,7 +29,7 @@ namespace WeatherApp.Resources.Controls
 
         private static void OnPreviewMouseWheel(object sender, MouseWheelEventArgs args)
         {
-            var scrollViewer = ((UIElement)sender).FindDescendant<ScrollViewer>();
+            var scrollViewer = sender as ScrollViewer;
 
             if (scrollViewer == null)
                 return;

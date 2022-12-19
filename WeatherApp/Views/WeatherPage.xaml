@@ -16,6 +16,7 @@
     <Page.Resources>
         <converters:WeatherCodeToIconConverter x:Key="WeatherCodeToIconConverter" />
         <converters:WeatherLocalizationConverter x:Key="LocalizationConverter" />
+        <converters:DaysLocalizationConverter x:Key="DaysLocalizationConverter" />
     </Page.Resources>
 
 
@@ -112,79 +113,93 @@
                 Grid.ColumnSpan="3"
                 Margin="50,30">
 
-                <ListView
-                    HorizontalAlignment="Center"
-                    HorizontalContentAlignment="Stretch"
+                <ScrollViewer
                     exct:ScrollViewerHelper.ShiftWheelScrollsHorizontally="True"
-                    Background="{Binding Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Page}}}"
-                    BorderThickness="0"
-                    ItemContainerStyle="{DynamicResource ListViewItemContainerStyle1}"
-                    ItemsSource="{Binding Forecast.DayForecasts}"
-                    MouseWheel="ListView_MouseWheel"
-                    ScrollViewer.CanContentScroll="False"
-                    ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                    SelectedItem="{Binding SelectedForecast}">
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal" />
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
+                    CanContentScroll="True"
+                    HorizontalScrollBarVisibility="Hidden"
+                    VerticalScrollBarVisibility="Disabled">
+                    <ItemsControl
+                        Name="panel"
+                        HorizontalAlignment="Center"
+                        HorizontalContentAlignment="Stretch"
+                        Background="{Binding Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Page}}}"
+                        BorderThickness="0"
+                        ItemsSource="{Binding Forecast.DayForecasts}"
+                        MouseWheel="ListView_MouseWheel">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
 
 
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid MouseWheel="ListView_MouseWheel">
-                                <Grid
-                                    MinWidth="130"
-                                    MinHeight="100"
-                                    Margin="10">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="30" />
-                                        <RowDefinition />
-                                    </Grid.RowDefinitions>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <RadioButton
+                                    Name="rb"
+                                    Background="Red"
+                                    Command="{Binding DataContext.SelectForecastCommand, ElementName=panel}"
+                                    CommandParameter="{Binding}"
+                                    GroupName="g1"
+                                    MouseWheel="ListView_MouseWheel"
+                                    Style="{StaticResource ForecastPanelRadiButton}">
 
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition />
-                                        <ColumnDefinition Width="68" />
-                                    </Grid.ColumnDefinitions>
+                                    <Grid
+                                        MinWidth="130"
+                                        MinHeight="120"
+                                        Margin="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="52" />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
 
-                                    <TextBlock FontSize="14" Text="{Binding Date, StringFormat='m'}" />
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition Width="70" />
+                                        </Grid.ColumnDefinitions>
 
-                                    <StackPanel
-                                        Grid.Row="1"
-                                        Grid.ColumnSpan="2"
-                                        VerticalAlignment="Top"
-                                        Orientation="Horizontal">
-                                        <TextBlock FontSize="40" Text="{Binding MaxTemperature}" />
+                                        <StackPanel>
+                                            <TextBlock FontSize="16" Text="{Binding Date, StringFormat='m'}" />
+                                            <TextBlock FontSize="25" Text="{Binding Date, Converter={StaticResource DaysLocalizationConverter}}" />
+                                        </StackPanel>
+
+                                        <StackPanel
+                                            Grid.Row="1"
+                                            Grid.ColumnSpan="2"
+                                            VerticalAlignment="Top"
+                                            Orientation="Horizontal">
+
+
+                                            <TextBlock FontSize="40" Text="{Binding MaxTemperature}" />
+
+                                            <TextBlock
+                                                Margin="15,0,0,0"
+                                                VerticalAlignment="Bottom"
+                                                FontSize="20"
+                                                Opacity="0.6"
+                                                Text="{Binding MinTemperature}" />
+                                        </StackPanel>
+
+                                        <Grid Grid.Column="1" Margin="0,0,0,-20">
+                                            <Control
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Top"
+                                                Template="{Binding Weather, Converter={StaticResource WeatherCodeToIconConverter}}" />
+                                        </Grid>
 
                                         <TextBlock
-                                            Margin="15,0,0,0"
+                                            Grid.Row="1"
+                                            Grid.ColumnSpan="2"
+                                            Margin="0,5,0,0"
                                             VerticalAlignment="Bottom"
-                                            FontSize="20"
-                                            Opacity="0.6"
-                                            Text="{Binding MinTemperature}" />
-                                    </StackPanel>
-
-                                    <Grid Grid.Column="1" Margin="0,0,0,-20">
-                                        <Control
-                                            HorizontalAlignment="Right"
-                                            VerticalAlignment="Top"
-                                            Template="{Binding Weather, Converter={StaticResource WeatherCodeToIconConverter}}" />
+                                            FontSize="14"
+                                            Text="{Binding Weather, Converter={StaticResource LocalizationConverter}}" />
                                     </Grid>
-
-                                    <TextBlock
-                                        Grid.ColumnSpan="2"
-                                        Grid.Row="1"
-                                        Margin="0,5,0,0"
-                                        VerticalAlignment="Bottom"
-                                        FontSize="14"
-                                        Text="{Binding Weather, Converter={StaticResource LocalizationConverter}}" />
-                                </Grid>
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                                </RadioButton>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
             </Grid>
 
 
