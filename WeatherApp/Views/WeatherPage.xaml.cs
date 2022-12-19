@@ -25,6 +25,7 @@ namespace WeatherApp.Views
             InitializeComponent();
         }
 
+
         private void ListView_MouseWheel(object sender, MouseWheelEventArgs e)
         {
             if (Keyboard.Modifiers == ModifierKeys.Shift)

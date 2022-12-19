@@ -412,7 +412,7 @@
                 StrokeThickness="1"
                 Width="70"
                 Height="56"
-                Margin="5,-8,0,0"
+                Margin="0,-8,-8,0"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
                 StrokeStartLineCap="Round">
@@ -437,8 +437,8 @@
                                     RepeatBehavior="Forever"
                                     Storyboard.TargetName="polygon2"
                                     Storyboard.TargetProperty="Margin"
-                                    From="3.5,-8,0,0"
-                                    To="6.8,-8,0,0"
+                                    From="-10,-8,0,0"
+                                    To="-5,-8,0,0"
                                     Duration="0:0:2" />
                             </Storyboard>
                         </BeginStoryboard>
@@ -451,7 +451,8 @@
                 StrokeThickness="1"
                 Width="56"
                 Height="56"
-                Margin="-8,-8,0,0"
+                Margin="-20,-8,0,0"
+                HorizontalAlignment="Left"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
                 StrokeStartLineCap="Round">
@@ -476,7 +477,7 @@
                                     RepeatBehavior="Forever"
                                     Storyboard.TargetName="polygon1"
                                     Storyboard.TargetProperty="Margin"
-                                    From="-11, -8, 0, 0"
+                                    From="-10, -8, 0, 0"
                                     To="-5, -8, 0, 0"
                                     Duration="0:0:2" />
                             </Storyboard>
@@ -488,10 +489,10 @@
         </Grid>
     </ControlTemplate>
 
-    <ControlTemplate x:Key="party-cloudy-day" TargetType="Control">
-        <Grid Margin="-3,-12,0,0">
+    <ControlTemplate x:Key="party-cloudly-day" TargetType="Control">
+        <Grid Margin="-1.5,-5,0,0">
             <Grid
-                Margin="3,12,0,0"
+                Margin="3,10,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top">
                 <Path
@@ -573,7 +574,7 @@
         </Grid>
     </ControlTemplate>
 
-    <ControlTemplate x:Key="party-cloudy-night" TargetType="Control">
+    <ControlTemplate x:Key="party-cloudly-night" TargetType="Control">
         <Grid Margin="-3,-12,0,0">
             <Grid
                 Margin="3,12,0,0"

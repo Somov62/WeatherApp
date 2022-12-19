@@ -52,7 +52,7 @@ namespace WeatherApp.ViewModels
         private async Task RefreshData()
         {
             IsRefreshing = true;
-            Forecast = await WeatherService.GetWeatherAsync(54.6f, 39.7f);
+            Forecast = await WeatherService.GetWeatherAsync(54.6f, 54.7f);
             SelectedForecast = Forecast.DayForecasts.Where(p => p.Date == DateTime.Now.Date).FirstOrDefault()!;
             IsRefreshing = false;
         }
