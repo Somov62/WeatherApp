@@ -45,7 +45,7 @@
                         Stretch="Fill" />
                 </Button>
                 <TextBlock
-                    Margin="0,0,6,0"
+                    Margin="0,0,20,0"
                     VerticalAlignment="Bottom"
                     DockPanel.Dock="Right"
                     FontSize="30"
@@ -65,7 +65,7 @@
 
             <Grid Margin="3,10,0,0" DataContext="{Binding SelectedForecast}">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition MinWidth="600" />
+                    <ColumnDefinition MinWidth="550" />
                     <ColumnDefinition Width="40" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
