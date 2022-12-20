@@ -17,7 +17,7 @@ namespace WeatherApp.ViewModels
 
         public WeatherViewModel()
         {
-            Title = "WeatherPage";
+            Title = "Главная";
 
             RefreshDataCommand = new RelayCommand(async(o) => await RefreshData());
             SelectForecastCommand = new RelayCommand((f) =>  SelectedForecast = f as DayForecastModel); 
