@@ -11,6 +11,7 @@
         public float Elevation { get; set; }
         public Measures? Daily_units { get; set; }
         public DailyResponseBody? Daily { get; set; }
+        public HourlyResponseBody? Hourly { get; set; }
     }
 
     public class Measures
@@ -47,5 +48,17 @@
         public List<float>? Windspeed_10m_max { get; set; }
         public List<float>? Windgusts_10m_max { get; set; }
         public List<int>? Winddirection_10m_dominant { get; set; }
+    }
+
+    public class HourlyResponseBody
+    {
+        public List<DateTime>? Time { get; set; }
+        public List<float>? Temperature_2m { get; set; }
+        public List<float>? Relativehumidity_2m { get; set; }
+        public List<float>? Apparent_temperature { get; set; }
+        public List<float>? Surface_pressure { get; set; }
+        public List<float>? Windspeed_10m { get; set; }
+        public List<int>? Winddirection_10m { get; set; }
+        public List<int>? Weathercode { get; set; }
     }
 }

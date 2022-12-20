@@ -32,13 +32,14 @@ namespace OpenMeteo
             url.Append("&timezone=auto");
             url.Append("&past_days=2");
             url.Append("&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,rain_sum,showers_sum,snowfall_sum,precipitation_hours,weathercode,sunrise,sunset,windspeed_10m_max,windgusts_10m_max,winddirection_10m_dominant");
+            url.Append("&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,surface_pressure,windspeed_10m,winddirection_10m,weathercode");
 
             DailyApiResponse response;
             try
             {
                 response = await _httpClient.GetFromJsonAsync<DailyApiResponse>(url.ToString());
             }
-            catch (Exception ex)
+            catch
             {
                 return null!;
             }
@@ -62,26 +63,46 @@ namespace OpenMeteo
 
             userModel.Measures = measures;
 
-            userModel.DayForecasts = new List<DayForecastModel>();
+            int hoursCounter = 0;
             for (int i = 0; i < apiModel?.Daily?.Time?.Count; i++)
             {
-                userModel.DayForecasts.Add(
-                    new DayForecastModel()
+                DayForecastModel day = new ()
+                {
+                    Date = apiModel.Daily.Time[i],
+                    Weather = (WeatherCodes)apiModel.Daily.Weathercode[i],
+                    MaxTemperature = apiModel.Daily.Temperature_2m_max[i],
+                    MinTemperature = apiModel.Daily.Temperature_2m_min[i],
+                    RainSum = apiModel.Daily.Rain_sum[i],
+                    ShowersSum = apiModel.Daily.Showers_sum[i],
+                    SnowfallSum = apiModel.Daily.Snowfall_sum[i],
+                    SumPrecipitation = apiModel.Daily.Precipitation_sum[i],
+                    Sunrise = apiModel.Daily.Sunrise[i],
+                    Sunset = apiModel.Daily.Sunset[i],
+                    WindDirection = apiModel.Daily.Winddirection_10m_dominant[i],
+                    WindGusts = apiModel.Daily.Windgusts_10m_max[i],
+                    WindSpeed = apiModel.Daily.Windspeed_10m_max[i]
+                };
+
+                for (int j = hoursCounter; j < hoursCounter + 24; j++)
+                {
+                    HourlyForecastModel hour = new ()
                     {
-                        Date = apiModel.Daily.Time[i],
-                        Weather = (WeatherCodes)apiModel.Daily.Weathercode[i],
-                        MaxTemperature = apiModel.Daily.Temperature_2m_max[i],
-                        MinTemperature = apiModel.Daily.Temperature_2m_min[i],
-                        RainSum = apiModel.Daily.Rain_sum[i],
-                        ShowersSum = apiModel.Daily.Showers_sum[i],
-                        SnowfallSum = apiModel.Daily.Snowfall_sum[i],
-                        SumPrecipitation = apiModel.Daily.Precipitation_sum[i],
-                        Sunrise = apiModel.Daily.Sunrise[i],
-                        Sunset = apiModel.Daily.Sunset[i],
-                        WindDirection = apiModel.Daily.Winddirection_10m_dominant[i],
-                        WindGusts = apiModel.Daily.Windgusts_10m_max[i],
-                        WindSpeed = apiModel.Daily.Windspeed_10m_max[i]
-                    });
+                        ApparentTemperature = apiModel.Hourly.Apparent_temperature[j],
+                        RelativeHumidity = apiModel.Hourly.Relativehumidity_2m[j],
+                        SurfasePressure = apiModel.Hourly.Surface_pressure[j],
+                        Temperature = apiModel.Hourly.Temperature_2m[j],
+                        Time = apiModel.Hourly.Time[j],
+                        Weather = (WeatherCodes)apiModel.Hourly.Weathercode[j],
+                        WindDirection = apiModel.Hourly.Winddirection_10m[j],
+                        WindSpeed = apiModel.Hourly.Windspeed_10m[j]
+                    };
+
+                    day.HourlyForecasts.Add(hour);
+                }
+
+                hoursCounter += 24;
+                userModel.DayForecasts.Add(day);
+                   
             }
 
             userModel.StartDate = apiModel.Daily.Time.First();
