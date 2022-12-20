@@ -26,6 +26,11 @@ namespace WeatherApp.Resources.Converters
             {
                 return App.Current.Resources[temperature.ToString()];
             }
+
+            if (value is PressureMeasure pressure)
+            {
+                return App.Current.Resources[pressure.ToString()];
+            }
             return string.Empty;
         }
 

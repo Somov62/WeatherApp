@@ -71,6 +71,9 @@
     <v:String x:Key="Mm">мм</v:String>
     <v:String x:Key="Cm">см</v:String>
 
+    <v:String x:Key="Hpa">гПа</v:String>
+    <v:String x:Key="MmHg">мм рт. ст.</v:String>
+
     <!--  Ветер  -->
     <v:String x:Key="West">З</v:String>
     <v:String x:Key="East">В</v:String>

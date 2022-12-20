@@ -63,4 +63,10 @@ namespace Models
         Mm,
         Cm
     }
+
+    public enum PressureMeasure
+    {
+        HPa,
+        MmHg
+    }
 }

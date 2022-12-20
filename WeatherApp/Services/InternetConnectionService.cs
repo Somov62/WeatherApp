@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.NetworkInformation;
+﻿using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Timers;
 
@@ -21,7 +18,18 @@ namespace WeatherApp.Services
             }
         }
 
-        public string HostName { get; set; } = null!;
+        private string _hostName;
+
+        public string HostName
+        {
+            get => _hostName;
+            set 
+            { 
+                _hostName = value;
+                Task.Run(async () => await CheckInternetConnection());
+            }
+        }
+
 
 
         public bool AutoCheck

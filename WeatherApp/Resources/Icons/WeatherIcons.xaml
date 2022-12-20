@@ -360,7 +360,7 @@
         </Grid>
     </ControlTemplate>
 
-    <ControlTemplate x:Key="cloudy" TargetType="Control">
+    <ControlTemplate x:Key="cloudly" TargetType="Control">
         <Grid>
             <Path
                 Name="polygon1"

@@ -14,6 +14,7 @@ namespace WeatherApp
         {
             WeatherService.UseOpenMeteo();
             WeatherService.MeasureConfiguration.Windspeed = WindSpeed.Ms;
+            WeatherService.MeasureConfiguration.Pressure = PressureMeasure.MmHg;
             ServiceManager.InternetConnectionService.HostName = WeatherService.ProviderDomain;
         }
 

@@ -82,24 +82,26 @@ namespace OpenMeteo
                     WindGusts = apiModel.Daily.Windgusts_10m_max[i],
                     WindSpeed = apiModel.Daily.Windspeed_10m_max[i]
                 };
-
+                float pressure = 0;
                 for (int j = hoursCounter; j < hoursCounter + 24; j++)
                 {
                     HourlyForecastModel hour = new ()
                     {
                         ApparentTemperature = apiModel.Hourly.Apparent_temperature[j],
                         RelativeHumidity = apiModel.Hourly.Relativehumidity_2m[j],
-                        SurfasePressure = apiModel.Hourly.Surface_pressure[j],
                         Temperature = apiModel.Hourly.Temperature_2m[j],
                         Time = apiModel.Hourly.Time[j],
                         Weather = (WeatherCodes)apiModel.Hourly.Weathercode[j],
                         WindDirection = apiModel.Hourly.Winddirection_10m[j],
                         WindSpeed = apiModel.Hourly.Windspeed_10m[j]
                     };
-
+                    hour.SurfasePressure = apiModel.Hourly.Surface_pressure[j];
+                    if (measures.Pressure == PressureMeasure.MmHg)
+                        hour.SurfasePressure *= 0.7501f;
+                    pressure += hour.SurfasePressure;
                     day.HourlyForecasts.Add(hour);
                 }
-
+                day.Pressure = pressure / 24;
                 hoursCounter += 24;
                 userModel.DayForecasts.Add(day);
                    

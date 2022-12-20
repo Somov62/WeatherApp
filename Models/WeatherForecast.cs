@@ -30,6 +30,8 @@ namespace Models
         public DateTime Sunrise { get; set; }
         public DateTime Sunset { get; set; }
 
+        public float Pressure { get; set; }
+
         public float WindSpeed { get; set; }
         public float WindGusts { get; set; }
         public int WindDirection { get; set; }
@@ -79,5 +81,6 @@ namespace Models
         public LenghtMeasure Snowfall { get; set; }
 
         public WindSpeed Windspeed { get; set; }
+        public PressureMeasure Pressure { get; set; }
     }
 }

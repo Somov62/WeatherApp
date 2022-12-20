@@ -27,10 +27,17 @@ namespace WeatherProvider
         };
         
 
-        public static async Task<WeatherForecast> GetWeatherAsync(float latitude, float longitude)
+        public static async Task<WeatherForecast>? GetWeatherAsync(float latitude, float longitude)
         {
             //check cache
-            return await _weatherProvider.GetWeatherAsync(latitude, longitude, MeasureConfiguration);
+            try
+            {
+                return await _weatherProvider.GetWeatherAsync(latitude, longitude, MeasureConfiguration);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
             //save in cache
         }
 
