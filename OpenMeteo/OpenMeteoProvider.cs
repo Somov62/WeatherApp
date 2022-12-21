@@ -118,23 +118,26 @@ namespace OpenMeteo
 
         private MoonPhazes GetMoonPhaze(DateTime date)
         {
-            double year = date.Year - Math.Round((12.0 - date.Month) / 10.0);
-            double month = date.Month + 9;
-            if (month > 12) month -= 12;
+            double year = date.Year;
+            double month = date.Month;
+            if (month < 3)
+            {
+                month += 12;
+                year -= 1;
+            }
 
-            double k1 = Math.Round(365.25 * (year + 4712));
-            double k2 = Math.Round(30.6 * month + 0.5);
-            double k3 = Math.Round(Math.Round(year / 100.0 + 49.0) * 0.75) - 38;
+            double julianDays = Math.Truncate(365.25 * (year + 4716)) + Math.Truncate(30.6001 * (month + 1)) + date.Day - 1524.5 - 13;
 
-            double julianDays = k1 + k2 + date.Day + 59;
-            if (julianDays > 2299160) julianDays -= k3;
+            double ip = (julianDays - 2451550.1) / 29.530588853;
+            ip -= Math.Floor(ip);
 
-            double age = (julianDays - 2451550.1) % 29.530588853;
+            if (ip < 0) ip += 1;
+            double age = ip * 29.53;
 
-            if (age < 3.69132360663) return MoonPhazes.New;
-            if (age < 11.0739708199) return MoonPhazes.FirstQuarter;
-            if (age < 18.4566180332) return MoonPhazes.Full;
-            if (age < 25.8392652465) return MoonPhazes.LastQuarter;
+            if (age < 1.84566) return MoonPhazes.New;
+            if (age < 12.91963) return MoonPhazes.FirstQuarter;
+            if (age < 16.61096) return MoonPhazes.Full;
+            if (age < 27.68493) return MoonPhazes.LastQuarter;
             return MoonPhazes.New;
 
         }

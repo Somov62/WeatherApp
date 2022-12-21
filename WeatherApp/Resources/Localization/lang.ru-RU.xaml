@@ -82,9 +82,9 @@
 
     <!--  Фазы луны  -->
     <v:String x:Key="New">Новолуние</v:String>
-    <v:String x:Key="FirstQuarter">Первая четверть</v:String>
+    <v:String x:Key="FirstQuarter">Растущая</v:String>
     <v:String x:Key="Full">Полнолуние</v:String>
-    <v:String x:Key="LastQuarter">Третья четверть</v:String>
+    <v:String x:Key="LastQuarter">Убывающая</v:String>
 
 
 </ResourceDictionary>
