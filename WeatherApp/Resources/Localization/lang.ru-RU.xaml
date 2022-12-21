@@ -74,11 +74,17 @@
     <v:String x:Key="Hpa">гПа</v:String>
     <v:String x:Key="MmHg">мм рт. ст.</v:String>
 
-    <!--  Ветер  -->
+    <!--  Стороны света  -->
     <v:String x:Key="West">З</v:String>
     <v:String x:Key="East">В</v:String>
     <v:String x:Key="North">С</v:String>
     <v:String x:Key="South">Ю</v:String>
+
+    <!--  Фазы луны  -->
+    <v:String x:Key="New">Новолуние</v:String>
+    <v:String x:Key="FirstQuarter">Первая четверть</v:String>
+    <v:String x:Key="Full">Полнолуние</v:String>
+    <v:String x:Key="LastQuarter">Третья четверть</v:String>
 
 
 </ResourceDictionary>

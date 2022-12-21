@@ -1600,7 +1600,6 @@
         </Grid>
     </ControlTemplate>
 
-
     <ControlTemplate x:Key="freezing-drizzle" TargetType="Control">
         <Grid>
             <Path
@@ -2034,7 +2033,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Data="M 12 29 h 11 l 5 4.5 l 5 -4.5 h 11"
-                Stroke="#374151"
+                Stroke="#eeeeee"
                 StrokeEndLineCap="Round"
                 StrokeLineJoin="Round"
                 StrokeStartLineCap="Round"
@@ -2109,15 +2108,13 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Data="M 12 29 h 11 l 5 -4.5 l 5 4.5 h 11"
-                Stroke="#374151"
+                Stroke="#eeeeee"
                 StrokeEndLineCap="Round"
                 StrokeLineJoin="Round"
                 StrokeStartLineCap="Round"
                 StrokeThickness="2" />
         </Grid>
     </ControlTemplate>
-
-   
 
     <ControlTemplate x:Key="earth" TargetType="Control">
         <Grid>

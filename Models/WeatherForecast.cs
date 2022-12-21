@@ -38,6 +38,7 @@ namespace Models
         public int WindDirection { get; set; }
 
         public WeatherCodes Weather  { get; set; }
+        public MoonPhazes MoonState { get; set; }
 
         public List<HourlyForecastModel> HourlyForecasts { get; set; } = new List<HourlyForecastModel>();
     }
@@ -83,5 +84,12 @@ namespace Models
 
         public WindSpeed Windspeed { get; set; }
         public PressureMeasure Pressure { get; set; }
+    }
+    public enum MoonPhazes
+    {
+        New,
+        FirstQuarter,
+        Full,
+        LastQuarter
     }
 }
