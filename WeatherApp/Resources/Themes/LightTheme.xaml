@@ -11,4 +11,10 @@
     <SolidColorBrush x:Key="WindowNavBtnBackgroundMouseOver" Color="#dddddd" />
     <SolidColorBrush x:Key="WindowNavBtnBackgroundPressed" Color="#bbbbbb" />
 
+    <LinearGradientBrush x:Key="BackgroundGradient" SpreadMethod="Repeat" StartPoint="0, 0" EndPoint="0, 1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0" Color="#FFFFFF" />
+            <GradientStop Offset="1.3" Color="#D7E1EC" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
 </ResourceDictionary>

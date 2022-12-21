@@ -78,6 +78,7 @@ namespace OpenMeteo
                     SumPrecipitation = apiModel.Daily.Precipitation_sum[i],
                     Sunrise = apiModel.Daily.Sunrise[i],
                     Sunset = apiModel.Daily.Sunset[i],
+                    DayTime = apiModel.Daily.Sunset[i] - apiModel.Daily.Sunrise[i],
                     WindDirection = apiModel.Daily.Winddirection_10m_dominant[i],
                     WindGusts = apiModel.Daily.Windgusts_10m_max[i],
                     WindSpeed = apiModel.Daily.Windspeed_10m_max[i]

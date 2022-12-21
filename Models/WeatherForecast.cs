@@ -29,6 +29,7 @@ namespace Models
 
         public DateTime Sunrise { get; set; }
         public DateTime Sunset { get; set; }
+        public TimeSpan DayTime { get; set; }
 
         public float Pressure { get; set; }
 
