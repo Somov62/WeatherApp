@@ -1,0 +1,68 @@
+﻿<ToggleButton
+    x:Class="WeatherApp.Resources.Controls.CustomToggleButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WeatherApp.Resources.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ToggleButton.Template>
+        <ControlTemplate TargetType="{x:Type local:CustomToggleButton}">
+            <StackPanel Orientation="Horizontal">
+                <ContentPresenter
+                    Margin="{TemplateBinding Padding}"
+                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                    RecognizesAccessKey="True"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                <Border
+                    Margin="10,0,0,0"
+                    Padding="1"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    CornerRadius="5">
+
+                    <StackPanel Orientation="Horizontal">
+                        <Border
+                            x:Name="on"
+                            Padding="10,5,5,5"
+                            Background="Transparent"
+                            CornerRadius="4,0,0,4">
+                            <TextBlock
+                                x:Name="onText"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="Black"
+                                Text="{TemplateBinding LeftCase}" />
+                        </Border>
+                        <Border
+                            x:Name="off"
+                            Padding="5,5,10,5"
+                            Background="Transparent"
+                            CornerRadius="0,4,4,0">
+                            <TextBlock
+                                x:Name="offText"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="Black"
+                                Text="{TemplateBinding RightCase}" />
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Foreground" Value="#ADADAD" />
+                </Trigger>
+                <Trigger Property="IsChecked" Value="true">
+                    <Setter TargetName="on" Property="Background" Value="Orange" />
+                    <Setter TargetName="onText" Property="Foreground" Value="White" />
+                </Trigger>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter TargetName="off" Property="Background" Value="Orange" />
+                    <Setter TargetName="offText" Property="Foreground" Value="White" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </ToggleButton.Template>
+</ToggleButton>

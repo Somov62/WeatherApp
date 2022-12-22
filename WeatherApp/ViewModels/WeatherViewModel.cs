@@ -1,6 +1,8 @@
 ﻿using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore.SkiaSharpView.Painting;
 using Models;
+using SkiaSharp;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,8 +27,8 @@ namespace WeatherApp.ViewModels
         {
             Title = "Главная";
             _refreshDataTimer.Elapsed += Timer_Elapsed;
-            RefreshDataCommand = new RelayCommand(async(o) => await RefreshData());
-            SelectForecastCommand = new RelayCommand((f) =>  SelectedForecast = f as DayForecastModel);
+            RefreshDataCommand = new RelayCommand(async (o) => await RefreshData());
+            SelectForecastCommand = new RelayCommand((f) => SelectedForecast = f as DayForecastModel);
 
             BuildTempGraphCommand = new RelayCommand(a => BuildTempGraph());
 
@@ -91,7 +93,7 @@ namespace WeatherApp.ViewModels
                 SelectedForecast = Forecast.DayForecasts.Where(p => p.Date == DateTime.Now.Date).FirstOrDefault()!;
                 ErrorReceivingData = false;
             }
-            else 
+            else
             {
                 await Task.Delay(700);
                 ErrorReceivingData = true;
@@ -110,9 +112,22 @@ namespace WeatherApp.ViewModels
         {
             Series = new ISeries[1]
             {
-                new LineSeries<float>
+                new LineSeries<double>
                 {
-                    Values = SelectedForecast.HourlyForecasts.Select(p => p.Temperature),
+                    Name = App.Current.Resources[Forecast.Measures.Temperature.ToString()].ToString(),
+                    Values = SelectedForecast.HourlyForecasts.Select(p => Math.Round(p.Temperature, 3, MidpointRounding.AwayFromZero)),
+                    Stroke = new LinearGradientPaint(
+                        gradientStops : new[]{ new SKColor(45, 64, 89), new SKColor(255, 212, 96)}, 
+                        startPoint : new SKPoint(0, 0), 
+                        endPoint : new SKPoint(1, 0), 
+                        tileMode : SKShaderTileMode.Clamp) 
+                        { StrokeThickness = 5 },
+                    GeometryStroke = new LinearGradientPaint(
+                        gradientStops : new[]{ new SKColor(45, 64, 89), new SKColor(255, 212, 96)},
+                        startPoint : new SKPoint(0, 0),
+                        endPoint : new SKPoint(1, 0),
+                        tileMode : SKShaderTileMode.Clamp)
+                        { StrokeThickness = 5 },
                     Fill = null
                 }
             };

@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:charts="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
+    xmlns:controls="clr-namespace:WeatherApp.Resources.Controls"
     xmlns:converters="clr-namespace:WeatherApp.Resources.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:exct="clr-namespace:WeatherApp.Resources.Controls"
@@ -28,7 +29,11 @@
     </Page.Resources>
 
 
-    <ScrollViewer x:Name="outsideScrollView" VerticalScrollBarVisibility="Hidden">
+    <ScrollViewer
+        x:Name="outsideScrollView"
+        Background="{DynamicResource PageBackground}"
+        PreviewMouseWheel="outsideScrollView_MouseWheel"
+        VerticalScrollBarVisibility="Hidden">
         <StackPanel>
 
             <!--#region Header-->
@@ -612,16 +617,17 @@
             <!--#endregion-->
 
             <!--#region Forecast Additional Information Panels-->
-            <Grid Margin="3,0,0,10">
+            <Grid Margin="3,0,0,0" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="460" />
                     <ColumnDefinition Width="40" />
-                    <ColumnDefinition MinWidth="550" />
+                    <ColumnDefinition Width="auto" MinWidth="550" />
                 </Grid.ColumnDefinitions>
 
                 <!--#region Space-->
                 <Border
                     MinHeight="350"
+                    Margin="0,0,0,10"
                     HorizontalAlignment="Stretch"
                     Background="White"
                     CornerRadius="10">
@@ -635,6 +641,7 @@
                 </Border>
                 <Border
                     MinHeight="250"
+                    Margin="0,0,0,10"
                     Padding="30,20"
                     CornerRadius="10"
                     DataContext="{Binding SelectedForecast}">
@@ -754,7 +761,7 @@
                 <Border
                     Grid.Column="2"
                     MinHeight="350"
-                    Margin="0,0,10,0"
+                    Margin="0,0,10,10"
                     Background="White"
                     CornerRadius="10">
                     <Border.Effect>
@@ -767,9 +774,10 @@
                 </Border>
 
                 <Border
+                    Name="graphicsPanel"
                     Grid.Column="2"
                     Height="350"
-                    Margin="0,0,10,0"
+                    Margin="0,0,10,10"
                     Padding="20,15"
                     Background="{DynamicResource BackgroundGradient}"
                     CornerRadius="10">
@@ -786,24 +794,28 @@
                                 Content="Температура"
                                 Style="{StaticResource GraphicSelectorRbStyle}" />
                             <RadioButton Content="Давление" Style="{StaticResource GraphicSelectorRbStyle}" />
-                            <RadioButton Content="Ветер" Style="{StaticResource GraphicSelectorRbStyle}" />
                             <RadioButton Content="Влажность" Style="{StaticResource GraphicSelectorRbStyle}" />
 
 
+                            <controls:CustomToggleButton
+                                x:Name="asdad"
+                                LeftCase="День"
+                                RightCase="Неделя" 
+                                FontSize="20"
+                                />
                         </StackPanel>
 
 
 
 
-                        <charts:CartesianChart Name="chart" Grid.Row="1" Series="{Binding Series}" ZoomMode="X" exct:ScrollViewerHelper.ShiftWheelScrollsHorizontally="True" />
+                        <charts:CartesianChart
+                            Name="chart"
+                            Grid.Row="1"
+                            Margin="-10,0,0,-10"
+                            ScrollViewer.CanContentScroll="True"
+                            Series="{Binding Series}"
+                            ZoomMode="X" />
                     </Grid>
-
-
-
-
-
-
-
 
                 </Border>
                 <!--#endregion-->

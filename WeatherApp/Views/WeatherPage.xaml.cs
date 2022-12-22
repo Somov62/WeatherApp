@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LiveChartsCore.SkiaSharpView.Drawing;
+using LiveChartsCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,7 +36,19 @@ namespace WeatherApp.Views
             var offset = outsideScrollView.VerticalOffset - e.Delta;
 
             outsideScrollView.ScrollToVerticalOffset(offset);
+        }
 
+        private void outsideScrollView_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                if (graphicsPanel.IsMouseOver)
+                {
+                    var chartcore = chart.CoreChart as CartesianChart<SkiaSharpDrawingContext>;
+                    chartcore.Zoom(new LiveChartsCore.Drawing.LvcPoint(0, 0), LiveChartsCore.Measure.ZoomDirection.ZoomIn);
+                    e.Handled = true;
+                }                
+            }
         }
     }
 }
