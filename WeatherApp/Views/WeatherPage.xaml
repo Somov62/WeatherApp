@@ -524,6 +524,8 @@
                 Grid.ColumnSpan="3"
                 Margin="50,30">
 
+               
+
                 <ScrollViewer
                     exct:ScrollViewerHelper.ShiftWheelScrollsHorizontally="True"
                     CanContentScroll="True"
@@ -605,14 +607,14 @@
                                                 VerticalAlignment="Top"
                                                 Template="{Binding Weather, Converter={StaticResource WeatherCodeToIconConverter}}" />
                                         </Grid>
-
-
                                     </Grid>
                                 </RadioButton>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
+  
+
             </Grid>
             <!--#endregion-->
 
@@ -747,6 +749,13 @@
                                 </Control.RenderTransform>
                             </Control>
                         </Grid>
+                        <TextBlock
+                            Margin="0, -30, 0, 0"
+                            Text="Фаза"
+                            Foreground="White"
+                            FontSize="32"
+                            FontWeight="Bold"
+                            HorizontalAlignment="Center" />  
                         <TextBlock
                             Text="{Binding MoonState, Converter={StaticResource MoonPhazesConverter}}"
                             Foreground="White"
