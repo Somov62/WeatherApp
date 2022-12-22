@@ -1,4 +1,6 @@
-﻿using Models;
+﻿using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
+using Models;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,6 +14,12 @@ namespace WeatherApp.ViewModels
     {
         public RelayCommand RefreshDataCommand { get; }
         public RelayCommand SelectForecastCommand { get; }
+        public RelayCommand BuildTempGraphCommand { get; }
+        public RelayCommand BuildPressureGraphCommand { get; }
+        public RelayCommand BuildWindGraphCommand { get; }
+        public RelayCommand BuildHumidityGraphCommand { get; }
+
+
 
         public WeatherViewModel()
         {
@@ -19,6 +27,10 @@ namespace WeatherApp.ViewModels
             _refreshDataTimer.Elapsed += Timer_Elapsed;
             RefreshDataCommand = new RelayCommand(async(o) => await RefreshData());
             SelectForecastCommand = new RelayCommand((f) =>  SelectedForecast = f as DayForecastModel);
+
+            BuildTempGraphCommand = new RelayCommand(a => BuildTempGraph());
+
+
             RefreshDataCommand.Execute(null);
         }
 
@@ -87,6 +99,24 @@ namespace WeatherApp.ViewModels
             IsRefreshing = false;
         }
 
+        private ISeries[] _series;
+        public ISeries[] Series
+        {
+            get => _series;
+            set => Set(ref _series, value, nameof(Series));
+        }
+
+        private void BuildTempGraph()
+        {
+            Series = new ISeries[1]
+            {
+                new LineSeries<float>
+                {
+                    Values = SelectedForecast.HourlyForecasts.Select(p => p.Temperature),
+                    Fill = null
+                }
+            };
+        }
 
     }
 }

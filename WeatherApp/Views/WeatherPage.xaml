@@ -2,17 +2,18 @@
     x:Class="WeatherApp.Views.WeatherPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:charts="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
     xmlns:converters="clr-namespace:WeatherApp.Resources.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:exct="clr-namespace:WeatherApp.Resources.Controls"
     xmlns:fa="http://schemas.fontawesome.io/icons/"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Name="page"
-    Background="{DynamicResource PageBackground}"
-    FontFamily="pack://application:,,,/Resources/Font/#Klukva"
     d:DesignHeight="450"
     d:DesignWidth="800"
     xml:lang="ru-RU"
+    Background="{DynamicResource PageBackground}"
+    FontFamily="pack://application:,,,/Resources/Font/#Klukva"
     mc:Ignorable="d">
     <Page.Resources>
         <converters:WeatherCodeToIconConverter x:Key="WeatherCodeToIconConverter" />
@@ -41,9 +42,9 @@
                 <StackPanel Orientation="Horizontal">
                     <Button
                         Grid.Column="0"
-                        Background="White"
                         Width="35"
                         Padding="7"
+                        Background="White"
                         Command="{Binding RefreshDataCommand}"
                         Style="{StaticResource WindowNavButtonStyle}">
                         <fa:ImageAwesome
@@ -55,11 +56,11 @@
                     </Button>
                     <TextBlock
                         Grid.Column="0"
-                        Foreground="White"
+                        Margin="20,0,0,0"
+                        VerticalAlignment="Bottom"
                         FontSize="30"
                         FontWeight="SemiBold"
-                        Margin="20,0,0,0"
-                        VerticalAlignment="Bottom">
+                        Foreground="White">
                         <TextBlock.Style>
                             <Style TargetType="TextBlock">
                                 <Style.Triggers>
@@ -72,24 +73,24 @@
                     </TextBlock>
                 </StackPanel>
                 <StackPanel
-                    Orientation="Horizontal"
                     Grid.Column="2"
-                    HorizontalAlignment="Right">
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
                     <TextBlock
-                        Text="{Binding Forecast.StartDate, StringFormat='Прогноз погоды {0:m} - '}"
-                        Foreground="White"
-                        FontSize="30"
-                        FontWeight="SemiBold"
                         VerticalAlignment="Bottom"
-                        DockPanel.Dock="Right" />
-                    <TextBlock
-                        Text="{Binding Forecast.EndDate, StringFormat='m'}"
-                        Foreground="White"
+                        DockPanel.Dock="Right"
                         FontSize="30"
                         FontWeight="SemiBold"
+                        Foreground="White"
+                        Text="{Binding Forecast.StartDate, StringFormat='Прогноз погоды {0:m} - '}" />
+                    <TextBlock
                         Margin="0,0,20,0"
                         VerticalAlignment="Bottom"
-                        DockPanel.Dock="Right" />
+                        DockPanel.Dock="Right"
+                        FontSize="30"
+                        FontWeight="SemiBold"
+                        Foreground="White"
+                        Text="{Binding Forecast.EndDate, StringFormat='m'}" />
 
                 </StackPanel>
 
@@ -110,9 +111,9 @@
 
                 <!--#region DayForecast-->
                 <Border
-                    Background="White"
                     MinHeight="350"
                     HorizontalAlignment="Stretch"
+                    Background="White"
                     CornerRadius="10">
                     <Border.Effect>
                         <DropShadowEffect
@@ -124,8 +125,8 @@
                 </Border>
                 <Border
                     Name="dayPanel"
-                    Background="{DynamicResource BackgroundGradient}"
                     MinHeight="350"
+                    Background="{DynamicResource BackgroundGradient}"
                     CornerRadius="10">
                     <DockPanel Margin="23,15,30,15" LastChildFill="False">
                         <Grid
@@ -139,25 +140,25 @@
                                 </Control.RenderTransform>
                             </Control>
                         </Grid>
-                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                             <TextBlock
-                                Text="{Binding Date, Converter={StaticResource DaysLocalizationConverter}, StringFormat='\{0} - '}"
+                                DockPanel.Dock="Top"
                                 FontSize="30"
-                                DockPanel.Dock="Top" />
+                                Text="{Binding Date, Converter={StaticResource DaysLocalizationConverter}, StringFormat='\{0} - '}" />
                             <TextBlock
-                                Text="{Binding Date, StringFormat='m'}"
+                                DockPanel.Dock="Top"
                                 FontSize="30"
-                                DockPanel.Dock="Top" />
+                                Text="{Binding Date, StringFormat='m'}" />
                         </StackPanel>
                         <StackPanel
-                            Orientation="Horizontal"
                             Margin="0,10,0,0"
-                            DockPanel.Dock="Top">
+                            DockPanel.Dock="Top"
+                            Orientation="Horizontal">
                             <fa:FontAwesome
-                                FontSize="27"
                                 Width="{Binding ElementName=dashboard, Path=ActualWidth}"
                                 Margin="0,0,0,0"
                                 VerticalAlignment="Top"
+                                FontSize="27"
                                 Icon="MapMarker"
                                 TextAlignment="Center">
                                 <fa:FontAwesome.Foreground>
@@ -169,75 +170,75 @@
                                     </LinearGradientBrush>
                                 </fa:FontAwesome.Foreground>
                             </fa:FontAwesome>
-                            <TextBlock Text="Рязань" FontSize="32" />
+                            <TextBlock FontSize="32" Text="Рязань" />
                         </StackPanel>
 
                         <StackPanel
-                            Orientation="Horizontal"
                             Margin="0,5,0,5"
-                            DockPanel.Dock="Top">
+                            DockPanel.Dock="Top"
+                            Orientation="Horizontal">
                             <TextBlock
-                                Text="{Binding MaxTemperature, StringFormat='\{0}°'}"
-                                FontSize="60"
                                 Margin="0,0,0,-5"
-                                VerticalAlignment="Bottom" />
+                                VerticalAlignment="Bottom"
+                                FontSize="60"
+                                Text="{Binding MaxTemperature, StringFormat='\{0}°'}" />
                             <StackPanel Margin="12,-15,0,0" VerticalAlignment="Bottom">
                                 <TextBlock
-                                    Text="Ночью"
+                                    HorizontalAlignment="Center"
                                     FontSize="24"
-                                    HorizontalAlignment="Center" />
+                                    Text="Ночью" />
                                 <TextBlock
-                                    Text="{Binding MinTemperature, StringFormat='\{0}°'}"
+                                    Margin="-2,-2,0,0"
                                     FontSize="30"
-                                    Margin="-2,-2,0,0" />
+                                    Text="{Binding MinTemperature, StringFormat='\{0}°'}" />
                             </StackPanel>
                         </StackPanel>
 
                         <TextBlock
-                            Text="{Binding Weather, Converter={StaticResource LocalizationConverter}}"
                             Grid.Row="2"
+                            DockPanel.Dock="Top"
                             FontSize="32"
-                            DockPanel.Dock="Top" />
+                            Text="{Binding Weather, Converter={StaticResource LocalizationConverter}}" />
 
 
                         <StackPanel
-                            Orientation="Horizontal"
                             Margin="0,-5,0,10"
-                            DockPanel.Dock="Top">
+                            DockPanel.Dock="Top"
+                            Orientation="Horizontal">
                             <Control
                                 Margin="0,15,0,0"
                                 VerticalAlignment="Bottom"
                                 Template="{StaticResource wind}" />
                             <TextBlock
-                                Text="{Binding WindSpeed}"
-                                FontSize="40"
                                 Margin="15,0,0,0"
-                                VerticalAlignment="Bottom" />
+                                VerticalAlignment="Bottom"
+                                FontSize="40"
+                                Text="{Binding WindSpeed}" />
                             <TextBlock
-                                Text="{Binding ElementName=page, Path=DataContext.Forecast.Measures.Windspeed, Converter={StaticResource MeasuresConverter}}"
-                                FontSize="32"
                                 Margin="5,13,0,0"
-                                VerticalAlignment="Bottom" />
+                                VerticalAlignment="Bottom"
+                                FontSize="32"
+                                Text="{Binding ElementName=page, Path=DataContext.Forecast.Measures.Windspeed, Converter={StaticResource MeasuresConverter}}" />
 
                             <StackPanel Margin="10,0,0,-1" VerticalAlignment="Bottom">
-                                <TextBlock Text="Порывы до" FontSize="24" />
+                                <TextBlock FontSize="24" Text="Порывы до" />
                                 <TextBlock
-                                    Text="{Binding WindGusts}"
-                                    FontSize="30"
                                     Margin="0,-2,0,0"
-                                    HorizontalAlignment="Center" />
+                                    HorizontalAlignment="Center"
+                                    FontSize="30"
+                                    Text="{Binding WindGusts}" />
                             </StackPanel>
 
                             <Path
-                                Stroke="Gray"
-                                StrokeThickness="3"
                                 Margin="30,30,0,0"
                                 VerticalAlignment="Center"
                                 Data="M 10 0 L -5 6 L -1.5 0 L -5 -6 Z"
                                 Fill="Gray"
+                                Stroke="Gray"
                                 StrokeEndLineCap="Round"
                                 StrokeLineJoin="Round"
-                                StrokeStartLineCap="Round">
+                                StrokeStartLineCap="Round"
+                                StrokeThickness="3">
                                 <Path.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform ScaleX="1" ScaleY="1" />
@@ -247,17 +248,17 @@
                             </Path>
 
                             <TextBlock
-                                Text="{Binding Path=WindDirection, Converter={StaticResource WindToTextConverter}}"
-                                FontSize="32"
                                 Margin="10,20,0,0"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center"
+                                FontSize="32"
+                                Text="{Binding Path=WindDirection, Converter={StaticResource WindToTextConverter}}" />
                         </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                             <fa:FontAwesome
-                                FontSize="30"
                                 Width="{Binding ElementName=dashboard, Path=ActualWidth}"
                                 Margin="0,0,10,0"
+                                FontSize="30"
                                 Icon="Tint"
                                 TextAlignment="Center">
                                 <fa:FontAwesome.Foreground>
@@ -271,23 +272,23 @@
                                 </fa:FontAwesome.Foreground>
                             </fa:FontAwesome>
                             <TextBlock
-                                Text="{Binding SumPrecipitation}"
+                                DockPanel.Dock="Top"
                                 FontSize="30"
-                                DockPanel.Dock="Top" />
+                                Text="{Binding SumPrecipitation}" />
                             <TextBlock
-                                Text="{Binding ElementName=page, Path=DataContext.Forecast.Measures.PrecipitationSum, Converter={StaticResource MeasuresConverter}}"
-                                FontSize="30"
                                 Margin="5,0"
-                                VerticalAlignment="Bottom" />
+                                VerticalAlignment="Bottom"
+                                FontSize="30"
+                                Text="{Binding ElementName=page, Path=DataContext.Forecast.Measures.PrecipitationSum, Converter={StaticResource MeasuresConverter}}" />
                         </StackPanel>
                         <StackPanel
-                            Orientation="Horizontal"
                             Margin="0,10"
-                            DockPanel.Dock="Top">
+                            DockPanel.Dock="Top"
+                            Orientation="Horizontal">
                             <fa:FontAwesome
                                 Name="dashboard"
-                                FontSize="30"
                                 Margin="0,0,10,0"
+                                FontSize="30"
                                 Icon="Dashboard">
                                 <fa:FontAwesome.Foreground>
                                     <LinearGradientBrush>
@@ -299,14 +300,14 @@
                                 </fa:FontAwesome.Foreground>
                             </fa:FontAwesome>
                             <TextBlock
-                                Text="{Binding Pressure, StringFormat='0'}"
+                                DockPanel.Dock="Top"
                                 FontSize="30"
-                                DockPanel.Dock="Top" />
+                                Text="{Binding Pressure, StringFormat='0'}" />
                             <TextBlock
-                                Text="{Binding ElementName=page, Path=DataContext.Forecast.Measures.Pressure, Converter={StaticResource MeasuresConverter}}"
-                                FontSize="30"
                                 Margin="5,0"
-                                VerticalAlignment="Bottom" />
+                                VerticalAlignment="Bottom"
+                                FontSize="30"
+                                Text="{Binding ElementName=page, Path=DataContext.Forecast.Measures.Pressure, Converter={StaticResource MeasuresConverter}}" />
                         </StackPanel>
 
 
@@ -318,9 +319,9 @@
                 <!--#region Hourly Panel-->
                 <Border
                     Grid.Column="2"
-                    Background="White"
                     MinHeight="350"
                     Margin="0,0,10,0"
+                    Background="White"
                     CornerRadius="10">
                     <Border.Effect>
                         <DropShadowEffect
@@ -333,10 +334,10 @@
 
                 <Border
                     Grid.Column="2"
-                    Background="{DynamicResource BackgroundGradient}"
                     Height="350"
                     Margin="0,0,10,0"
                     Padding="20,15"
+                    Background="{DynamicResource BackgroundGradient}"
                     CornerRadius="10">
 
 
@@ -347,7 +348,7 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
 
-                        <TextBlock Text="Прогноз на каждый час" FontSize="30" />
+                        <TextBlock FontSize="30" Text="Прогноз на каждый час" />
 
                         <Grid Grid.Row="1" Margin="2,6,2,4">
                             <Grid.Resources>
@@ -369,15 +370,15 @@
                             <TextBlock Text="Время" TextAlignment="Center" />
                             <TextBlock
                                 Name="tempBlock"
-                                Text="{Binding ElementName=page, Path=DataContext.Forecast.Measures.Temperature, Converter={StaticResource MeasuresConverter}}"
                                 Grid.Column="3"
                                 Margin="-10,0,0,0"
+                                Text="{Binding ElementName=page, Path=DataContext.Forecast.Measures.Temperature, Converter={StaticResource MeasuresConverter}}"
                                 TextAlignment="Center" />
-                            <TextBlock Text="Ощущается" Grid.Column="4" />
+                            <TextBlock Grid.Column="4" Text="Ощущается" />
                             <fa:FontAwesome
                                 Grid.Column="5"
-                                FontSize="20"
                                 HorizontalAlignment="Center"
+                                FontSize="20"
                                 Icon="Tint"
                                 TextAlignment="Center">
                                 <fa:FontAwesome.Foreground>
@@ -392,9 +393,9 @@
                             </fa:FontAwesome>
                             <fa:FontAwesome
                                 Grid.Column="6"
-                                FontSize="20"
                                 Margin="-5,0,0,0"
                                 HorizontalAlignment="Center"
+                                FontSize="20"
                                 Icon="Dashboard"
                                 TextAlignment="Center">
                                 <fa:FontAwesome.Foreground>
@@ -407,18 +408,18 @@
                                 </fa:FontAwesome.Foreground>
                             </fa:FontAwesome>
                             <TextBlock
-                                Text="Ветер"
                                 Grid.Column="7"
-                                HorizontalAlignment="Center" />
+                                HorizontalAlignment="Center"
+                                Text="Ветер" />
                         </Grid>
 
                         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Hidden">
                             <ItemsControl
                                 Name="hpanel"
-                                ItemsSource="{Binding HourlyForecasts}"
-                                BorderThickness="0"
                                 Margin="1,0"
-                                HorizontalContentAlignment="Stretch">
+                                HorizontalContentAlignment="Stretch"
+                                BorderThickness="0"
+                                ItemsSource="{Binding HourlyForecasts}">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
                                         <StackPanel />
@@ -457,39 +458,39 @@
                                                 </Control.RenderTransform>
                                             </Control>
                                             <TextBlock
-                                                Text="{Binding Temperature, StringFormat='\{0}°'}"
                                                 Grid.Column="3"
+                                                Text="{Binding Temperature, StringFormat='\{0}°'}"
                                                 TextAlignment="Left" />
                                             <TextBlock
-                                                Text="{Binding ApparentTemperature, StringFormat='\{0}°'}"
                                                 Grid.Column="4"
                                                 Margin="-10,0,20,0"
+                                                Text="{Binding ApparentTemperature, StringFormat='\{0}°'}"
                                                 TextAlignment="Center" />
                                             <TextBlock
-                                                Text="{Binding RelativeHumidity, StringFormat='\{0}%'}"
                                                 Grid.Column="5"
-                                                Margin="-10,0,0,0" />
+                                                Margin="-10,0,0,0"
+                                                Text="{Binding RelativeHumidity, StringFormat='\{0}%'}" />
                                             <TextBlock
-                                                Text="{Binding SurfasePressure, StringFormat='0'}"
                                                 Grid.Column="6"
+                                                Text="{Binding SurfasePressure, StringFormat='0'}"
                                                 TextAlignment="Center" />
                                             <StackPanel
-                                                Orientation="Horizontal"
                                                 Grid.Column="7"
                                                 Height="20"
                                                 Margin="10,0"
-                                                VerticalAlignment="Top">
+                                                VerticalAlignment="Top"
+                                                Orientation="Horizontal">
 
                                                 <Path
-                                                    Stroke="Gray"
-                                                    StrokeThickness="3"
                                                     Margin="10,0,0,-10"
                                                     VerticalAlignment="Center"
                                                     Data="M 10 0 L -5 6 L -1.5 0 L -5 -6 Z"
                                                     Fill="Gray"
+                                                    Stroke="Gray"
                                                     StrokeEndLineCap="Round"
                                                     StrokeLineJoin="Round"
-                                                    StrokeStartLineCap="Round">
+                                                    StrokeStartLineCap="Round"
+                                                    StrokeThickness="3">
                                                     <Path.RenderTransform>
                                                         <TransformGroup>
                                                             <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
@@ -498,7 +499,7 @@
                                                     </Path.RenderTransform>
                                                 </Path>
 
-                                                <TextBlock Text="{Binding Path=WindDirection, Converter={StaticResource WindToTextConverter}}" Margin="5,0,0,0" />
+                                                <TextBlock Margin="5,0,0,0" Text="{Binding Path=WindDirection, Converter={StaticResource WindToTextConverter}}" />
                                             </StackPanel>
                                         </Grid>
                                     </DataTemplate>
@@ -525,11 +526,11 @@
                     VerticalScrollBarVisibility="Disabled">
                     <ItemsControl
                         Name="panel"
-                        ItemsSource="{Binding Forecast.DayForecasts}"
-                        Background="{Binding Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Page}}}"
-                        BorderThickness="0"
                         HorizontalAlignment="Center"
                         HorizontalContentAlignment="Stretch"
+                        Background="{Binding Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Page}}}"
+                        BorderThickness="0"
+                        ItemsSource="{Binding Forecast.DayForecasts}"
                         MouseWheel="ListView_MouseWheel">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -565,32 +566,32 @@
                                         </Grid.ColumnDefinitions>
 
                                         <StackPanel>
-                                            <TextBlock Text="{Binding Date, StringFormat='m'}" FontSize="20" />
+                                            <TextBlock FontSize="20" Text="{Binding Date, StringFormat='m'}" />
                                             <TextBlock
-                                                Text="{Binding Date, Converter={StaticResource DaysLocalizationConverter}, ConverterParameter='a'}"
+                                                FontSize="35"
                                                 Foreground="{Binding Date, Converter={StaticResource WeekendHighlightConverter}}"
-                                                FontSize="35" />
+                                                Text="{Binding Date, Converter={StaticResource DaysLocalizationConverter}, ConverterParameter='a'}" />
                                         </StackPanel>
 
                                         <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
                                             <StackPanel
-                                                Orientation="Horizontal"
                                                 Margin="0,0,0,0"
-                                                VerticalAlignment="Top">
-                                                <TextBlock Text="{Binding MaxTemperature}" FontSize="50" />
+                                                VerticalAlignment="Top"
+                                                Orientation="Horizontal">
+                                                <TextBlock FontSize="50" Text="{Binding MaxTemperature}" />
                                                 <TextBlock
-                                                    Text="{Binding MinTemperature}"
-                                                    FontSize="30"
                                                     Margin="5,0,5,0"
                                                     VerticalAlignment="Bottom"
-                                                    Opacity="0.6" />
+                                                    FontSize="30"
+                                                    Opacity="0.6"
+                                                    Text="{Binding MinTemperature}" />
                                             </StackPanel>
 
                                             <TextBlock
-                                                Text="{Binding Weather, Converter={StaticResource LocalizationConverter}}"
                                                 Grid.Row="1"
                                                 Grid.ColumnSpan="2"
-                                                FontSize="24" />
+                                                FontSize="24"
+                                                Text="{Binding Weather, Converter={StaticResource LocalizationConverter}}" />
                                         </StackPanel>
 
                                         <Grid Grid.Column="1" Margin="0,0,0,-20">
@@ -611,7 +612,7 @@
             <!--#endregion-->
 
             <!--#region Forecast Additional Information Panels-->
-            <Grid Margin="3,0,0,10" DataContext="{Binding SelectedForecast}">
+            <Grid Margin="3,0,0,10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="40" />
@@ -620,9 +621,9 @@
 
                 <!--#region Space-->
                 <Border
-                    Background="White"
                     MinHeight="350"
                     HorizontalAlignment="Stretch"
+                    Background="White"
                     CornerRadius="10">
                     <Border.Effect>
                         <DropShadowEffect
@@ -635,7 +636,8 @@
                 <Border
                     MinHeight="250"
                     Padding="30,20"
-                    CornerRadius="10">
+                    CornerRadius="10"
+                    DataContext="{Binding SelectedForecast}">
                     <Border.Background>
                         <LinearGradientBrush SpreadMethod="Pad" StartPoint="0, 0" EndPoint="1, 1">
                             <LinearGradientBrush.GradientStops>
@@ -646,18 +648,18 @@
                     </Border.Background>
                     <StackPanel>
                         <TextBlock
-                            Text="Световой день"
-                            Foreground="White"
+                            HorizontalAlignment="Center"
                             FontSize="32"
                             FontWeight="Bold"
-                            HorizontalAlignment="Center" />
+                            Foreground="White"
+                            Text="Световой день" />
                         <TextBlock
-                            Text="{Binding DayTime, StringFormat='\{0:hh}ч {0:mm}м'}"
-                            Foreground="White"
+                            Margin="-5,-3,0,0"
+                            HorizontalAlignment="Center"
                             FontSize="32"
                             FontWeight="Bold"
-                            Margin="-5,-3,0,0"
-                            HorizontalAlignment="Center" />
+                            Foreground="White"
+                            Text="{Binding DayTime, StringFormat='\{0:hh}ч {0:mm}м'}" />
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
@@ -667,16 +669,16 @@
 
                             <Ellipse
                                 Grid.ColumnSpan="3"
-                                Stroke="#FFFBBF24"
-                                StrokeThickness="3"
                                 Width="180"
                                 Height="180"
                                 Margin="0,10,0,0"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
+                                Stroke="#FFFBBF24"
                                 StrokeDashArray="5, 5, 5, 5, 5, 5, 5, 5, 5, 5,5, 5, 5   200"
                                 StrokeDashCap="Round"
-                                StrokeDashOffset="160" />
+                                StrokeDashOffset="160"
+                                StrokeThickness="3" />
 
                             <Control
                                 Grid.Column="2"
@@ -695,13 +697,13 @@
                             </Control>
 
                             <TextBlock
-                                Text="{Binding Sunset, StringFormat=t}"
                                 Grid.Column="2"
-                                Foreground="White"
-                                FontSize="25"
                                 Margin="7,40,0,0"
                                 HorizontalAlignment="Left"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center"
+                                FontSize="25"
+                                Foreground="White"
+                                Text="{Binding Sunset, StringFormat=t}" />
 
                             <Control
                                 Grid.Column="0"
@@ -720,13 +722,13 @@
                             </Control>
 
                             <TextBlock
-                                Text="{Binding Sunrise, StringFormat=t}"
                                 Grid.Column="0"
-                                Foreground="White"
-                                FontSize="25"
                                 Margin="0,40,7,0"
                                 HorizontalAlignment="Right"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center"
+                                FontSize="25"
+                                Foreground="White"
+                                Text="{Binding Sunrise, StringFormat=t}" />
                             <Control
                                 Grid.Column="1"
                                 HorizontalAlignment="Center"
@@ -739,11 +741,11 @@
                             </Control>
                         </Grid>
                         <TextBlock
-                            Text="{Binding MoonState, Converter={StaticResource MoonPhazesConverter}}"
-                            Foreground="White"
+                            HorizontalAlignment="Center"
                             FontSize="32"
                             FontWeight="Bold"
-                            HorizontalAlignment="Center" />
+                            Foreground="White"
+                            Text="{Binding MoonState, Converter={StaticResource MoonPhazesConverter}}" />
                     </StackPanel>
                 </Border>
                 <!--#endregion-->
@@ -751,9 +753,9 @@
                 <!--#region Graphics-->
                 <Border
                     Grid.Column="2"
-                    Background="White"
                     MinHeight="350"
                     Margin="0,0,10,0"
+                    Background="White"
                     CornerRadius="10">
                     <Border.Effect>
                         <DropShadowEffect
@@ -766,11 +768,44 @@
 
                 <Border
                     Grid.Column="2"
-                    Background="{DynamicResource BackgroundGradient}"
                     Height="350"
                     Margin="0,0,10,0"
                     Padding="20,15"
-                    CornerRadius="10" />
+                    Background="{DynamicResource BackgroundGradient}"
+                    CornerRadius="10">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton
+                                Command="{Binding BuildTempGraphCommand}"
+                                Content="Температура"
+                                Style="{StaticResource GraphicSelectorRbStyle}" />
+                            <RadioButton Content="Давление" Style="{StaticResource GraphicSelectorRbStyle}" />
+                            <RadioButton Content="Ветер" Style="{StaticResource GraphicSelectorRbStyle}" />
+                            <RadioButton Content="Влажность" Style="{StaticResource GraphicSelectorRbStyle}" />
+
+
+                        </StackPanel>
+
+
+
+
+                        <charts:CartesianChart Name="chart" Grid.Row="1" Series="{Binding Series}" ZoomMode="X" exct:ScrollViewerHelper.ShiftWheelScrollsHorizontally="True" />
+                    </Grid>
+
+
+
+
+
+
+
+
+                </Border>
                 <!--#endregion-->
             </Grid>
             <!--#endregion-->
