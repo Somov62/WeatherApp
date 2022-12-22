@@ -25,9 +25,9 @@
                     <StackPanel Orientation="Horizontal">
                         <Border
                             x:Name="on"
-                            Padding="10,5,5,5"
+                            Padding="10,5,10,5"
                             Background="Transparent"
-                            CornerRadius="4,0,0,4">
+                            CornerRadius="5, 1, 1 , 5">
                             <TextBlock
                                 x:Name="onText"
                                 HorizontalAlignment="Center"
@@ -39,7 +39,7 @@
                             x:Name="off"
                             Padding="5,5,10,5"
                             Background="Transparent"
-                            CornerRadius="0,4,4,0">
+                            CornerRadius="1,5,5,1">
                             <TextBlock
                                 x:Name="offText"
                                 HorizontalAlignment="Center"
