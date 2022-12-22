@@ -73,6 +73,7 @@
 
     <v:String x:Key="Hpa">гПа</v:String>
     <v:String x:Key="MmHg">мм рт. ст.</v:String>
+    <v:String x:Key="RelativeHumidity">Влажность</v:String>
 
     <!--  Стороны света  -->
     <v:String x:Key="West">З</v:String>

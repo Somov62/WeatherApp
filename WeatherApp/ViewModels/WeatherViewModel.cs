@@ -4,8 +4,11 @@ using LiveChartsCore.SkiaSharpView.Painting;
 using Models;
 using SkiaSharp;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using WeatherApp.Mvvm;
 using WeatherApp.Services;
 using WeatherProvider;
@@ -18,7 +21,6 @@ namespace WeatherApp.ViewModels
         public RelayCommand SelectForecastCommand { get; }
         public RelayCommand BuildTempGraphCommand { get; }
         public RelayCommand BuildPressureGraphCommand { get; }
-        public RelayCommand BuildWindGraphCommand { get; }
         public RelayCommand BuildHumidityGraphCommand { get; }
 
 
@@ -30,8 +32,9 @@ namespace WeatherApp.ViewModels
             RefreshDataCommand = new RelayCommand(async (o) => await RefreshData());
             SelectForecastCommand = new RelayCommand((f) => SelectedForecast = f as DayForecastModel);
 
-            BuildTempGraphCommand = new RelayCommand(a => BuildTempGraph());
-
+            //BuildTempGraphCommand = new RelayCommand(a => BuildTempGraph());
+            //BuildPressureGraphCommand = new RelayCommand(a => BuildPressureGraph());
+            //BuildHumidityGraphCommand = new RelayCommand(a => BuildHumidityGraph());
 
             RefreshDataCommand.Execute(null);
         }
@@ -53,7 +56,11 @@ namespace WeatherApp.ViewModels
         public DayForecastModel SelectedForecast
         {
             get => _selectedForecast;
-            set => Set(ref _selectedForecast, value, nameof(SelectedForecast));
+            set
+            {
+                Set(ref _selectedForecast, value, nameof(SelectedForecast));
+                if (!IsWeekTimeSelected) IsTempChecked = true;
+            }
         }
 
         private readonly System.Timers.Timer _refreshDataTimer = new System.Timers.Timer()
@@ -63,7 +70,6 @@ namespace WeatherApp.ViewModels
         };
 
         private bool _isRefreshing;
-
         public bool IsRefreshing
         {
             get => _isRefreshing;
@@ -71,7 +77,6 @@ namespace WeatherApp.ViewModels
         }
 
         private bool _errorReceivingData;
-
         public bool ErrorReceivingData
         {
             get => _errorReceivingData;
@@ -101,6 +106,64 @@ namespace WeatherApp.ViewModels
             IsRefreshing = false;
         }
 
+
+
+        #region Graphics
+
+        private bool _isTempChecked;
+        public bool IsTempChecked
+        {
+            get => _isTempChecked;
+            set
+            {
+                Set(ref _isTempChecked, value, nameof(IsTempChecked));
+                if (value) BuildTempGraph();
+            }
+        }
+
+        private bool _isPressureChecked;
+        public bool IsPressureChecked
+        {
+            get => _isPressureChecked;
+            set
+            {
+                Set(ref _isPressureChecked, value, nameof(IsPressureChecked));
+                if (value) BuildPressureGraph();
+            }
+        }
+
+        private bool _isRelativeHumidityChecked;
+        public bool IsRelativeHumidityChecked
+        {
+            get => _isRelativeHumidityChecked;
+            set
+            {
+                Set(ref _isRelativeHumidityChecked, value, nameof(IsRelativeHumidityChecked));
+                if (value) BuildHumidityGraph();
+            }
+        }
+
+        private bool _isWeekTimeSelected;
+
+        public bool IsWeekTimeSelected
+        {
+            get => _isWeekTimeSelected;
+            set
+            {
+                Set(ref _isWeekTimeSelected, value, nameof(IsWeekTimeSelected));
+                if (value)
+                {
+                    AxisX = new List<Axis>() { new Axis { Labels = Forecast.DayForecasts.Select(p => p.Date.ToString("dd.MM")).ToList() } };
+                }
+                else
+                {
+                    AxisX = new List<Axis>() { new Axis { Labels = SelectedForecast.HourlyForecasts.Select(p => p.Time.ToString("t")).ToList() } };
+                }
+                IsTempChecked = true;
+            }
+        }
+
+
         private ISeries[] _series;
         public ISeries[] Series
         {
@@ -108,30 +171,112 @@ namespace WeatherApp.ViewModels
             set => Set(ref _series, value, nameof(Series));
         }
 
-        private void BuildTempGraph()
+        private List<Axis> _axisX;
+        public List<Axis> AxisX
         {
-            Series = new ISeries[1]
-            {
-                new LineSeries<double>
-                {
-                    Name = App.Current.Resources[Forecast.Measures.Temperature.ToString()].ToString(),
-                    Values = SelectedForecast.HourlyForecasts.Select(p => Math.Round(p.Temperature, 3, MidpointRounding.AwayFromZero)),
-                    Stroke = new LinearGradientPaint(
-                        gradientStops : new[]{ new SKColor(45, 64, 89), new SKColor(255, 212, 96)}, 
-                        startPoint : new SKPoint(0, 0), 
-                        endPoint : new SKPoint(1, 0), 
-                        tileMode : SKShaderTileMode.Clamp) 
-                        { StrokeThickness = 5 },
-                    GeometryStroke = new LinearGradientPaint(
-                        gradientStops : new[]{ new SKColor(45, 64, 89), new SKColor(255, 212, 96)},
-                        startPoint : new SKPoint(0, 0),
-                        endPoint : new SKPoint(1, 0),
-                        tileMode : SKShaderTileMode.Clamp)
-                        { StrokeThickness = 5 },
-                    Fill = null
-                }
-            };
+            get => _axisX;
+            set => Set(ref _axisX, value, nameof(AxisX));
         }
 
+
+        private void BuildTempGraph()
+        {
+            var series = new LineSeries<double>
+            {
+                Name = App.Current.Resources[Forecast.Measures.Temperature.ToString()].ToString(),
+                Stroke = new LinearGradientPaint(
+                        gradientStops: new[] { new SKColor(245, 175, 25), new SKColor(241, 39, 17) },
+                        startPoint: new SKPoint(0, 0), endPoint: new SKPoint(1, 0),
+                        tileMode: SKShaderTileMode.Clamp)
+                { StrokeThickness = 5 },
+                GeometryStroke = new LinearGradientPaint(
+                        gradientStops: new[] { new SKColor(245, 175, 25), new SKColor(241, 39, 17) },
+                        startPoint: new SKPoint(0, 0), endPoint: new SKPoint(1, 0),
+                        tileMode: SKShaderTileMode.Clamp)
+                { StrokeThickness = 5 },
+                Fill = null
+            };
+            Series = new ISeries[1] { series };
+
+            if (IsWeekTimeSelected)
+            {
+                series.Values = Forecast.DayForecasts.Select(p => Math.Round(p.MaxTemperature, 3, MidpointRounding.AwayFromZero));
+
+                Series = new ISeries[2] { series,  new LineSeries<double>
+                {
+                    Name = App.Current.Resources[Forecast.Measures.Temperature.ToString()].ToString(),
+                    Values = Forecast.DayForecasts.Select(p => Math.Round(p.MinTemperature, 3, MidpointRounding.AwayFromZero)),
+                    Stroke =  new LinearGradientPaint(
+                                gradientStops: new[] { new SKColor(9, 198, 249), new SKColor(4, 93, 233) },
+                                startPoint: new SKPoint(0, 0), endPoint: new SKPoint(1, 0),
+                                tileMode: SKShaderTileMode.Clamp) { StrokeThickness = 5 },
+                    GeometryStroke = new LinearGradientPaint(
+                                gradientStops: new[] { new SKColor(9, 198, 249), new SKColor(4, 93, 233) },
+                                startPoint: new SKPoint(0, 0), endPoint: new SKPoint(1, 0),
+                                tileMode: SKShaderTileMode.Clamp) { StrokeThickness = 5 },
+                    Fill = null
+                }};
+                return;
+            }
+            series.Values = SelectedForecast.HourlyForecasts.Select(p => Math.Round(p.Temperature, 3, MidpointRounding.AwayFromZero));
+
+        }
+
+        private void BuildPressureGraph()
+        {
+            var series = new LineSeries<double>
+            {
+                Name = App.Current.Resources[Forecast.Measures.Pressure.ToString()].ToString(),
+                Stroke = new LinearGradientPaint(
+                        gradientStops: new[] { new SKColor(220, 227, 91), new SKColor(69, 182, 73) },
+                        startPoint: new SKPoint(0, 0), endPoint: new SKPoint(1, 0),
+                        tileMode: SKShaderTileMode.Clamp)
+                { StrokeThickness = 5 },
+                GeometryStroke = new LinearGradientPaint(
+                        gradientStops: new[] { new SKColor(220, 227, 91), new SKColor(69, 182, 73) },
+                        startPoint: new SKPoint(0, 0), endPoint: new SKPoint(1, 0),
+                        tileMode: SKShaderTileMode.Clamp)
+                { StrokeThickness = 5 },
+                Fill = null
+            };
+
+            Series = new ISeries[1] { series };
+            if (IsWeekTimeSelected)
+            {
+                series.Values = Forecast.DayForecasts.Select(p => Math.Round(p.HourlyForecasts.Average(p => p.SurfasePressure), 3, MidpointRounding.AwayFromZero));
+                return;
+            }
+            series.Values = SelectedForecast.HourlyForecasts.Select(p => Math.Round(p.SurfasePressure, 3, MidpointRounding.AwayFromZero));
+        }
+
+        private void BuildHumidityGraph()
+        {
+            var series = new LineSeries<double>
+            {
+                Name = App.Current.Resources["RelativeHumidity"].ToString() + " %",
+                Stroke = new LinearGradientPaint(
+                       gradientStops: new[] { new SKColor(9, 198, 249), new SKColor(4, 93, 233) },
+                       startPoint: new SKPoint(0, 0), endPoint: new SKPoint(1, 0),
+                       tileMode: SKShaderTileMode.Clamp)
+                { StrokeThickness = 5 },
+                GeometryStroke = new LinearGradientPaint(
+                       gradientStops: new[] { new SKColor(9, 198, 249), new SKColor(4, 93, 233) },
+                       startPoint: new SKPoint(0, 0), endPoint: new SKPoint(1, 0),
+                       tileMode: SKShaderTileMode.Clamp)
+                { StrokeThickness = 5 },
+                Fill = null
+            };
+
+            Series = new ISeries[1] { series };
+
+            if (IsWeekTimeSelected)
+            {
+                series.Values = Forecast.DayForecasts.Select(p => Math.Round(p.HourlyForecasts.Average(p => p.RelativeHumidity), 3, MidpointRounding.AwayFromZero));
+                return;
+            }
+            series.Values = SelectedForecast.HourlyForecasts.Select(p => Math.Round(p.RelativeHumidity, 3, MidpointRounding.AwayFromZero));
+        }
+
+        #endregion
     }
 }

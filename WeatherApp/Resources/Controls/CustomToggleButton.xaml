@@ -16,36 +16,36 @@
                     RecognizesAccessKey="True"
                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                 <Border
+                    BorderThickness="1"
                     Margin="10,0,0,0"
                     Padding="1"
                     BorderBrush="Gray"
-                    BorderThickness="1"
                     CornerRadius="5">
 
                     <StackPanel Orientation="Horizontal">
                         <Border
                             x:Name="on"
-                            Padding="10,5,10,5"
                             Background="Transparent"
+                            Padding="10,5,10,5"
                             CornerRadius="5, 1, 1 , 5">
                             <TextBlock
                                 x:Name="onText"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
+                                Text="{TemplateBinding LeftCase}"
                                 Foreground="Black"
-                                Text="{TemplateBinding LeftCase}" />
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
                         </Border>
                         <Border
                             x:Name="off"
-                            Padding="5,5,10,5"
                             Background="Transparent"
+                            Padding="10,5,10,5"
                             CornerRadius="1,5,5,1">
                             <TextBlock
                                 x:Name="offText"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
+                                Text="{TemplateBinding RightCase}"
                                 Foreground="Black"
-                                Text="{TemplateBinding RightCase}" />
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
                         </Border>
                     </StackPanel>
                 </Border>
@@ -54,13 +54,15 @@
                 <Trigger Property="IsEnabled" Value="false">
                     <Setter Property="Foreground" Value="#ADADAD" />
                 </Trigger>
-                <Trigger Property="IsChecked" Value="true">
+                <Trigger Property="IsChecked" Value="false">
                     <Setter TargetName="on" Property="Background" Value="Orange" />
                     <Setter TargetName="onText" Property="Foreground" Value="White" />
+                    <Setter Property="Padding" TargetName="on"  Value="15,5,15,5" />
                 </Trigger>
-                <Trigger Property="IsChecked" Value="False">
+                <Trigger Property="IsChecked" Value="true">
                     <Setter TargetName="off" Property="Background" Value="Orange" />
                     <Setter TargetName="offText" Property="Foreground" Value="White" />
+                    <Setter Property="Padding" TargetName="off"  Value="15,5,15,5" />
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
