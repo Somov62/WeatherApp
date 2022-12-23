@@ -9,14 +9,14 @@ namespace WeatherApp.Resources.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value == null) return (SolidColorBrush)App.Current.Resources["PageForeground"];
+            if (value == null) return (SolidColorBrush)App.Current.Resources["MainForeground"];
 
             if (value is DateTime date)
             {
                 if (date.Date.DayOfWeek == DayOfWeek.Sunday || date.Date.DayOfWeek == DayOfWeek.Saturday)
                     return (SolidColorBrush)App.Current.Resources["WeekendHighlight"];
             }
-            return (SolidColorBrush)App.Current.Resources["PageForeground"];
+            return (SolidColorBrush)App.Current.Resources["MainForeground"];
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -11,7 +11,6 @@
                 <ResourceDictionary Source="Resources/Localization/lang.ru-RU.xaml" />
                 <ResourceDictionary Source="Resources/Themes/LightTheme.xaml" />
                 <ResourceDictionary Source="Resources/Styles/ButtonStyles.xaml" />
-                <ResourceDictionary Source="Resources/Styles/ListViewStyles.xaml" />
                 <ResourceDictionary Source="Resources/Icons/WeatherIcons.xaml" />
             </ResourceDictionary.MergedDictionaries>
 

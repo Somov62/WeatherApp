@@ -1,20 +1,55 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-
     <SolidColorBrush x:Key="PageBackground" Color="#FFBF8C" />
-    <SolidColorBrush x:Key="PageForeground" Color="#000000" />
-    <SolidColorBrush x:Key="WeekendHighlight" Color="#FF3333" />
 
+    <SolidColorBrush x:Key="Accent" Color="Orange" />
+    <SolidColorBrush x:Key="MainForeground" Color="#000000" />
 
     <SolidColorBrush x:Key="WindowNavBtnForeground" Color="Black" />
     <SolidColorBrush x:Key="WindowNavBtnBackground" Color="White" />
     <SolidColorBrush x:Key="WindowNavBtnBackgroundMouseOver" Color="#dddddd" />
     <SolidColorBrush x:Key="WindowNavBtnBackgroundPressed" Color="#bbbbbb" />
+    <Color x:Key="WindowNavOpenBorderBrush">Orange</Color>
+    <Color x:Key="WindowNavBorderBrush">White</Color>
+
+    <SolidColorBrush x:Key="MenuBtnForeground" Color="#222222" />
+
+    <SolidColorBrush x:Key="RefreshBtnForeground" Color="#333333" />
+    <SolidColorBrush x:Key="RefreshBtnBackground" Color="White" />
+
+    <SolidColorBrush x:Key="PagesTipsForeground" Color="White" />
+    <SolidColorBrush x:Key="SpacePanelForeground" Color="White" />
+
+    <SolidColorBrush x:Key="WeekendHighlight" Color="#FF3333" />
+    <SolidColorBrush x:Key="WindArrowColor" Color="Gray" />
+
 
     <LinearGradientBrush x:Key="BackgroundGradient" SpreadMethod="Repeat" StartPoint="0, 0" EndPoint="0, 1">
         <LinearGradientBrush.GradientStops>
             <GradientStop Offset="0" Color="#FFFFFF" />
             <GradientStop Offset="1.3" Color="#D7E1EC" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="MapIconForeground">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0" Color="#ff7447" />
+            <GradientStop Offset="1" Color="#ff4e50" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="TintIconForeground">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0" Color="#4286ee" />
+            <GradientStop Offset="0.45" Color="#4286ee" />
+            <GradientStop Offset="1" Color="#0950bc" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="SpacePanelBackground">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0" Color="#FFDA88" />
+            <GradientStop Offset="1" Color="#3C4260" />
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 </ResourceDictionary>
