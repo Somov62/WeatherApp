@@ -1,0 +1,56 @@
+﻿<TextBox
+    x:Class="WeatherApp.Resources.Controls.CustomTextBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WeatherApp.Resources.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontSize="32"
+    BorderThickness="3"
+    CaretBrush="{DynamicResource CaretBrush}"
+    SelectionBrush="{DynamicResource PageBackground2}"
+    mc:Ignorable="d">
+    <TextBox.Template>
+        <ControlTemplate TargetType="{x:Type local:CustomTextBox}">
+            <Border
+                x:Name="border"
+                Background="{TemplateBinding Background}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                Padding="20,10"
+                BorderBrush="{TemplateBinding Background}"
+                CornerRadius="{TemplateBinding CornerRadius}"
+                SnapsToDevicePixels="True">
+                <Grid>
+                    <TextBlock
+                        Name="placeholder"
+                        Text="{TemplateBinding PlaceHolder}"
+                        Foreground="{TemplateBinding PlaceHolderColor}"
+                        Visibility="Hidden" />
+                    <ScrollViewer
+                        x:Name="PART_ContentHost"
+                        Focusable="false"
+                        HorizontalScrollBarVisibility="Hidden"
+                        VerticalScrollBarVisibility="Hidden" />
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter TargetName="border" Property="Opacity" Value="0.56" />
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource PageBackground2}" />
+                </Trigger>
+                <Trigger Property="IsKeyboardFocused" Value="true">
+                    <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource PageBackground2}" />
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Text" Value="" />
+                        <Condition Property="IsKeyboardFocused" Value="false" />
+                    </MultiTrigger.Conditions>
+                    <Setter TargetName="placeholder" Property="Visibility" Value="Visible" />
+                </MultiTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </TextBox.Template>
+</TextBox>

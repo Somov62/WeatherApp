@@ -8,7 +8,12 @@
             <GradientStop Offset="1" Color="#FFC371" />
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
-
+    <LinearGradientBrush x:Key="PageBackground2">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="1" Color="#FF5F6D" />
+            <GradientStop Offset="0" Color="#FFC371" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
     <SolidColorBrush x:Key="Accent" Color="#FF9926" />
     <SolidColorBrush x:Key="MainForeground" Color="#000000" />
 
@@ -29,7 +34,7 @@
 
     <SolidColorBrush x:Key="WeekendHighlight" Color="#FF3333" />
     <SolidColorBrush x:Key="WindArrowColor" Color="Gray" />
-
+    <SolidColorBrush x:Key="CaretBrush" Color="#FF5F6D" />
 
     <LinearGradientBrush x:Key="BackgroundGradient" SpreadMethod="Repeat" StartPoint="0, 0" EndPoint="0, 1">
         <LinearGradientBrush.GradientStops>

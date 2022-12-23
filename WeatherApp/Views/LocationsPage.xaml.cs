@@ -24,5 +24,10 @@ namespace WeatherApp.Views
         {
             InitializeComponent();
         }
+
+        private void Page_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Keyboard.ClearFocus();
+        }
     }
 }
