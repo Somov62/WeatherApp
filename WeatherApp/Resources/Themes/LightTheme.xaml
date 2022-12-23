@@ -1,8 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <SolidColorBrush x:Key="PageBackground" Color="#FFBF8C" />
+    <SolidColorBrush x:Key="PageBackground1" Color="#FFBF8C" />
 
-    <SolidColorBrush x:Key="Accent" Color="Orange" />
+    <LinearGradientBrush x:Key="PageBackground">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0" Color="#FF5F6D" />
+            <GradientStop Offset="1" Color="#FFC371" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="Accent" Color="#FF9926" />
     <SolidColorBrush x:Key="MainForeground" Color="#000000" />
 
     <SolidColorBrush x:Key="WindowNavBtnForeground" Color="Black" />

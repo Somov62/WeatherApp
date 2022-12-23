@@ -11,7 +11,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Name="page"
     xml:lang="ru-RU"
-    Background="{DynamicResource PageBackground}"
+    Background="Transparent"
     FontFamily="pack://application:,,,/Resources/Font/#Klukva"
     mc:Ignorable="d">
     <Page.Resources>
@@ -29,7 +29,6 @@
 
     <ScrollViewer
         x:Name="outsideScrollView"
-        Background="{DynamicResource PageBackground}"
         PreviewMouseWheel="outsideScrollView_MouseWheel"
         VerticalScrollBarVisibility="Hidden">
         <StackPanel>

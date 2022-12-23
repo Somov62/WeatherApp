@@ -40,7 +40,7 @@
 
             <Border
                 Grid.ColumnSpan="2"
-                Background="{DynamicResource PageBackground}"
+                Background="Transparent"
                 CornerRadius="20, 20, 0, 0"
                 MouseDown="Border_MouseDown" />
             <StackPanel

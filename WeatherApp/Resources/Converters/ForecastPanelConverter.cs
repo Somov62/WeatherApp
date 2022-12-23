@@ -16,6 +16,7 @@ namespace WeatherApp.Resources.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var vm = value as WeatherViewModel;
+            if (vm != null) return false;
             var day = (parameter as Grid).DataContext as DayForecastModel;
             return vm.SelectedForecast.Equals(day);
         }

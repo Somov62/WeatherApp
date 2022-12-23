@@ -7,14 +7,14 @@
         <Grid>
             <Path
                 Name="polygon1"
-                Stroke="#FFFBBF24"
-                StrokeThickness="3"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
+                Stroke="#FFFBBF24"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="3">
                 <Path.Data>
                     <PathGeometry Figures="M 32 15.71 V 9.5 m 0 45 v -6.21 m 11.52 -27.81 l 4.39 -4.39 M 16.09 47.91 l 4.39 -4.39 m 0 -23 l -4.39 -4.39 m 31.82 31.78 l -4.39 -4.39 M 15.71 32 H 9.5 m 45 0 h -6.21" />
                 </Path.Data>
@@ -39,10 +39,10 @@
             </Path>
 
             <Ellipse
-                Stroke="#FFFBBF24"
-                StrokeThickness="1"
                 Width="24"
-                Height="24">
+                Height="24"
+                Stroke="#FFFBBF24"
+                StrokeThickness="1">
                 <Ellipse.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -60,14 +60,14 @@
         <Grid>
             <Path
                 Name="polygon1"
-                Stroke="#72b9d5"
-                StrokeThickness="1"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
+                Stroke="#72b9d5"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -107,16 +107,16 @@
         <Grid>
             <Path
                 Name="polygon1"
-                Stroke="#e6effc"
-                StrokeThickness="1"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
+                Stroke="#e6effc"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -134,14 +134,14 @@
 
             <Path
                 Name="polygon2"
-                StrokeThickness="2"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 VerticalAlignment="Top"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="2">
                 <Path.Stroke>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -183,14 +183,14 @@
 
             <Path
                 Name="polygon3"
-                StrokeThickness="2"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 VerticalAlignment="Top"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="2">
                 <Path.Stroke>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -230,14 +230,14 @@
 
             <Path
                 Name="polygon4"
-                StrokeThickness="2"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 VerticalAlignment="Top"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="2">
                 <Path.Stroke>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -283,7 +283,6 @@
         <Grid>
             <Path
                 Name="polygon1"
-                StrokeThickness="3"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
@@ -291,7 +290,8 @@
                 StrokeDashCap="Round"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="3">
                 <Path.Stroke>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -323,7 +323,6 @@
             </Path>
             <Path
                 Name="polygon2"
-                StrokeThickness="3"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
@@ -331,7 +330,8 @@
                 StrokeDashCap="Round"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="3">
                 <Path.Stroke>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -368,14 +368,14 @@
         <Grid>
             <Path
                 Name="polygon1"
-                Stroke="{DynamicResource CloudStroke}"
-                StrokeThickness="1"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
+                Stroke="{DynamicResource CloudStroke}"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -412,14 +412,14 @@
         <Grid>
             <Path
                 Name="polygon2"
-                Stroke="#848b98"
-                StrokeThickness="1"
                 Width="70"
                 Height="56"
                 Margin="0,-8,-8,0"
+                Stroke="#848b98"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -451,15 +451,15 @@
             </Path>
             <Path
                 Name="polygon1"
-                Stroke="{DynamicResource CloudStroke}"
-                StrokeThickness="1"
                 Width="56"
                 Height="56"
                 Margin="-20,-8,0,0"
                 HorizontalAlignment="Left"
+                Stroke="{DynamicResource CloudStroke}"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -501,14 +501,14 @@
                 VerticalAlignment="Top">
                 <Path
                     Name="polygon1"
-                    Stroke="#FFFBBF24"
-                    StrokeThickness="3"
                     Width="56"
                     Height="56"
                     Margin="-8,-8,0,0"
+                    Stroke="#FFFBBF24"
                     StrokeEndLineCap="Round"
                     StrokeMiterLimit="10"
-                    StrokeStartLineCap="Round">
+                    StrokeStartLineCap="Round"
+                    StrokeThickness="3">
                     <Path.Data>
                         <PathGeometry Figures="M 32 15.71 V 9.5 m 0 45 v -6.21 m 11.52 -27.81 l 4.39 -4.39 M 16.09 47.91 l 4.39 -4.39 m 0 -23 l -4.39 -4.39 m 31.82 31.78 l -4.39 -4.39 M 15.71 32 H 9.5 m 45 0 h -6.21" />
                     </Path.Data>
@@ -533,10 +533,10 @@
                 </Path>
 
                 <Ellipse
-                    Stroke="#FFFBBF24"
-                    StrokeThickness="1"
                     Width="24"
-                    Height="24">
+                    Height="24"
+                    Stroke="#FFFBBF24"
+                    StrokeThickness="1">
                     <Ellipse.Fill>
                         <LinearGradientBrush>
                             <LinearGradientBrush.GradientStops>
@@ -554,14 +554,14 @@
 
             <Path
                 Name="polygon3"
-                Stroke="{DynamicResource CloudStroke}"
-                StrokeThickness="1"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
+                Stroke="{DynamicResource CloudStroke}"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -586,14 +586,14 @@
                 VerticalAlignment="Top">
                 <Path
                     Name="polygon1"
-                    Stroke="#72b9d5"
-                    StrokeThickness="1"
                     Width="56"
                     Height="56"
                     Margin="-8,-8,0,0"
+                    Stroke="#72b9d5"
                     StrokeEndLineCap="Round"
                     StrokeMiterLimit="10"
-                    StrokeStartLineCap="Round">
+                    StrokeStartLineCap="Round"
+                    StrokeThickness="1">
                     <Path.Fill>
                         <LinearGradientBrush>
                             <LinearGradientBrush.GradientStops>
@@ -633,14 +633,14 @@
 
             <Path
                 Name="polygon3"
-                Stroke="{DynamicResource CloudStroke}"
-                StrokeThickness="1"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
+                Stroke="{DynamicResource CloudStroke}"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -661,14 +661,14 @@
         <Grid>
             <Path
                 Name="polygon1"
-                Stroke="{DynamicResource CloudStroke}"
-                StrokeThickness="1"
                 Width="64"
                 Height="56"
                 Margin="-8,-16,0,0"
+                Stroke="{DynamicResource CloudStroke}"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -684,13 +684,13 @@
             </Path>
             <Path
                 Name="polygon2"
-                StrokeThickness="3"
                 Width="56"
                 Height="64"
                 Margin="-25,-8,0,0"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="3">
                 <Path.Stroke>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -726,13 +726,13 @@
             </Path>
             <Path
                 Name="polygon3"
-                StrokeThickness="3"
                 Width="56"
                 Height="64"
                 Margin="-25,-8,0,0"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="3">
                 <Path.Stroke>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -773,16 +773,16 @@
         <Grid>
             <Path
                 Name="polygon1"
-                Stroke="{DynamicResource CloudStroke}"
-                StrokeThickness="1"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
+                Stroke="{DynamicResource CloudStroke}"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -800,14 +800,14 @@
 
             <Path
                 Name="polygon2"
-                StrokeThickness="2"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 VerticalAlignment="Top"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="2">
                 <Path.Stroke>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -848,14 +848,14 @@
 
             <Path
                 Name="polygon3"
-                StrokeThickness="2"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 VerticalAlignment="Top"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="2">
                 <Path.Stroke>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -904,16 +904,16 @@
         <Grid>
             <Path
                 Name="polygon1"
-                Stroke="{DynamicResource CloudStroke}"
-                StrokeThickness="1"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
+                Stroke="{DynamicResource CloudStroke}"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -931,14 +931,14 @@
 
             <Path
                 Name="polygon2"
-                StrokeThickness="2"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 VerticalAlignment="Top"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="2">
                 <Path.Stroke>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -979,14 +979,14 @@
 
             <Path
                 Name="polygon3"
-                StrokeThickness="2"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 VerticalAlignment="Top"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="2">
                 <Path.Stroke>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -1033,15 +1033,15 @@
         <Grid>
             <Path
                 Name="polygon1"
-                Stroke="{DynamicResource CloudStroke}"
-                StrokeThickness="1"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 VerticalAlignment="Top"
+                Stroke="{DynamicResource CloudStroke}"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -1057,13 +1057,13 @@
             </Path>
             <Grid x:Name="polygon2" VerticalAlignment="Top">
                 <Path
-                    StrokeThickness="1"
                     Width="56"
                     Height="56"
                     Margin="-8,-8,0,0"
                     StrokeEndLineCap="Round"
                     StrokeMiterLimit="10"
-                    StrokeStartLineCap="Round">
+                    StrokeStartLineCap="Round"
+                    StrokeThickness="1">
                     <Path.Data>
                         <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
                     </Path.Data>
@@ -1079,12 +1079,12 @@
                 </Path>
 
                 <Ellipse
-                    StrokeThickness="0.9"
                     Width="3"
                     Height="3"
                     Margin="-2,26,0,0"
                     VerticalAlignment="Center"
-                    Fill="Transparent">
+                    Fill="Transparent"
+                    StrokeThickness="0.9">
                     <Ellipse.Stroke>
                         <LinearGradientBrush>
                             <LinearGradientBrush.GradientStops>
@@ -1141,16 +1141,16 @@
         <Grid>
             <Path
                 Name="polygon1"
-                Stroke="{DynamicResource CloudStroke}"
-                StrokeThickness="1"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
+                Stroke="{DynamicResource CloudStroke}"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -1169,13 +1169,13 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top">
                 <Path
-                    StrokeThickness="1"
                     Width="56"
                     Height="56"
                     Margin="-8,-8,0,0"
                     StrokeEndLineCap="Round"
                     StrokeMiterLimit="10"
-                    StrokeStartLineCap="Round">
+                    StrokeStartLineCap="Round"
+                    StrokeThickness="1">
                     <Path.Data>
                         <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
                     </Path.Data>
@@ -1191,12 +1191,12 @@
                 </Path>
 
                 <Ellipse
-                    StrokeThickness="0.9"
                     Width="3"
                     Height="3"
                     Margin="-2,26,0,0"
                     VerticalAlignment="Center"
-                    Fill="Transparent">
+                    Fill="Transparent"
+                    StrokeThickness="0.9">
                     <Ellipse.Stroke>
                         <LinearGradientBrush>
                             <LinearGradientBrush.GradientStops>
@@ -1248,13 +1248,13 @@
             </Grid>
             <Grid x:Name="polygon3" VerticalAlignment="Top">
                 <Path
-                    StrokeThickness="1"
                     Width="56"
                     Height="56"
                     Margin="-8,-8,0,0"
                     StrokeEndLineCap="Round"
                     StrokeMiterLimit="10"
-                    StrokeStartLineCap="Round">
+                    StrokeStartLineCap="Round"
+                    StrokeThickness="1">
                     <Path.Data>
                         <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
                     </Path.Data>
@@ -1270,12 +1270,12 @@
                 </Path>
 
                 <Ellipse
-                    StrokeThickness="0.9"
                     Width="3"
                     Height="3"
                     Margin="-2,26,0,0"
                     VerticalAlignment="Center"
-                    Fill="Transparent">
+                    Fill="Transparent"
+                    StrokeThickness="0.9">
                     <Ellipse.Stroke>
                         <LinearGradientBrush>
                             <LinearGradientBrush.GradientStops>
@@ -1332,16 +1332,16 @@
         <Grid>
             <Path
                 Name="polygon1"
-                Stroke="{DynamicResource CloudStroke}"
-                StrokeThickness="1"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
+                Stroke="{DynamicResource CloudStroke}"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -1360,13 +1360,13 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top">
                 <Path
-                    StrokeThickness="1"
                     Width="56"
                     Height="56"
                     Margin="-8,-8,0,0"
                     StrokeEndLineCap="Round"
                     StrokeMiterLimit="10"
-                    StrokeStartLineCap="Round">
+                    StrokeStartLineCap="Round"
+                    StrokeThickness="1">
                     <Path.Data>
                         <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
                     </Path.Data>
@@ -1382,12 +1382,12 @@
                 </Path>
 
                 <Ellipse
-                    StrokeThickness="0.9"
                     Width="3"
                     Height="3"
                     Margin="-2,26,0,0"
                     VerticalAlignment="Center"
-                    Fill="Transparent">
+                    Fill="Transparent"
+                    StrokeThickness="0.9">
                     <Ellipse.Stroke>
                         <LinearGradientBrush>
                             <LinearGradientBrush.GradientStops>
@@ -1442,13 +1442,13 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top">
                 <Path
-                    StrokeThickness="1"
                     Width="56"
                     Height="56"
                     Margin="-8,-8,0,0"
                     StrokeEndLineCap="Round"
                     StrokeMiterLimit="10"
-                    StrokeStartLineCap="Round">
+                    StrokeStartLineCap="Round"
+                    StrokeThickness="1">
                     <Path.Data>
                         <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
                     </Path.Data>
@@ -1464,12 +1464,12 @@
                 </Path>
 
                 <Ellipse
-                    StrokeThickness="0.9"
                     Width="3"
                     Height="3"
                     Margin="-2,26,0,0"
                     VerticalAlignment="Center"
-                    Fill="Transparent">
+                    Fill="Transparent"
+                    StrokeThickness="0.9">
                     <Ellipse.Stroke>
                         <LinearGradientBrush>
                             <LinearGradientBrush.GradientStops>
@@ -1524,13 +1524,13 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top">
                 <Path
-                    StrokeThickness="1"
                     Width="56"
                     Height="56"
                     Margin="-8,-8,0,0"
                     StrokeEndLineCap="Round"
                     StrokeMiterLimit="10"
-                    StrokeStartLineCap="Round">
+                    StrokeStartLineCap="Round"
+                    StrokeThickness="1">
                     <Path.Data>
                         <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
                     </Path.Data>
@@ -1546,12 +1546,12 @@
                 </Path>
 
                 <Ellipse
-                    StrokeThickness="0.9"
                     Width="3"
                     Height="3"
                     Margin="-2,26,0,0"
                     VerticalAlignment="Center"
-                    Fill="Transparent">
+                    Fill="Transparent"
+                    StrokeThickness="0.9">
                     <Ellipse.Stroke>
                         <LinearGradientBrush>
                             <LinearGradientBrush.GradientStops>
@@ -1608,16 +1608,16 @@
         <Grid>
             <Path
                 Name="polygon1"
-                Stroke="{DynamicResource CloudStroke}"
-                StrokeThickness="1"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
+                Stroke="{DynamicResource CloudStroke}"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -1636,13 +1636,13 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top">
                 <Path
-                    StrokeThickness="1"
                     Width="56"
                     Height="56"
                     Margin="-8,-8,0,0"
                     StrokeEndLineCap="Round"
                     StrokeMiterLimit="10"
-                    StrokeStartLineCap="Round">
+                    StrokeStartLineCap="Round"
+                    StrokeThickness="1">
                     <Path.Data>
                         <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
                     </Path.Data>
@@ -1658,12 +1658,12 @@
                 </Path>
 
                 <Ellipse
-                    StrokeThickness="0.9"
                     Width="3"
                     Height="3"
                     Margin="-2,26,0,0"
                     VerticalAlignment="Center"
-                    Fill="Transparent">
+                    Fill="Transparent"
+                    StrokeThickness="0.9">
                     <Ellipse.Stroke>
                         <LinearGradientBrush>
                             <LinearGradientBrush.GradientStops>
@@ -1719,13 +1719,13 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top">
                 <Path
-                    StrokeThickness="1"
                     Width="56"
                     Height="56"
                     Margin="-8,-8,0,0"
                     StrokeEndLineCap="Round"
                     StrokeMiterLimit="10"
-                    StrokeStartLineCap="Round">
+                    StrokeStartLineCap="Round"
+                    StrokeThickness="1">
                     <Path.Data>
                         <PathGeometry Figures="M 33.17 46.25 l -1.09 -0.63 m -2.16 -1.24 l -1.09 -0.63 M 31 42.5 v 1.25 m 0 3.75 v -1.25 m -1.08 -0.63 l -1.09 0.63 m 4.34 -2.5 l -1.09 0.63" />
                     </Path.Data>
@@ -1741,12 +1741,12 @@
                 </Path>
 
                 <Ellipse
-                    StrokeThickness="0.9"
                     Width="3"
                     Height="3"
                     Margin="-2,26,0,0"
                     VerticalAlignment="Center"
-                    Fill="Transparent">
+                    Fill="Transparent"
+                    StrokeThickness="0.9">
                     <Ellipse.Stroke>
                         <LinearGradientBrush>
                             <LinearGradientBrush.GradientStops>
@@ -1799,7 +1799,6 @@
 
             <Path
                 Name="polygon6"
-                StrokeThickness="2"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
@@ -1807,7 +1806,8 @@
                 VerticalAlignment="Top"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="2">
                 <Path.Stroke>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -1848,7 +1848,6 @@
 
             <Path
                 Name="polygon5"
-                StrokeThickness="2"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
@@ -1856,7 +1855,8 @@
                 VerticalAlignment="Top"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="2">
                 <Path.Stroke>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -1901,15 +1901,15 @@
         <Grid>
             <Path
                 Name="polygon1"
-                Stroke="#848b98"
-                StrokeThickness="1"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
                 VerticalAlignment="Top"
+                Stroke="#848b98"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -1926,14 +1926,14 @@
 
             <Path
                 Name="polygon2"
-                Stroke="#f6a823"
-                StrokeThickness="1"
                 Width="56"
                 Height="64"
                 Margin="-8,-8,0,0"
+                Stroke="#f6a823"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="1">
                 <Path.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -1979,14 +1979,14 @@
             <Path
                 Name="polygon1"
                 Grid.RowSpan="2"
-                Stroke="#FFFBBF24"
-                StrokeThickness="3"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
+                Stroke="#FFFBBF24"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="3">
                 <Path.Data>
                     <PathGeometry Figures="M 32 15.71 V 9.5 m 0 45 v -6.21 m 11.52 -27.81 l 4.39 -4.39 M 16.09 47.91 l 4.39 -4.39 m 0 -23 l -4.39 -4.39 m 31.82 31.78 l -4.39 -4.39 M 15.71 32 H 9.5 m 45 0 h -6.21" />
                 </Path.Data>
@@ -2012,10 +2012,10 @@
 
             <Ellipse
                 Grid.RowSpan="2"
-                Stroke="#FFFBBF24"
-                StrokeThickness="1"
                 Width="24"
-                Height="24">
+                Height="24"
+                Stroke="#FFFBBF24"
+                StrokeThickness="1">
                 <Ellipse.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -2031,17 +2031,17 @@
 
             <Path
                 Grid.RowSpan="2"
-                Stroke="#eeeeee"
-                StrokeThickness="2"
                 Width="56"
                 Height="56"
                 Margin="0,5,0,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Data="M 12 29 h 11 l 5 4.5 l 5 -4.5 h 11"
+                Stroke="#eeeeee"
                 StrokeEndLineCap="Round"
                 StrokeLineJoin="Round"
-                StrokeStartLineCap="Round" />
+                StrokeStartLineCap="Round"
+                StrokeThickness="2" />
         </Grid>
     </ControlTemplate>
 
@@ -2054,14 +2054,14 @@
             <Path
                 Name="polygon1"
                 Grid.RowSpan="2"
-                Stroke="#FFFBBF24"
-                StrokeThickness="3"
                 Width="56"
                 Height="56"
                 Margin="-8,-8,0,0"
+                Stroke="#FFFBBF24"
                 StrokeEndLineCap="Round"
                 StrokeMiterLimit="10"
-                StrokeStartLineCap="Round">
+                StrokeStartLineCap="Round"
+                StrokeThickness="3">
                 <Path.Data>
                     <PathGeometry Figures="M 32 15.71 V 9.5 m 0 45 v -6.21 m 11.52 -27.81 l 4.39 -4.39 M 16.09 47.91 l 4.39 -4.39 m 0 -23 l -4.39 -4.39 m 31.82 31.78 l -4.39 -4.39 M 15.71 32 H 9.5 m 45 0 h -6.21" />
                 </Path.Data>
@@ -2087,10 +2087,10 @@
 
             <Ellipse
                 Grid.RowSpan="2"
-                Stroke="#FFFBBF24"
-                StrokeThickness="1"
                 Width="24"
-                Height="24">
+                Height="24"
+                Stroke="#FFFBBF24"
+                StrokeThickness="1">
                 <Ellipse.Fill>
                     <LinearGradientBrush>
                         <LinearGradientBrush.GradientStops>
@@ -2106,17 +2106,17 @@
 
             <Path
                 Grid.RowSpan="2"
-                Stroke="#eeeeee"
-                StrokeThickness="2"
                 Width="56"
                 Height="56"
                 Margin="0,5,0,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Data="M 12 29 h 11 l 5 -4.5 l 5 4.5 h 11"
+                Stroke="#eeeeee"
                 StrokeEndLineCap="Round"
                 StrokeLineJoin="Round"
-                StrokeStartLineCap="Round" />
+                StrokeStartLineCap="Round"
+                StrokeThickness="2" />
         </Grid>
     </ControlTemplate>
 
@@ -2125,45 +2125,45 @@
             <Path Data="M 30 0 A 1 1 0 0 0 30 60 A 1 1 0 0 0 30 0" Fill="#61A2EF" />
 
             <Path
-                Stroke="#444444"
-                StrokeThickness="1"
                 Data="M 0.264 25.998 L 5 26 L 9 27 L 12 28 L 13 31 L 15 33 L 16 34 L 16 37 L 14 40 L 12 44 L 12 49 L 10 52 L 9.693 52.058 L 6.58 48.696 L 4.712 46.135 L 3.112 43.2 L 1.582 39.589 L 0.568 35.658 L 0.088 32.118 L 0.07 30.037 L 0.105 28.044 Z"
-                Fill="#4fc497" />
-            <Path
+                Fill="#4fc497"
                 Stroke="#444444"
-                StrokeThickness="1"
+                StrokeThickness="1" />
+            <Path
                 Data="M 59.806 27.006 L 50.986 27.119 L 52.554 29.993 L 52.947 31.316 L 52.804 32.388 L 52.286 32.959 L 51.089 33.067 L 49.713 32.799 L 45.674 30.158 L 42.654 28.459 L 38.765 27.024 L 37.292 22.003 L 33.894 19.775 L 31.591 19.813 L 33.403 22.833 L 31.855 23.891 L 31.063 23.136 L 31.969 22.531 L 30.005 19.888 L 28.042 19.964 L 27.06 21.323 L 26.872 23.438 L 24.568 23.438 L 24.417 20.039 L 25.777 18.869 L 26.419 15.584 L 27.589 14.187 L 29.288 13.281 L 32.422 13.168 L 35.631 12.715 L 38.35 12.677 L 37.594 10.714 L 34.989 11.582 L 33.366 10.751 L 36.122 8.486 L 39.596 7.051 L 41.181 7.353 L 41.521 8.259 L 40.653 10.374 L 44.844 9.619 L 50.545 8.335 L 54.963 13.432 L 57.53 18.567 L 59.002 23.136"
-                Fill="#4fc497" />
-            <Path
+                Fill="#4fc497"
                 Stroke="#444444"
-                StrokeThickness="1"
+                StrokeThickness="1" />
+            <Path
                 Data="M 41.188 46.025 L 41.836 43.641 L 43.16 41.111 L 44.19 41.17 L 43.895 43.082 L 42.601 45.525 L 41.983 46.054 Z"
-                Fill="#4fc497" />
-            <Path
+                Fill="#4fc497"
                 Stroke="#444444"
-                StrokeThickness="1"
+                StrokeThickness="1" />
+            <Path
                 Data=" M 24.353 26.015 L 25.41 25.147 L 28.619 25.033 L 30.847 26.317 L 35.264 26.279 L 37.417 27.412 L 38.776 28.469 L 39.04 30.772 L 41.834 32.207 L 43.042 34.51 L 42.363 38.059 L 38.776 41.533 L 38.398 44.78 L 37.643 50.33 L 33.301 50.33 L 32.47 48.405 L 31.753 42.741 L 30.507 38.06 L 27.147 37.002 L 24.013 35.719 L 22.654 32.056 L 22.654 28.885 Z"
-                Fill="#4fc497" />
-            <Path
+                Fill="#4fc497"
                 Stroke="#444444"
-                StrokeThickness="1"
+                StrokeThickness="1" />
+            <Path
                 Data="M 27.798 11.697 L 27.209 12.844 L 26.031 12.937 L 25.349 12.069 L 25.38 10.984 L 26.062 10.52 L 26.31 8.815 L 26.868 8.505 L 27.736 9.9 Z"
-                Fill="#4fc497" />
-            <Path
+                Fill="#4fc497"
                 Stroke="#444444"
-                StrokeThickness="1"
+                StrokeThickness="1" />
+            <Path
                 Data="M 38.71 1.321 L 36.683 2.028 L 34.543 2.499 L 33.128 2.282 L 30.553 2.862 L 26.78 2.898 L 24.531 2.463 L 22.935 2.282 L 21.303 1.375 L 21.295 1.302 L 22.897 0.861 L 25.425 0.366 L 28.223 0.076 L 29.977 0.027 L 31.413 0.051 L 33.319 0.195 L 34.919 0.429 L 36.442 0.719 Z"
-                Fill="#ffffff" />
-            <Path
+                Fill="#ffffff"
                 Stroke="#444444"
-                StrokeThickness="1"
+                StrokeThickness="1" />
+            <Path
                 Data="M 19.371 58.064 L 22.297 57.338 L 25.864 57.274 L 29.795 57.039 L 33.362 57.402 L 36.865 57.573 L 40.09 58.15 L 36.886 59.175 L 33.148 59.773 L 30.007 59.934 L 27.088 59.817 L 23.884 59.324 Z"
-                Fill="#ffffff" />
+                Fill="#ffffff"
+                Stroke="#444444"
+                StrokeThickness="1" />
 
             <Path
+                Data="M 30 0 A 1 1 0 0 0 30 60 A 1 1 0 0 0 30 0"
                 Stroke="#444444"
-                StrokeThickness="1.5"
-                Data="M 30 0 A 1 1 0 0 0 30 60 A 1 1 0 0 0 30 0" />
+                StrokeThickness="1.5" />
 
         </Grid>
     </ControlTemplate>

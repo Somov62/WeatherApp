@@ -16,36 +16,36 @@
                     RecognizesAccessKey="True"
                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                 <Border
-                    BorderThickness="1"
                     Margin="10,0,0,0"
                     Padding="1"
                     BorderBrush="Gray"
+                    BorderThickness="1"
                     CornerRadius="5">
 
                     <StackPanel Orientation="Horizontal">
                         <Border
                             x:Name="on"
-                            Background="Transparent"
                             Padding="10,5,10,5"
+                            Background="Transparent"
                             CornerRadius="5, 1, 1 , 5">
                             <TextBlock
                                 x:Name="onText"
-                                Text="{TemplateBinding LeftCase}"
-                                Foreground="Black"
                                 HorizontalAlignment="Center"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource MainForeground}"
+                                Text="{TemplateBinding LeftCase}" />
                         </Border>
                         <Border
                             x:Name="off"
-                            Background="Transparent"
                             Padding="10,5,10,5"
+                            Background="Transparent"
                             CornerRadius="1,5,5,1">
                             <TextBlock
                                 x:Name="offText"
-                                Text="{TemplateBinding RightCase}"
-                                Foreground="Black"
                                 HorizontalAlignment="Center"
-                                VerticalAlignment="Center" />
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource MainForeground}"
+                                Text="{TemplateBinding RightCase}" />
                         </Border>
                     </StackPanel>
                 </Border>
@@ -55,14 +55,14 @@
                     <Setter Property="Foreground" Value="#ADADAD" />
                 </Trigger>
                 <Trigger Property="IsChecked" Value="false">
-                    <Setter TargetName="on" Property="Background" Value="Orange" />
-                    <Setter TargetName="onText" Property="Foreground" Value="White" />
-                    <Setter Property="Padding" TargetName="on"  Value="15,5,15,5" />
+                    <Setter TargetName="on" Property="Background" Value="{DynamicResource Accent}" />
+                    <Setter TargetName="onText" Property="Foreground" Value="{DynamicResource PagesTipsForeground}" />
+                    <Setter TargetName="on" Property="Padding" Value="15,5,15,5" />
                 </Trigger>
                 <Trigger Property="IsChecked" Value="true">
-                    <Setter TargetName="off" Property="Background" Value="Orange" />
-                    <Setter TargetName="offText" Property="Foreground" Value="White" />
-                    <Setter Property="Padding" TargetName="off"  Value="15,5,15,5" />
+                    <Setter TargetName="off" Property="Background" Value="{DynamicResource Accent}" />
+                    <Setter TargetName="offText" Property="Foreground" Value="{DynamicResource PagesTipsForeground}" />
+                    <Setter TargetName="off" Property="Padding" Value="15,5,15,5" />
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
