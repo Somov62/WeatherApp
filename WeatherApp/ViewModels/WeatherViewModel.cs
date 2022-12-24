@@ -31,12 +31,6 @@ namespace WeatherApp.ViewModels
             _refreshDataTimer.Elapsed += Timer_Elapsed;
             RefreshDataCommand = new RelayCommand(async (o) => await RefreshData());
             SelectForecastCommand = new RelayCommand((f) => SelectedForecast = f as DayForecastModel);
-
-            //BuildTempGraphCommand = new RelayCommand(a => BuildTempGraph());
-            //BuildPressureGraphCommand = new RelayCommand(a => BuildPressureGraph());
-            //BuildHumidityGraphCommand = new RelayCommand(a => BuildHumidityGraph());
-
-            RefreshDataCommand.Execute(null);
         }
 
         private void Timer_Elapsed(object? sender, System.Timers.ElapsedEventArgs e)
@@ -88,7 +82,7 @@ namespace WeatherApp.ViewModels
             IsRefreshing = true;
             if (ServiceManager.InternetConnectionService.IsConnectionExists)
             {
-                Forecast = await WeatherService.GetWeatherAsync(54.6f, 39.7f)!;
+                Forecast = await WeatherService.GetWeatherAsync(SettingsService.Configuration.SelectedLocation.Latitude, SettingsService.Configuration.SelectedLocation.Longitude, SettingsService.Configuration.SelectedLocation.Name)!;
                 if (Forecast == null)
                 {
                     ErrorReceivingData = true;
@@ -106,7 +100,18 @@ namespace WeatherApp.ViewModels
             IsRefreshing = false;
         }
 
-
+        public override void OnAppearing()
+        {
+            if (Forecast is null)
+            {
+                RefreshDataCommand.Execute(null);
+                return;
+            }
+            if (Forecast.Location.Latitude != SettingsService.Configuration.SelectedLocation.Latitude ||
+                Forecast.Location.Longitude != SettingsService.Configuration.SelectedLocation.Longitude)
+                RefreshDataCommand.Execute(null);
+            base.OnAppearing();
+        }
 
         #region Graphics
 

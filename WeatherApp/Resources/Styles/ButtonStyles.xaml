@@ -17,10 +17,10 @@
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border
                         x:Name="border"
-                        Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}"
                         Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
+                        Width="{Binding ActualHeight, RelativeSource={RelativeSource Mode=Self}}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
                         CornerRadius="90"
                         SnapsToDevicePixels="true">
                         <ContentPresenter
@@ -58,22 +58,22 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
                     <Border
-                        Padding="{TemplateBinding Padding}"
                         Background="{TemplateBinding Background}"
+                        Padding="{TemplateBinding Padding}"
                         CornerRadius="4">
                         <Grid
                             x:Name="Cog"
-                            Margin="{TemplateBinding Padding}"
                             Background="Transparent"
+                            Margin="{TemplateBinding Padding}"
                             SnapsToDevicePixels="True">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="22" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <fa:FontAwesome
-                                VerticalAlignment="Center"
-                                FontSize="24"
                                 Foreground="{DynamicResource MenuBtnForeground}"
+                                FontSize="24"
+                                VerticalAlignment="Center"
                                 Icon="{Binding ContentStringFormat, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
                             <ContentPresenter
                                 x:Name="contentPresenter"
@@ -88,7 +88,6 @@
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="HasContent" Value="true" />
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="Background" Value="{DynamicResource WindowNavBtnBackgroundMouseOver}" />
                         </Trigger>
@@ -117,8 +116,8 @@
                     <Grid Margin="5,0,5,0">
                         <Border
                             Name="shadow"
-                            Margin="0,5"
                             Background="White"
+                            Margin="0,5"
                             CornerRadius="10"
                             Visibility="Hidden">
                             <Border.Effect>
@@ -132,8 +131,8 @@
                         </Border>
                         <Border
                             Name="border"
-                            Margin="0,5"
                             Background="{TemplateBinding Background}"
+                            Margin="0,5"
                             CornerRadius="10">
                             <ContentPresenter
                                 x:Name="contentPresenter"
@@ -183,8 +182,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
                     <Border
-                        Margin="{TemplateBinding Margin}"
                         Background="{TemplateBinding Background}"
+                        Margin="{TemplateBinding Margin}"
                         CornerRadius="4">
                         <ContentPresenter
                             x:Name="contentPresenter"

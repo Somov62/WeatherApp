@@ -17,7 +17,7 @@
                 Background="{TemplateBinding Background}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 Padding="20,10"
-                BorderBrush="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
                 CornerRadius="{TemplateBinding CornerRadius}"
                 SnapsToDevicePixels="True">
                 <Grid>

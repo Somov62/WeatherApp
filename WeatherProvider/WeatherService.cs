@@ -27,12 +27,14 @@ namespace WeatherProvider
         };
         
 
-        public static async Task<WeatherForecast>? GetWeatherAsync(float latitude, float longitude)
+        public static async Task<WeatherForecast>? GetWeatherAsync(float latitude, float longitude, string name = null)
         {
             //check cache
             try
             {
-                return await _weatherProvider.GetWeatherAsync(latitude, longitude, MeasureConfiguration);
+                var model = await _weatherProvider.GetWeatherAsync(latitude, longitude, MeasureConfiguration);
+                model.Location.Name = name;
+                return model;
             }
             catch (Exception)
             {

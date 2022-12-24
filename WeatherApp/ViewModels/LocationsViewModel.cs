@@ -1,18 +1,21 @@
 ﻿using GeoCoder;
 using GeoCoder.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using WeatherApp.Mvvm;
+using WeatherApp.Services;
 
 namespace WeatherApp.ViewModels
 {
     class LocationsViewModel : Base.BaseViewModel
     {
+        public RelayCommand SelectLocationCommand { get; }
+
         public LocationsViewModel()
         {
             Title = App.Current.Resources["LocationsPageTitle"].ToString();
+            SelectLocationCommand = new RelayCommand((location) => SelectedLocation = location as GeoLocation);
         }
 
         private string _locationSearch;
@@ -20,7 +23,7 @@ namespace WeatherApp.ViewModels
         public string LocationSearch
         {
             get => _locationSearch;
-            set 
+            set
             {
                 Set(ref _locationSearch, value, nameof(LocationSearch));
                 if (string.IsNullOrEmpty(value))
@@ -32,8 +35,6 @@ namespace WeatherApp.ViewModels
             }
         }
 
-
-
         private List<GeoLocation> _searchResults;
 
         public List<GeoLocation> SearchResults
@@ -42,7 +43,24 @@ namespace WeatherApp.ViewModels
             set => Set(ref _searchResults, value, nameof(SearchResults));
         }
 
-        
+        public ObservableCollection<GeoLocation> FavouritLocations => SettingsService.Configuration.FavouritLocations;
+
+        public GeoLocation SelectedLocation
+        {
+            get => SettingsService.Configuration.SelectedLocation;
+            set
+            {
+                SearchResults = null!;
+                if (value is not null)
+                {
+                    SettingsService.Configuration.SelectedLocation = value;
+                    if (!FavouritLocations.Contains(value)) FavouritLocations.Add(value);
+                }
+
+                OnPropertyChanged(nameof(SelectedLocation));
+            }
+        }
+
 
     }
 }

@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:WeatherApp.Resources.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
     xmlns:local="clr-namespace:WeatherApp.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Background="Transparent"
@@ -12,76 +13,224 @@
     mc:Ignorable="d">
 
     <Grid>
-        <StackPanel>
-            <controls:CustomTextBox
-                Text="{Binding LocationSearch, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                CornerRadius="20"
-                PlaceHolder="Найти любую точку на планете"
-                PlaceHolderColor="Gray"
-                Style="{DynamicResource SearchTextBoxStyle}" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Hidden">
+            <StackPanel Margin="0,0,5,0">
+                <controls:CustomTextBox
+                    Text="{Binding LocationSearch, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    CornerRadius="20"
+                    BorderBrush="{DynamicResource PageBackground2}"
+                    PlaceHolder="Найти любую точку на планете"
+                    PlaceHolderColor="Gray" />
 
-            <Border
-                Margin="0,10"
-                Padding="5"
-                CornerRadius="10">
-                <ListView
-                    Name="listview"
-                    ItemsSource="{Binding SearchResults}"
-                    Background="Transparent"
+                <Border
+                    Margin="0,10"
+                    Padding="5"
+                    CornerRadius="10">
+                    <ListView
+                        ItemsSource="{Binding SearchResults}"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        MaxHeight="450"
+                        HorizontalContentAlignment="Stretch"
+                        ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                        ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                        SelectedItem="{Binding SelectedLocation}">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                            <Border
+                                                Name="border"
+                                                Background="{DynamicResource WindowNavBtnBackground}"
+                                                Padding="5"
+                                                CornerRadius="10">
+                                                <ContentPresenter TextBlock.FontSize="25" />
+                                            </Border>
+
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowNavBtnBackgroundMouseOver}" />
+                                                </Trigger>
+                                                <Trigger Property="IsSelected" Value="true">
+                                                    <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowNavBtnBackgroundPressed}" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+
+                                    <TextBlock Text="{Binding Name}" />
+                                    <TextBlock Text="{Binding Description, StringFormat=' - {0}'}" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Setter Property="Background" Value="{DynamicResource WindowNavBtnBackground}" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding SearchResults}" Value="{x:Null}">
+                                    <Setter Property="Background" Value="Transparent" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                </Border>
+
+
+
+                <TextBlock
+                    Text="{DynamicResource SelectLocation}"
+                    Foreground="{DynamicResource PagesTipsForeground}"
+                    FontSize="40" />
+
+                <Grid>
+
+                    <Border
+                        Background="White"
+                        Margin="0,5,0,0"
+                        CornerRadius="10">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="5" Opacity="0.5" />
+                        </Border.Effect>
+                    </Border>
+                    <Border
+                        Background="{DynamicResource WindowNavBtnBackground}"
+                        Margin="0,5,0,0"
+                        Padding="15,10"
+                        CornerRadius="10">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:FontAwesome
+                                Foreground="{DynamicResource MapIconForeground}"
+                                FontSize="30"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Icon="MapMarker" />
+                            <TextBlock
+                                Text="{Binding SelectedLocation.Name}"
+                                Foreground="{DynamicResource MainForeground}"
+                                FontSize="35"
+                                Margin="20,0,0,0"
+                                VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <TextBlock
+                    Text="{DynamicResource FavouritLocations}"
+                    Foreground="{DynamicResource PagesTipsForeground}"
+                    FontSize="40"
+                    Margin="0,30,0,0" />
+
+                <ItemsControl
+                    Name="items"
+                    ItemsSource="{Binding FavouritLocations, UpdateSourceTrigger=PropertyChanged}"
                     BorderThickness="0"
                     MaxHeight="450"
                     HorizontalContentAlignment="Stretch"
                     ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
-                                        <Border
-                                            Name="border"
-                                            Background="{DynamicResource WindowNavBtnBackground}"
-                                            Padding="5"
-                                            CornerRadius="10">
-                                            <ContentPresenter TextBlock.FontSize="25" />
-                                        </Border>
 
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="true">
-                                                <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowNavBtnBackgroundMouseOver}" />
-                                            </Trigger>
-                                            <Trigger Property="IsSelected" Value="true">
-                                                <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowNavBtnBackgroundPressed}" />
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </ListView.ItemContainerStyle>
-
-                    <ListView.ItemTemplate>
+                    <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
 
-                                <TextBlock Text="{Binding Name}" />
-                                <TextBlock Text="{Binding Description, StringFormat=' - {0}'}" />
-                            </StackPanel>
+                            <Grid>
+
+                                <Border
+                                    Background="White"
+                                    Margin="0,5"
+                                    CornerRadius="12">
+                                    <Border.Effect>
+                                        <DropShadowEffect BlurRadius="5" Opacity="0.5" />
+                                    </Border.Effect>
+                                </Border>
+                                <Border
+                                    Name="border"
+                                    Background="{DynamicResource WindowNavBtnBackground}"
+                                    Margin="0,5"
+                                    Padding="20,10"
+                                    CornerRadius="12"
+                                    TextBlock.FontSize="35">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition Width="auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock DockPanel.Dock="Left" TextWrapping="Wrap">
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0} - {1}">
+                                                    <Binding Path="Name" />
+                                                    <Binding Path="Description" />
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                        <Button
+                                            Grid.Column="1"
+                                            Margin="5,0,0,0"
+                                            Command="{Binding DataContext.SelectLocationCommand, ElementName=items}"
+                                            CommandParameter="{Binding}"
+                                            Content="Выбрать">
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                                <Border
+                                                                    Name="border"
+                                                                    Background="{DynamicResource WindowNavBtnBackground}"
+                                                                    BorderThickness="2"
+                                                                    Padding="10,5"
+                                                                    HorizontalAlignment="Right"
+                                                                    VerticalAlignment="Center"
+                                                                    BorderBrush="{DynamicResource PrimaryAccent}"
+                                                                    CornerRadius="10"
+                                                                    TextBlock.FontSize="28"
+                                                                    TextBlock.FontWeight="Normal"
+                                                                    TextBlock.Foreground="{DynamicResource PrimaryAccent}">
+                                                                    <ContentPresenter />
+                                                                </Border>
+                                                                <ControlTemplate.Triggers>
+                                                                    <Trigger Property="IsMouseOver" Value="true">
+                                                                        <Setter TargetName="border" Property="Background" Value="{DynamicResource PageBackground}" />
+                                                                        <Setter TargetName="border" Property="TextBlock.Foreground" Value="{DynamicResource PagesTipsForeground}" />
+                                                                        <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource WindowNavBtnBackground}" />
+                                                                    </Trigger>
+                                                                    <Trigger Property="IsPressed" Value="True">
+                                                                        <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource WindowNavBtnBackgroundMouseOver}" />
+
+                                                                    </Trigger>
+                                                                </ControlTemplate.Triggers>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </Button.Style>
+                                        </Button>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <DataTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowNavBtnBackgroundMouseOver}" />
+                                </Trigger>
+                            </DataTemplate.Triggers>
                         </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
 
-                <Border.Style>
-                    <Style TargetType="Border">
-                        <Setter Property="Background" Value="{DynamicResource WindowNavBtnBackground}" />
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding SearchResults}" Value="{x:Null}">
-                                <Setter Property="Background" Value="Transparent" />
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Border.Style>
-            </Border>
-
-        </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

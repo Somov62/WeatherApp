@@ -11,6 +11,8 @@
     <v:String x:Key="MainPageTitle">BeautifulWeather</v:String>
     <v:String x:Key="OnlineTip">онлайн</v:String>
     <v:String x:Key="OfflineTip">не в сети</v:String>
+    <v:String x:Key="SelectLocation">Выбранное место:</v:String>
+    <v:String x:Key="FavouritLocations">Избранные места:</v:String>
 
 
 

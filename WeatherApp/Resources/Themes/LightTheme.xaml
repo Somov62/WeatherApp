@@ -15,6 +15,7 @@
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
     <SolidColorBrush x:Key="Accent" Color="#FF9926" />
+    <SolidColorBrush x:Key="PrimaryAccent" Color="#FF5F6D" />
     <SolidColorBrush x:Key="MainForeground" Color="#000000" />
 
     <SolidColorBrush x:Key="WindowNavBtnForeground" Color="Black" />
@@ -31,10 +32,10 @@
 
     <SolidColorBrush x:Key="PagesTipsForeground" Color="White" />
     <SolidColorBrush x:Key="SpacePanelForeground" Color="White" />
+    <SolidColorBrush x:Key="CaretBrush" Color="#FF5F6D" />
 
     <SolidColorBrush x:Key="WeekendHighlight" Color="#FF3333" />
     <SolidColorBrush x:Key="WindArrowColor" Color="Gray" />
-    <SolidColorBrush x:Key="CaretBrush" Color="#FF5F6D" />
 
     <LinearGradientBrush x:Key="BackgroundGradient" SpreadMethod="Repeat" StartPoint="0, 0" EndPoint="0, 1">
         <LinearGradientBrush.GradientStops>
