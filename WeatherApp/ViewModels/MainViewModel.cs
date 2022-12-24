@@ -8,8 +8,6 @@ namespace WeatherApp.ViewModels
         private WeatherViewModel _weatherPage;
         private LocationsViewModel _locationsPage;
 
-
-
         public MainViewModel()
         {
             NavigationService.ViewChanged += ViewChanged;

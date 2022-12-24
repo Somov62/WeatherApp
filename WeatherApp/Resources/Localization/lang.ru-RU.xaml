@@ -4,6 +4,16 @@
     xmlns:v="clr-namespace:System;assembly=mscorlib">
     <v:String x:Key="lang">ru-Ru</v:String>
 
+
+
+    <v:String x:Key="LocationsPageTitle">Места</v:String>
+    <v:String x:Key="WeatherPageTitle">Главная</v:String>
+    <v:String x:Key="MainPageTitle">BeautifulWeather</v:String>
+    <v:String x:Key="OnlineTip">онлайн</v:String>
+    <v:String x:Key="OfflineTip">не в сети</v:String>
+
+
+
     <!--  Расшифровка кодов погоды  -->
     <v:String x:Key="NoData">Нет данных</v:String>
 

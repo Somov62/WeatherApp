@@ -27,7 +27,7 @@ namespace WeatherApp.ViewModels
 
         public WeatherViewModel()
         {
-            Title = "Главная";
+            Title = App.Current.Resources["WeatherPageTitle"].ToString();
             _refreshDataTimer.Elapsed += Timer_Elapsed;
             RefreshDataCommand = new RelayCommand(async (o) => await RefreshData());
             SelectForecastCommand = new RelayCommand((f) => SelectedForecast = f as DayForecastModel);

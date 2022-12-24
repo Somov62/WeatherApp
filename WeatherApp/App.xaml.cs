@@ -16,6 +16,7 @@ namespace WeatherApp
             WeatherService.MeasureConfiguration.Windspeed = WindSpeed.Ms;
             WeatherService.MeasureConfiguration.Pressure = PressureMeasure.MmHg;
             ServiceManager.InternetConnectionService.HostName = WeatherService.ProviderDomain;
+            System.Console.WriteLine();
         }
 
     }

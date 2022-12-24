@@ -8,17 +8,80 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Background="Transparent"
     FontFamily="pack://application:,,,/Resources/Font/#Klukva"
-    mc:Ignorable="d"
-    MouseDown="Page_MouseDown">
+    MouseDown="Page_MouseDown"
+    mc:Ignorable="d">
 
     <Grid>
         <StackPanel>
             <controls:CustomTextBox
-                Text=""
+                Text="{Binding LocationSearch, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 CornerRadius="20"
                 PlaceHolder="Найти любую точку на планете"
                 PlaceHolderColor="Gray"
                 Style="{DynamicResource SearchTextBoxStyle}" />
+
+            <Border
+                Margin="0,10"
+                Padding="5"
+                CornerRadius="10">
+                <ListView
+                    Name="listview"
+                    ItemsSource="{Binding SearchResults}"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    MaxHeight="450"
+                    HorizontalContentAlignment="Stretch"
+                    ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                        <Border
+                                            Name="border"
+                                            Background="{DynamicResource WindowNavBtnBackground}"
+                                            Padding="5"
+                                            CornerRadius="10">
+                                            <ContentPresenter TextBlock.FontSize="25" />
+                                        </Border>
+
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowNavBtnBackgroundMouseOver}" />
+                                            </Trigger>
+                                            <Trigger Property="IsSelected" Value="true">
+                                                <Setter TargetName="border" Property="Background" Value="{DynamicResource WindowNavBtnBackgroundPressed}" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock Text="{Binding Name}" />
+                                <TextBlock Text="{Binding Description, StringFormat=' - {0}'}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="Background" Value="{DynamicResource WindowNavBtnBackground}" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding SearchResults}" Value="{x:Null}">
+                                <Setter Property="Background" Value="Transparent" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+            </Border>
+
         </StackPanel>
     </Grid>
 </Page>

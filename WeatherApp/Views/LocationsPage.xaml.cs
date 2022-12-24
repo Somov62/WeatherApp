@@ -23,6 +23,7 @@ namespace WeatherApp.Views
         public LocationsPage()
         {
             InitializeComponent();
+
         }
 
         private void Page_MouseDown(object sender, MouseButtonEventArgs e)

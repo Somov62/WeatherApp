@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApp", "WeatherApp\We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenMeteo", "OpenMeteo\OpenMeteo.csproj", "{4CE026F4-5F72-459C-976A-04592E2B6DFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherProvider", "WeatherProvider\WeatherProvider.csproj", "{1587CB04-150D-4A26-85D8-500784A80BFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherProvider", "WeatherProvider\WeatherProvider.csproj", "{1587CB04-150D-4A26-85D8-500784A80BFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{D33D2F4E-0AA0-4DBE-BEC1-C00C9FFE60A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{D33D2F4E-0AA0-4DBE-BEC1-C00C9FFE60A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{65F14271-2323-4251-86C4-FFC6019A03A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{65F14271-2323-4251-86C4-FFC6019A03A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoCoder", "GeoCoder\GeoCoder.csproj", "{47993896-1B8D-4C7B-A0D3-C4E01D3A3319}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{65F14271-2323-4251-86C4-FFC6019A03A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65F14271-2323-4251-86C4-FFC6019A03A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65F14271-2323-4251-86C4-FFC6019A03A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47993896-1B8D-4C7B-A0D3-C4E01D3A3319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47993896-1B8D-4C7B-A0D3-C4E01D3A3319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47993896-1B8D-4C7B-A0D3-C4E01D3A3319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47993896-1B8D-4C7B-A0D3-C4E01D3A3319}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
