@@ -214,31 +214,28 @@
                 <DockPanel>
                     <RadioButton
                         Command="{Binding ToWeatherPageCommand}"
-                        Content="Главная"
+                        Content="{DynamicResource WeatherPageTitle}"
                         ContentStringFormat="Home"
                         DockPanel.Dock="Top"
+                        IsChecked="True"
                         Style="{DynamicResource MenuRadioButtonStyle}" />
                     <RadioButton
                         Command="{Binding ToLocationsPageCommand}"
-                        Content="Места"
+                        Content="{DynamicResource LocationsPageTitle}"
                         ContentStringFormat="MapMarker"
-                        DockPanel.Dock="Top"
-                        Style="{DynamicResource MenuRadioButtonStyle}" />
-                    <RadioButton
-                        Content="sdfaf"
-                        ContentStringFormat="Home"
                         DockPanel.Dock="Top"
                         Style="{DynamicResource MenuRadioButtonStyle}" />
                     <RadioButton
                         Margin="0"
                         VerticalAlignment="Bottom"
-                        Content="Выход"
+                        Content="{DynamicResource Exit}"
                         ContentStringFormat="PowerOff"
                         DockPanel.Dock="Bottom"
                         Style="{DynamicResource MenuRadioButtonStyle}" />
                     <RadioButton
                         VerticalAlignment="Bottom"
-                        Content="Настройки"
+                        Command="{Binding ToSettingsPageCommand}"
+                        Content="{DynamicResource SettingsPageTitle}"
                         ContentStringFormat="Cog"
                         DockPanel.Dock="Bottom"
                         Style="{DynamicResource MenuRadioButtonStyle}" />

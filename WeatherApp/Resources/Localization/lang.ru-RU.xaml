@@ -5,16 +5,48 @@
     <v:String x:Key="lang">ru-Ru</v:String>
 
 
-
-    <v:String x:Key="LocationsPageTitle">Места</v:String>
-    <v:String x:Key="WeatherPageTitle">Главная</v:String>
+    <!--  Главная страница  -->
     <v:String x:Key="MainPageTitle">BeautifulWeather</v:String>
+    <v:String x:Key="WeatherPageTitle">Главная</v:String>
+    <v:String x:Key="LocationsPageTitle">Места</v:String>
+    <v:String x:Key="SettingsPageTitle">Настройки</v:String>
+    <v:String x:Key="Exit">Выход</v:String>
     <v:String x:Key="OnlineTip">онлайн</v:String>
     <v:String x:Key="OfflineTip">не в сети</v:String>
+
+    <!--  Страница погоды  -->
+    <v:String x:Key="RefreshDataError">Невозможно обновить данные</v:String>
+    <v:String x:Key="DateHeader">Прогноз погоды</v:String>
+    <v:String x:Key="NightTemperature">Ночью</v:String>
+    <v:String x:Key="WindGusts">Порывы до</v:String>
+    <v:String x:Key="HourlyForecast">Прогноз на каждый час</v:String>
+    <v:String x:Key="Time">Время</v:String>
+    <v:String x:Key="ApparentTemperature">Ощущается</v:String>
+    <v:String x:Key="Wind">Ветер</v:String>
+    <v:String x:Key="Hours">ч</v:String>
+    <v:String x:Key="Minutes">м</v:String>
+    <v:String x:Key="MoonPhazes">Фаза</v:String>
+    <v:String x:Key="Temp">Температура</v:String>
+    <v:String x:Key="Pressure">Давление</v:String>
+    <v:String x:Key="Precipitation">Влажность</v:String>
+    <v:String x:Key="Day">День</v:String>
+    <v:String x:Key="Week">Неделя</v:String>
+
+    <!--  Страница мест  -->
     <v:String x:Key="SelectLocation">Выбранное место:</v:String>
     <v:String x:Key="FavouritLocations">Избранные места:</v:String>
+    <v:String x:Key="SearchPlaceHolder">Найти любую точку на планете</v:String>
 
-
+    <!--  Страница Настроек  -->
+    <v:String x:Key="General">Основные</v:String>
+    <v:String x:Key="About">О приложениии</v:String>
+    <v:String x:Key="TempSetting">Единицы измерения температуры</v:String>
+    <v:String x:Key="PressureSetting">Единицы измерения давления</v:String>
+    <v:String x:Key="PrecipitationSetting">Единицы измерения выпавших осадков</v:String>
+    <v:String x:Key="WindSetting">Единицы измерения скорости ветра</v:String>
+    <v:String x:Key="Version">Версия 1.0</v:String>
+    <v:String x:Key="SourceCode">Исходный код -</v:String>
+    <v:String x:Key="Font">Шрифт</v:String>
 
     <!--  Расшифровка кодов погоды  -->
     <v:String x:Key="NoData">Нет данных</v:String>
@@ -82,8 +114,9 @@
 
     <v:String x:Key="Mm">мм</v:String>
     <v:String x:Key="Cm">см</v:String>
+    <v:String x:Key="Inch">дюйм</v:String>
 
-    <v:String x:Key="Hpa">гПа</v:String>
+    <v:String x:Key="HPa">гПа</v:String>
     <v:String x:Key="MmHg">мм рт. ст.</v:String>
     <v:String x:Key="RelativeHumidity">Влажность</v:String>
 

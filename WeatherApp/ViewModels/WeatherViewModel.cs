@@ -5,10 +5,8 @@ using Models;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Media;
 using WeatherApp.Mvvm;
 using WeatherApp.Services;
 using WeatherProvider;
@@ -109,7 +107,17 @@ namespace WeatherApp.ViewModels
             }
             if (Forecast.Location.Latitude != SettingsService.Configuration.SelectedLocation.Latitude ||
                 Forecast.Location.Longitude != SettingsService.Configuration.SelectedLocation.Longitude)
+            {
                 RefreshDataCommand.Execute(null);
+                return;
+            }
+
+            if (Forecast.Measures.PrecipitationSum != SettingsService.Configuration.Lenght ||
+                Forecast.Measures.Temperature != SettingsService.Configuration.Temperature ||
+                Forecast.Measures.Windspeed != SettingsService.Configuration.Wind ||
+                Forecast.Measures.Pressure != SettingsService.Configuration.Pressure)
+                RefreshDataCommand.Execute(null);
+
             base.OnAppearing();
         }
 
@@ -156,6 +164,8 @@ namespace WeatherApp.ViewModels
             set
             {
                 Set(ref _isWeekTimeSelected, value, nameof(IsWeekTimeSelected));
+                IsTempChecked = true;
+                if (Forecast is null) return;
                 if (value)
                 {
                     AxisX = new List<Axis>() { new Axis { Labels = Forecast.DayForecasts.Select(p => p.Date.ToString("dd.MM")).ToList() } };
@@ -164,7 +174,6 @@ namespace WeatherApp.ViewModels
                 {
                     AxisX = new List<Axis>() { new Axis { Labels = SelectedForecast.HourlyForecasts.Select(p => p.Time.ToString("t")).ToList() } };
                 }
-                IsTempChecked = true;
             }
         }
 
@@ -186,6 +195,8 @@ namespace WeatherApp.ViewModels
 
         private void BuildTempGraph()
         {
+            if (Forecast is null) return;
+
             var series = new LineSeries<double>
             {
                 Name = App.Current.Resources[Forecast.Measures.Temperature.ToString()].ToString(),
@@ -229,6 +240,8 @@ namespace WeatherApp.ViewModels
 
         private void BuildPressureGraph()
         {
+            if (Forecast is null) return;
+
             var series = new LineSeries<double>
             {
                 Name = App.Current.Resources[Forecast.Measures.Pressure.ToString()].ToString(),
@@ -256,6 +269,8 @@ namespace WeatherApp.ViewModels
 
         private void BuildHumidityGraph()
         {
+            if (Forecast is null) return;
+
             var series = new LineSeries<double>
             {
                 Name = App.Current.Resources["RelativeHumidity"].ToString() + " %",

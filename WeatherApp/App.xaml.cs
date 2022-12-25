@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using WeatherApp.Services;
 using WeatherProvider;
-using Models;
 
 namespace WeatherApp
 {
@@ -13,8 +12,10 @@ namespace WeatherApp
         public App()
         {
             WeatherService.UseOpenMeteo();
-            WeatherService.MeasureConfiguration.Windspeed = WindSpeed.Ms;
-            WeatherService.MeasureConfiguration.Pressure = PressureMeasure.MmHg;
+            WeatherService.MeasureConfiguration.Windspeed = SettingsService.Configuration.Wind;
+            WeatherService.MeasureConfiguration.Pressure = SettingsService.Configuration.Pressure;
+            WeatherService.MeasureConfiguration.PrecipitationSum = SettingsService.Configuration.Lenght;
+            WeatherService.MeasureConfiguration.Temperature = SettingsService.Configuration.Temperature;
             ServiceManager.InternetConnectionService.HostName = WeatherService.ProviderDomain;
         }
 

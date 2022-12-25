@@ -22,7 +22,7 @@
     <SolidColorBrush x:Key="WindowNavBtnBackground" Color="White" />
     <SolidColorBrush x:Key="WindowNavBtnBackgroundMouseOver" Color="#dddddd" />
     <SolidColorBrush x:Key="WindowNavBtnBackgroundPressed" Color="#bbbbbb" />
-    <Color x:Key="WindowNavOpenBorderBrush">Orange</Color>
+    <Color x:Key="WindowNavOpenBorderBrush">#FF9926</Color>
     <Color x:Key="WindowNavBorderBrush">White</Color>
 
     <SolidColorBrush x:Key="MenuBtnForeground" Color="#222222" />

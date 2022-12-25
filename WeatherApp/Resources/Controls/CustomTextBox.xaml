@@ -5,8 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:WeatherApp.Resources.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    FontSize="32"
     BorderThickness="3"
+    FontSize="32"
     CaretBrush="{DynamicResource CaretBrush}"
     SelectionBrush="{DynamicResource PageBackground2}"
     mc:Ignorable="d">

@@ -37,5 +37,35 @@ namespace WeatherApp.Views
                 }                
             }
         }
+
+        private void ScrollToLeft_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            selectForecastScroll.LineLeft();
+            selectForecastScroll.LineLeft();
+            selectForecastScroll.LineLeft();
+            selectForecastScroll.LineLeft();
+            selectForecastScroll.LineLeft();
+            selectForecastScroll.LineLeft();
+            selectForecastScroll.LineLeft();
+            selectForecastScroll.LineLeft();
+            selectForecastScroll.LineLeft();
+            selectForecastScroll.LineLeft();
+            selectForecastScroll.LineLeft();
+        }
+
+        private void ScrollToRight_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            selectForecastScroll.LineRight();
+            selectForecastScroll.LineRight();
+            selectForecastScroll.LineRight();
+            selectForecastScroll.LineRight();
+            selectForecastScroll.LineRight();
+            selectForecastScroll.LineRight();
+            selectForecastScroll.LineRight();
+            selectForecastScroll.LineRight();
+            selectForecastScroll.LineRight();
+            selectForecastScroll.LineRight();
+            selectForecastScroll.LineRight();
+        }
     }
 }

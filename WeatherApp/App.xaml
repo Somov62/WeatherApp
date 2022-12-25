@@ -11,7 +11,6 @@
                 <ResourceDictionary Source="Resources/Localization/lang.ru-RU.xaml" />
                 <ResourceDictionary Source="Resources/Themes/LightTheme.xaml" />
                 <ResourceDictionary Source="Resources/Styles/ButtonStyles.xaml" />
-                <ResourceDictionary Source="Resources/Styles/TextBoxStyles.xaml" />
                 <ResourceDictionary Source="Resources/Icons/WeatherIcons.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
@@ -23,7 +22,9 @@
                 <views:LocationsPage />
             </DataTemplate>
 
-
+            <DataTemplate DataType="{x:Type viewmodels:SettingsViewModel}">
+                <views:SettingsPage />
+            </DataTemplate>
 
         </ResourceDictionary>
     </Application.Resources>

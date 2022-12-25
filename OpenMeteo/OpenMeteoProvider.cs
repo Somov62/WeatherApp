@@ -44,24 +44,33 @@ namespace OpenMeteo
                 return null!;
             }
 
-            return ToUserModel(response!, measures);
+            return ToUserModel(response!, measures, latitude, longitude);
         }
 
-        private WeatherForecast ToUserModel(DailyApiResponse apiModel, ForecastMeasuresModel measures)
+        private WeatherForecast ToUserModel(DailyApiResponse apiModel, ForecastMeasuresModel measures, float latitude, float longitude)
         {
             WeatherForecast userModel = new ();
 
             userModel.Location = new()
             {
-                Latitude = apiModel.Latitude,
-                Longitude = apiModel.Longitude,
+                Latitude = latitude,
+                Longitude = longitude,
                 Elevation = apiModel.Elevation,
                 Timezone = apiModel.Timezone,
                 TimezoneAbbreviation = apiModel.Timezone_abbreviation,
                 UtcOffsetSeconds = apiModel.Utc_offset_seconds,
             };
 
-            userModel.Measures = measures;
+            userModel.Measures = new ForecastMeasuresModel()
+            {
+                PrecipitationSum = measures.PrecipitationSum,
+                Pressure = measures.Pressure,
+                Rain = measures.Rain,
+                Showers = measures.Showers,
+                Snowfall = measures.Snowfall,
+                Temperature = measures.Temperature,
+                Windspeed = measures.Windspeed
+            };
 
             int hoursCounter = 0;
             for (int i = 0; i < apiModel?.Daily?.Time?.Count; i++)

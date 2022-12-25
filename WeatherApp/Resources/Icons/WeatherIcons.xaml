@@ -304,22 +304,27 @@
                 <Path.Data>
                     <PathGeometry Figures="M 43.64 20 a 5 5 0 1 1 3.61 8.46 h -35.5" />
                 </Path.Data>
-                <Path.Triggers>
-                    <EventTrigger RoutedEvent="Loaded">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation
-                                    RepeatBehavior="Forever"
-                                    SpeedRatio="1"
-                                    Storyboard.TargetName="polygon1"
-                                    Storyboard.TargetProperty="StrokeDashOffset"
-                                    From="-5"
-                                    To="17"
-                                    Duration="0:0:1.3" />
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Path.Triggers>
+                <Path.Style>
+                    <Style TargetType="Path">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="true">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                RepeatBehavior="Forever"
+                                                SpeedRatio="1"
+                                                Storyboard.TargetProperty="StrokeDashOffset"
+                                                From="-5"
+                                                To="17"
+                                                Duration="0:0:1.3" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Path.Style>
             </Path>
             <Path
                 Name="polygon2"
@@ -344,22 +349,27 @@
                 <Path.Data>
                     <PathGeometry Figures="M 29.14 44 a 5 5 0 1 0 3.61 -8.46 h -21" />
                 </Path.Data>
-                <Path.Triggers>
-                    <EventTrigger RoutedEvent="Loaded">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation
-                                    BeginTime="-0:0:0.7"
-                                    RepeatBehavior="Forever"
-                                    Storyboard.TargetName="polygon2"
-                                    Storyboard.TargetProperty="StrokeDashOffset"
-                                    From="-5"
-                                    To="17"
-                                    Duration="0:0:1.3" />
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Path.Triggers>
+                <Path.Style>
+                    <Style TargetType="Path">
+                        <Style.Triggers>
+                            <Trigger Property="IsEnabled" Value="true">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                BeginTime="-0:0:0.7"
+                                                RepeatBehavior="Forever"
+                                                Storyboard.TargetProperty="StrokeDashOffset"
+                                                From="-5"
+                                                To="17"
+                                                Duration="0:0:1.3" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Path.Style>
             </Path>
         </Grid>
     </ControlTemplate>

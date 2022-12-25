@@ -11,11 +11,17 @@ namespace WeatherApp.ViewModels
     class LocationsViewModel : Base.BaseViewModel
     {
         public RelayCommand SelectLocationCommand { get; }
+        public RelayCommand DeleteLocationCommand { get; }
 
         public LocationsViewModel()
         {
             Title = App.Current.Resources["LocationsPageTitle"].ToString();
             SelectLocationCommand = new RelayCommand((location) => SelectedLocation = location as GeoLocation);
+            DeleteLocationCommand = new RelayCommand((location) =>
+            {
+                if (FavouritLocations.Count > 1)
+                    FavouritLocations.Remove(location as GeoLocation);
+            });
         }
 
         private string _locationSearch;

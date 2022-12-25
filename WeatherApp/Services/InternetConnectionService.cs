@@ -30,14 +30,11 @@ namespace WeatherApp.Services
             }
         }
 
-
-
         public bool AutoCheck
         {
             get => _timer.Enabled;
             set => _timer.Enabled = value;
         }
-
 
         private System.Timers.Timer _timer = new System.Timers.Timer();
 
@@ -59,8 +56,13 @@ namespace WeatherApp.Services
         {
             if (string.IsNullOrEmpty(HostName)) return false;
             Ping ping = new Ping();
-            var response = await ping.SendPingAsync(HostName, 3000);
-            bool connection = response.Status == IPStatus.Success;
+            bool connection = false;
+            try
+            {
+                var response = await ping.SendPingAsync(HostName, 3000);
+                connection = response.Status == IPStatus.Success;
+            }
+            catch { }
             if (connection != _connection) IsConnectionExists = connection;
             return connection;
         }
@@ -68,9 +70,5 @@ namespace WeatherApp.Services
         public delegate void InternetConnactionChangedHandler(bool actualConnction);
 
         public event InternetConnactionChangedHandler ConnectionChanged = null!;
-
-
-
-
     }
 }

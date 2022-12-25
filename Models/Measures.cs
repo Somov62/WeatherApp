@@ -61,7 +61,8 @@ namespace Models
     public enum LenghtMeasure
     {
         Mm,
-        Cm
+        Cm,
+        Inch
     }
 
     public enum PressureMeasure
