@@ -11,6 +11,7 @@ namespace WeatherApp
     {
         public App()
         {
+            InitializeComponent();
             WeatherService.UseOpenMeteo();
             WeatherService.MeasureConfiguration.Windspeed = SettingsService.Configuration.Wind;
             WeatherService.MeasureConfiguration.Pressure = SettingsService.Configuration.Pressure;

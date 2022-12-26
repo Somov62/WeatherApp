@@ -1,0 +1,137 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <v:String x:Key="lang">en-US</v:String>
+
+
+    <!--  Главная страница  -->
+    <v:String x:Key="MainPageTitle">BeautifulWeather</v:String>
+    <v:String x:Key="WeatherPageTitle">Weather</v:String>
+    <v:String x:Key="LocationsPageTitle">Locations</v:String>
+    <v:String x:Key="SettingsPageTitle">Settings</v:String>
+    <v:String x:Key="Exit">Exit</v:String>
+    <v:String x:Key="OnlineTip">online</v:String>
+    <v:String x:Key="OfflineTip">offline</v:String>
+
+    <!--  Страница погоды  -->
+    <v:String x:Key="RefreshDataError">data update error</v:String>
+    <v:String x:Key="DateHeader">Weather forecast</v:String>
+    <v:String x:Key="NightTemperature">Night</v:String>
+    <v:String x:Key="WindGusts">Gusts up to</v:String>
+    <v:String x:Key="HourlyForecast">Hourly Forecast</v:String>
+    <v:String x:Key="Time">Time</v:String>
+    <v:String x:Key="ApparentTemperature">Apparent</v:String>
+    <v:String x:Key="Wind">Wind</v:String>
+    <v:String x:Key="Hours">h</v:String>
+    <v:String x:Key="Minutes">m</v:String>
+    <v:String x:Key="DaylightHours">Daylight hours</v:String>
+    <v:String x:Key="MoonPhazes">phaze</v:String>
+    <v:String x:Key="Temp">Temperature</v:String>
+    <v:String x:Key="Pressure">Pressure</v:String>
+    <v:String x:Key="Precipitation">Precipitation</v:String>
+    <v:String x:Key="Day">Day</v:String>
+    <v:String x:Key="Week">Week</v:String>
+    <v:String x:Key="CheckConnection">Check internet connection</v:String>
+
+    <!--  Страница мест  -->
+    <v:String x:Key="SelectLocation">Selected location:</v:String>
+    <v:String x:Key="FavouritLocations">Favourit locations:</v:String>
+    <v:String x:Key="SearchPlaceHolder">Find any place on the planet</v:String>
+
+    <!--  Страница Настроек  -->
+    <v:String x:Key="General">General</v:String>
+    <v:String x:Key="About">About</v:String>
+    <v:String x:Key="TempSetting">Temperature measurement units</v:String>
+    <v:String x:Key="PressureSetting">Pressure measurement units</v:String>
+    <v:String x:Key="PrecipitationSetting">Precipitation measurement units</v:String>
+    <v:String x:Key="WindSetting">Wind speed measurement units</v:String>
+    <v:String x:Key="LanguageSetting">Language</v:String>
+    <v:String x:Key="Version">Version 1.0</v:String>
+    <v:String x:Key="SourceCode">Source code -</v:String>
+    <v:String x:Key="Font">Font</v:String>
+
+    <!--  Расшифровка кодов погоды  -->
+    <v:String x:Key="NoData">No data</v:String>
+
+    <v:String x:Key="ClearSky">Clear sky</v:String>
+    <v:String x:Key="MainlyClear">Mainly clear</v:String>
+    <v:String x:Key="PartlyCloudly">Partly cloudly</v:String>
+    <v:String x:Key="Overcast">Overcast</v:String>
+
+    <v:String x:Key="Fog">Fog</v:String>
+    <v:String x:Key="DepositingRimeFog">Depositing rime fog</v:String>
+
+    <v:String x:Key="LightDrizzle">Light drizzle</v:String>
+    <v:String x:Key="ModerateDrizzle">Moderate drizzle</v:String>
+    <v:String x:Key="DenseDrizzle">Dense drizzle</v:String>
+
+    <v:String x:Key="LightFreezingDrizzle">Light freezing drizzle</v:String>
+    <v:String x:Key="DenseFreezingDrizzle">Dense dreezing drizzle</v:String>
+
+    <v:String x:Key="SlightRain">Slight rain</v:String>
+    <v:String x:Key="ModerateRain">Moderate rain</v:String>
+    <v:String x:Key="HeavyRain">Heavy rain</v:String>
+
+    <v:String x:Key="SlightSnowfall">Slight snowfall</v:String>
+    <v:String x:Key="ModerateSnowfall">Moderate snowfall</v:String>
+    <v:String x:Key="HeavySnowfall">Heavy snowfall</v:String>
+    <v:String x:Key="SnowGrains">Snow grains</v:String>
+
+    <v:String x:Key="SlightRainShowers">Slight rain showers</v:String>
+    <v:String x:Key="ModerateRainShowers">Moderate rain showers</v:String>
+    <v:String x:Key="ViolentRainShowers">Violent rain showers</v:String>
+
+    <v:String x:Key="SlightSnowShowers">Slight snow showers</v:String>
+    <v:String x:Key="HeavySnowShowers">Heavy snow showers</v:String>
+
+    <v:String x:Key="Thunderstorm">Thunderstorm</v:String>
+    <v:String x:Key="ThunderstormWithSlightHail">Thunderstorm with slight hail</v:String>
+    <v:String x:Key="ThunderstormWithHeavyHail">Thunderstorm with heavy hail</v:String>
+
+    <!--  Дни недели  -->
+    <v:String x:Key="Monday">Monday</v:String>
+    <v:String x:Key="Tuesday">Tuesday</v:String>
+    <v:String x:Key="Wednesday">Wednesday</v:String>
+    <v:String x:Key="Thursday">Thursday</v:String>
+    <v:String x:Key="Friday">Friday</v:String>
+    <v:String x:Key="Saturday">Saturday</v:String>
+    <v:String x:Key="Sunday">Sunday</v:String>
+
+    <v:String x:Key="MondayShort">Mon</v:String>
+    <v:String x:Key="TuesdayShort">Tue</v:String>
+    <v:String x:Key="WednesdayShort">Wed</v:String>
+    <v:String x:Key="ThursdayShort">Thu</v:String>
+    <v:String x:Key="FridayShort">Fri</v:String>
+    <v:String x:Key="SaturdayShort">Sat</v:String>
+    <v:String x:Key="SundayShort">Sun</v:String>
+
+    <!--  Системы измерения  -->
+    <v:String x:Key="Celsius">°C</v:String>
+    <v:String x:Key="Fahrenheit">°F</v:String>
+
+    <v:String x:Key="Kmh">kmh</v:String>
+    <v:String x:Key="Ms">мs</v:String>
+    <v:String x:Key="Mph">mph</v:String>
+    <v:String x:Key="Kn">kn</v:String>
+
+    <v:String x:Key="Mm">mm</v:String>
+    <v:String x:Key="Cm">cm</v:String>
+    <v:String x:Key="Inch">inch</v:String>
+
+    <v:String x:Key="HPa">hpa</v:String>
+    <v:String x:Key="MmHg">mm hg</v:String>
+    <v:String x:Key="RelativeHumidity">Relative humidity</v:String>
+
+    <!--  Стороны света  -->
+    <v:String x:Key="West">W</v:String>
+    <v:String x:Key="East">E</v:String>
+    <v:String x:Key="North">N</v:String>
+    <v:String x:Key="South">S</v:String>
+
+    <!--  Фазы луны  -->
+    <v:String x:Key="New">New</v:String>
+    <v:String x:Key="FirstQuarter">First quarter</v:String>
+    <v:String x:Key="Full">Full</v:String>
+    <v:String x:Key="LastQuarter">Last quarter</v:String>
+</ResourceDictionary>

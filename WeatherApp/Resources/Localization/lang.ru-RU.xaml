@@ -25,12 +25,14 @@
     <v:String x:Key="Wind">Ветер</v:String>
     <v:String x:Key="Hours">ч</v:String>
     <v:String x:Key="Minutes">м</v:String>
+    <v:String x:Key="DaylightHours">Световой день</v:String>
     <v:String x:Key="MoonPhazes">Фаза</v:String>
     <v:String x:Key="Temp">Температура</v:String>
     <v:String x:Key="Pressure">Давление</v:String>
     <v:String x:Key="Precipitation">Влажность</v:String>
     <v:String x:Key="Day">День</v:String>
     <v:String x:Key="Week">Неделя</v:String>
+    <v:String x:Key="CheckConnection">Проверьте подключение к сети</v:String>
 
     <!--  Страница мест  -->
     <v:String x:Key="SelectLocation">Выбранное место:</v:String>
@@ -44,6 +46,7 @@
     <v:String x:Key="PressureSetting">Единицы измерения давления</v:String>
     <v:String x:Key="PrecipitationSetting">Единицы измерения выпавших осадков</v:String>
     <v:String x:Key="WindSetting">Единицы измерения скорости ветра</v:String>
+    <v:String x:Key="LanguageSetting">Язык интерфейса</v:String>
     <v:String x:Key="Version">Версия 1.0</v:String>
     <v:String x:Key="SourceCode">Исходный код -</v:String>
     <v:String x:Key="Font">Шрифт</v:String>
@@ -131,6 +134,4 @@
     <v:String x:Key="FirstQuarter">Растущая</v:String>
     <v:String x:Key="Full">Полнолуние</v:String>
     <v:String x:Key="LastQuarter">Убывающая</v:String>
-
-
 </ResourceDictionary>

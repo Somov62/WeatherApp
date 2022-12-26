@@ -11,56 +11,56 @@
     FontFamily="pack://application:,,,/Resources/Font/#Klukva"
     mc:Ignorable="d">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Hidden">
-            <StackPanel Margin="0,0,5,0">
+    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="auto" MinWidth="690" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" Margin="0,0,5,0">
                 <TextBlock
-                    Text="{DynamicResource General}"
+                    FontSize="40"
                     Foreground="{DynamicResource PagesTipsForeground}"
-                    FontSize="40" />
+                    Text="{DynamicResource General}" />
                 <Border
-                    Background="{DynamicResource BackgroundGradient}"
                     Height="3"
+                    Background="{DynamicResource BackgroundGradient}"
                     CornerRadius="1" />
                 <Grid>
                     <Border
-                        Background="White"
                         Margin="0,20,0,0"
+                        Background="White"
                         CornerRadius="10">
                         <Border.Effect>
                             <DropShadowEffect BlurRadius="5" Opacity="0.5" />
                         </Border.Effect>
                     </Border>
                     <Border
-                        Background="{DynamicResource WindowNavBtnBackground}"
                         Margin="0,20,0,0"
                         Padding="15,10"
+                        Background="{DynamicResource WindowNavBtnBackground}"
                         CornerRadius="10">
                         <DockPanel>
                             <fa:FontAwesome
-                                Foreground="{DynamicResource MapIconForeground}"
-                                FontSize="30"
                                 Width="{Binding ElementName=dashboard, Path=ActualWidth}"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 DockPanel.Dock="Left"
+                                FontSize="30"
+                                Foreground="{DynamicResource MapIconForeground}"
                                 Icon="Thermometer" />
                             <TextBlock
-                                Text="{DynamicResource TempSetting}"
-                                Foreground="{DynamicResource MainForeground}"
-                                FontSize="35"
                                 Margin="10,0,0,0"
                                 VerticalAlignment="Center"
-                                DockPanel.Dock="Left" />
+                                DockPanel.Dock="Left"
+                                FontSize="35"
+                                Foreground="{DynamicResource MainForeground}"
+                                Text="{DynamicResource TempSetting}" />
                             <contorls:CustomToggleButton
-                                FontSize="25"
                                 Margin="40,0,0,0"
                                 HorizontalAlignment="Right"
+                                FontSize="25"
                                 IsChecked="{Binding TempController}"
                                 LeftCase="{DynamicResource Celsius}"
                                 RightCase="{DynamicResource Fahrenheit}" />
@@ -70,38 +70,38 @@
 
                 <Grid>
                     <Border
-                        Background="White"
                         Margin="0,20,0,0"
+                        Background="White"
                         CornerRadius="10">
                         <Border.Effect>
                             <DropShadowEffect BlurRadius="5" Opacity="0.5" />
                         </Border.Effect>
                     </Border>
                     <Border
-                        Background="{DynamicResource WindowNavBtnBackground}"
                         Margin="0,20,0,0"
                         Padding="15,10"
+                        Background="{DynamicResource WindowNavBtnBackground}"
                         CornerRadius="10">
                         <DockPanel>
                             <fa:FontAwesome
-                                Foreground="{DynamicResource MapIconForeground}"
-                                FontSize="30"
                                 Width="{Binding ElementName=dashboard, Path=ActualWidth}"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 DockPanel.Dock="Left"
+                                FontSize="30"
+                                Foreground="{DynamicResource MapIconForeground}"
                                 Icon="Dashboard" />
                             <TextBlock
-                                Text="{DynamicResource PressureSetting}"
-                                Foreground="{DynamicResource MainForeground}"
-                                FontSize="35"
                                 Margin="10,0,0,0"
                                 VerticalAlignment="Center"
-                                DockPanel.Dock="Left" />
+                                DockPanel.Dock="Left"
+                                FontSize="35"
+                                Foreground="{DynamicResource MainForeground}"
+                                Text="{DynamicResource PressureSetting}" />
                             <contorls:CustomToggleButton
-                                FontSize="25"
                                 Margin="40,0,0,0"
                                 HorizontalAlignment="Right"
+                                FontSize="25"
                                 IsChecked="{Binding PressureController}"
                                 LeftCase="{DynamicResource HPa}"
                                 RightCase="{DynamicResource MmHg}" />
@@ -112,38 +112,38 @@
 
                 <Grid>
                     <Border
-                        Background="White"
                         Margin="0,20,0,0"
+                        Background="White"
                         CornerRadius="10">
                         <Border.Effect>
                             <DropShadowEffect BlurRadius="5" Opacity="0.5" />
                         </Border.Effect>
                     </Border>
                     <Border
-                        Background="{DynamicResource WindowNavBtnBackground}"
                         Margin="0,20,0,0"
                         Padding="15,10"
+                        Background="{DynamicResource WindowNavBtnBackground}"
                         CornerRadius="10">
                         <DockPanel>
                             <fa:FontAwesome
-                                Foreground="{DynamicResource TintIconForeground}"
-                                FontSize="30"
                                 Width="{Binding ElementName=dashboard, Path=ActualWidth}"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 DockPanel.Dock="Left"
+                                FontSize="30"
+                                Foreground="{DynamicResource TintIconForeground}"
                                 Icon="Tint" />
                             <TextBlock
-                                Text="{DynamicResource PrecipitationSetting}"
-                                Foreground="{DynamicResource MainForeground}"
-                                FontSize="35"
                                 Margin="10,0,0,0"
                                 VerticalAlignment="Center"
-                                DockPanel.Dock="Left" />
+                                DockPanel.Dock="Left"
+                                FontSize="35"
+                                Foreground="{DynamicResource MainForeground}"
+                                Text="{DynamicResource PrecipitationSetting}" />
                             <contorls:CustomToggleButton
-                                FontSize="25"
                                 Margin="40,0,0,0"
                                 HorizontalAlignment="Right"
+                                FontSize="25"
                                 IsChecked="{Binding PrecipitationController}"
                                 LeftCase="{DynamicResource Mm}"
                                 RightCase="{DynamicResource Inch}" />
@@ -153,17 +153,17 @@
 
                 <Grid>
                     <Border
-                        Background="White"
                         Margin="0,20,0,0"
+                        Background="White"
                         CornerRadius="10">
                         <Border.Effect>
                             <DropShadowEffect BlurRadius="5" Opacity="0.5" />
                         </Border.Effect>
                     </Border>
                     <Border
-                        Background="{DynamicResource WindowNavBtnBackground}"
                         Margin="0,20,0,0"
                         Padding="15,10"
+                        Background="{DynamicResource WindowNavBtnBackground}"
                         CornerRadius="10">
                         <DockPanel>
 
@@ -185,16 +185,16 @@
                                 </Control>
                             </Grid>
                             <TextBlock
-                                Text="{DynamicResource WindSetting}"
-                                Foreground="{DynamicResource MainForeground}"
-                                FontSize="35"
                                 Margin="10,0,0,0"
                                 VerticalAlignment="Center"
-                                DockPanel.Dock="Left" />
+                                DockPanel.Dock="Left"
+                                FontSize="35"
+                                Foreground="{DynamicResource MainForeground}"
+                                Text="{DynamicResource WindSetting}" />
                             <contorls:CustomToggleButton
-                                FontSize="25"
                                 Margin="40,0,0,0"
                                 HorizontalAlignment="Right"
+                                FontSize="25"
                                 IsChecked="{Binding WindController}"
                                 LeftCase="{DynamicResource Ms}"
                                 RightCase="{DynamicResource Kmh}" />
@@ -202,82 +202,124 @@
                     </Border>
                 </Grid>
 
+                <Grid>
+                    <Border
+                        Margin="0,20,0,0"
+                        Background="White"
+                        CornerRadius="10">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="5" Opacity="0.5" />
+                        </Border.Effect>
+                    </Border>
+                    <Border
+                        Margin="0,20,0,0"
+                        Padding="15,10"
+                        Background="{DynamicResource WindowNavBtnBackground}"
+                        CornerRadius="10">
+                        <DockPanel>
+
+                            <fa:FontAwesome
+                                Width="{Binding ElementName=dashboard, Path=ActualWidth}"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                DockPanel.Dock="Left"
+                                FontSize="30"
+                                Foreground="{DynamicResource TintIconForeground}"
+                                Icon="Language" />
+                            <TextBlock
+                                Margin="10,0,0,0"
+                                VerticalAlignment="Center"
+                                DockPanel.Dock="Left"
+                                FontSize="35"
+                                Foreground="{DynamicResource MainForeground}"
+                                Text="{DynamicResource LanguageSetting}" />
+                            <contorls:CustomToggleButton
+                                Margin="40,0,0,0"
+                                HorizontalAlignment="Right"
+                                FontSize="25"
+                                IsChecked="{Binding LanguageController}"
+                                LeftCase="ru"
+                                RightCase="en" />
+                        </DockPanel>
+                    </Border>
+                </Grid>
+
                 <TextBlock
-                    Text="{DynamicResource About}"
-                    Foreground="{DynamicResource PagesTipsForeground}"
+                    Margin="0,20,0,0"
                     FontSize="40"
-                    Margin="0,20,0,0" />
+                    Foreground="{DynamicResource PagesTipsForeground}"
+                    Text="{DynamicResource About}" />
                 <Border
-                    Background="{DynamicResource BackgroundGradient}"
                     Height="3"
+                    Background="{DynamicResource BackgroundGradient}"
                     CornerRadius="1" />
 
                 <Border
-                    Background="White"
                     Margin="0,20,0,0"
+                    Background="White"
                     CornerRadius="10">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="5" Opacity="0.5" />
                     </Border.Effect>
                 </Border>
                 <Border
-                    Background="{DynamicResource WindowNavBtnBackground}"
                     Margin="0,0,0,0"
                     Padding="35,30,35,20"
+                    Background="{DynamicResource WindowNavBtnBackground}"
                     CornerRadius="10">
                     <StackPanel>
                         <Border
-                            Background="{DynamicResource PageBackground}"
                             Padding="15,10"
+                            Background="{DynamicResource PageBackground}"
                             CornerRadius="8">
                             <TextBlock
-                                Text="{DynamicResource MainPageTitle}"
-                                Foreground="{DynamicResource PagesTipsForeground}"
+                                HorizontalAlignment="Center"
                                 FontSize="40"
-                                HorizontalAlignment="Center" />
+                                Foreground="{DynamicResource PagesTipsForeground}"
+                                Text="{DynamicResource MainPageTitle}" />
                         </Border>
 
                         <TextBlock
-                            Text="{DynamicResource Version}"
-                            Foreground="{DynamicResource MainForeground}"
-                            FontSize="27"
                             Margin="0,20,0,0"
                             HorizontalAlignment="Center"
+                            FontSize="27"
+                            Foreground="{DynamicResource MainForeground}"
+                            Text="{DynamicResource Version}"
                             TextAlignment="Center" />
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                             <TextBlock
-                                Text="{DynamicResource SourceCode}"
+                                FontSize="27"
                                 Foreground="{DynamicResource MainForeground}"
-                                FontSize="27" />
+                                Text="{DynamicResource SourceCode}" />
                             <TextBlock
-                                Text=""
-                                FontSize="18"
-                                FontFamily="SergoUI"
                                 Margin="7,2,0,0"
-                                VerticalAlignment="Center">
+                                VerticalAlignment="Center"
+                                FontFamily="SergoUI"
+                                FontSize="18"
+                                Text="">
                                 <Hyperlink
-                                    Foreground="{DynamicResource PageBackground}"
                                     BaselineAlignment="Center"
+                                    Foreground="{DynamicResource PageBackground}"
                                     NavigateUri="https://github.com/Somov62/WeatherApp"
                                     RequestNavigate="Hyperlink_RequestNavigate">
                                     <TextBlock Text="github.com" />
                                 </Hyperlink>
                             </TextBlock>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                             <TextBlock
-                                Text="{DynamicResource Font}"
+                                FontSize="27"
                                 Foreground="{DynamicResource MainForeground}"
-                                FontSize="27" />
+                                Text="{DynamicResource Font}" />
                             <TextBlock
-                                Text=""
-                                FontSize="18"
-                                FontFamily="SergoUI"
                                 Margin="7,2,0,0"
-                                VerticalAlignment="Center">
+                                VerticalAlignment="Center"
+                                FontFamily="SergoUI"
+                                FontSize="18"
+                                Text="">
                                 <Hyperlink
-                                    Foreground="{DynamicResource PageBackground}"
                                     BaselineAlignment="Center"
+                                    Foreground="{DynamicResource PageBackground}"
                                     NavigateUri="https://www.behance.net/gallery/145290893/shrift-kljukva"
                                     RequestNavigate="Hyperlink_RequestNavigate">
                                     <TextBlock Text="Klukva" />
@@ -285,17 +327,17 @@
                             </TextBlock>
                         </StackPanel>
                         <TextBlock
-                            Text="Open-Meteo&#10;Yandex Geocoder&#10;2022"
-                            Foreground="{DynamicResource MainForeground}"
-                            FontSize="25"
                             Margin="0,10,0,0"
                             HorizontalAlignment="Center"
+                            FontSize="25"
+                            Foreground="{DynamicResource MainForeground}"
                             Opacity="0.5"
+                            Text="Open-Meteo&#10;Yandex Geocoder&#10;2022"
                             TextAlignment="Center" />
                     </StackPanel>
                 </Border>
             </StackPanel>
 
-        </ScrollViewer>
-    </Grid>
+        </Grid>
+    </ScrollViewer>
 </Page>

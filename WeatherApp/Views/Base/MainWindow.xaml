@@ -7,13 +7,13 @@
     xmlns:viewmodel="clr-namespace:WeatherApp.ViewModels"
     Name="window"
     Title="MainWindow"
-    Background="Transparent"
     Width="1200"
     Height="700"
     MinWidth="1200"
     MinHeight="700"
     MaxHeight="{x:Static SystemParameters.MaximizedPrimaryScreenHeight}"
     AllowsTransparency="True"
+    Background="Transparent"
     WindowStyle="None"
     mc:Ignorable="d">
     <Window.Resources>
@@ -44,16 +44,16 @@
                 CornerRadius="20, 20, 0, 0"
                 MouseDown="Border_MouseDown" />
             <StackPanel
-                Orientation="Horizontal"
                 Grid.Column="1"
-                HorizontalAlignment="Right">
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
                 <TextBlock
-                    Foreground="{DynamicResource PagesTipsForeground}"
-                    FontSize="32"
-                    FontWeight="SemiBold"
-                    FontFamily="pack://application:,,,/Resources/Font/#Klukva"
                     Margin="20,5,20,0"
                     VerticalAlignment="Center"
+                    FontFamily="pack://application:,,,/Resources/Font/#Klukva"
+                    FontSize="32"
+                    FontWeight="SemiBold"
+                    Foreground="{DynamicResource PagesTipsForeground}"
                     IsHitTestVisible="False">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
@@ -70,9 +70,9 @@
                 <Border>
                     <StackPanel Orientation="Horizontal">
                         <Button
-                            FontSize="{Binding FontSize, ElementName=btnResize}"
                             Click="MinimazedButton_Click"
                             Content="🗕"
+                            FontSize="{Binding FontSize, ElementName=btnResize}"
                             Style="{StaticResource WindowNavButtonStyle}" />
                         <Button
                             Name="btnResize"
@@ -80,7 +80,7 @@
                             Click="MaximazedButton_Click"
                             DataContext="{Binding ElementName=window}">
                             <Button.Style>
-                                <Style TargetType="Button" BasedOn="{StaticResource WindowNavButtonStyle}">
+                                <Style BasedOn="{StaticResource WindowNavButtonStyle}" TargetType="Button">
                                     <Setter Property="Content" Value="🗖" />
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding Path=WindowState, ElementName=window}" Value="Maximized">
@@ -92,9 +92,9 @@
                             </Button.Style>
                         </Button>
                         <Button
-                            FontSize="{Binding FontSize, ElementName=btnResize}"
                             Click="CloseButton_Click"
                             Content="🗙"
+                            FontSize="{Binding FontSize, ElementName=btnResize}"
                             Style="{StaticResource WindowNavButtonStyle}" />
                     </StackPanel>
                     <Border.Style>
@@ -116,28 +116,28 @@
                 </Border>
             </StackPanel>
             <TextBlock
-                Text="{DynamicResource MainPageTitle}"
                 Grid.ColumnSpan="2"
-                Foreground="{DynamicResource PagesTipsForeground}"
-                FontSize="40"
-                FontWeight="SemiBold"
-                FontFamily="pack://application:,,,/Resources/Font/#Klukva"
                 Margin="20,10,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
-                IsHitTestVisible="False" />
-
-            <TextBlock
-                Text="{Binding ElementName=pageContainer, Path=Content.Title}"
-                Grid.ColumnSpan="2"
-                Foreground="{DynamicResource PagesTipsForeground}"
+                FontFamily="pack://application:,,,/Resources/Font/#Klukva"
                 FontSize="40"
                 FontWeight="SemiBold"
-                FontFamily="pack://application:,,,/Resources/Font/#Klukva"
+                Foreground="{DynamicResource PagesTipsForeground}"
+                IsHitTestVisible="False"
+                Text="{DynamicResource MainPageTitle}" />
+
+            <TextBlock
+                Grid.ColumnSpan="2"
                 Margin="20,5,0,0"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                IsHitTestVisible="False" />
+                FontFamily="pack://application:,,,/Resources/Font/#Klukva"
+                FontSize="40"
+                FontWeight="SemiBold"
+                Foreground="{DynamicResource PagesTipsForeground}"
+                IsHitTestVisible="False"
+                Text="{Binding ElementName=pageContainer, Path=Content.Title}" />
 
 
             <Frame
@@ -151,13 +151,13 @@
 
             <Border
                 Grid.RowSpan="2"
-                Background="{DynamicResource WindowNavBtnBackground}"
-                BorderThickness="2"
                 Height="300"
                 Margin="20"
                 Padding="5"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Center"
+                Background="{DynamicResource WindowNavBtnBackground}"
+                BorderThickness="2"
                 CornerRadius="10">
                 <Border.BorderBrush>
                     <SolidColorBrush x:Name="borderColor" Color="{DynamicResource WindowNavBorderBrush}" />
@@ -228,6 +228,7 @@
                     <RadioButton
                         Margin="0"
                         VerticalAlignment="Bottom"
+                        Click="CloseButton_Click"
                         Content="{DynamicResource Exit}"
                         ContentStringFormat="PowerOff"
                         DockPanel.Dock="Bottom"

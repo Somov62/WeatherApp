@@ -1,4 +1,5 @@
 ﻿using Models;
+using System.Text.RegularExpressions;
 using WeatherApp.Services;
 using WeatherProvider;
 
@@ -14,6 +15,7 @@ namespace WeatherApp.ViewModels
             _windController = _config.Wind == WindSpeed.Kmh;
             _pressureController = _config.Pressure == PressureMeasure.MmHg;
             _precipitationController = _config.Lenght == LenghtMeasure.Inch;
+            _languageController = _config.Culture == Cultures.EN;
         }
 
 
@@ -73,6 +75,20 @@ namespace WeatherApp.ViewModels
                 if (value) _config.Pressure = PressureMeasure.MmHg;
                 else _config.Pressure = PressureMeasure.HPa;
                 WeatherService.MeasureConfiguration.Pressure = _config.Pressure;
+            }
+        }
+
+        private bool _languageController;
+
+        public bool LanguageController
+        {
+            get => _languageController;
+            set
+            {
+                Set(ref _languageController, value, nameof(LanguageController));
+                if (value) _config.Culture = Cultures.EN;
+                else _config.Culture = Cultures.RU;
+                ServiceManager.LocalizationService.SetCulture(_config.Culture);
             }
         }
     }

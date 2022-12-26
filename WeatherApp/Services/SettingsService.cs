@@ -1,9 +1,7 @@
 ﻿using GeoCoder.Models;
 using Models;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 
@@ -27,6 +25,7 @@ namespace WeatherApp.Services
             Configuration config = JsonConvert.DeserializeObject<Configuration>(File.ReadAllText(_pathToFile))!;
             config ??= new Configuration()
             {
+                Culture = Cultures.EN,
                 Lenght = LenghtMeasure.Mm,
                 Temperature = TemperatureMeasure.Celsius,
                 Pressure = PressureMeasure.MmHg,
@@ -34,6 +33,7 @@ namespace WeatherApp.Services
                 SelectedLocation = new GeoLocation() { Latitude = 54.629566f, Longitude = 39.741917f, Name = "Рязань", Description = "Россия" }
             };
             if (!config.FavouritLocations.Contains(config.SelectedLocation)) config.FavouritLocations.Add(config.SelectedLocation);
+            ServiceManager.LocalizationService.SetCulture(config.Culture);
             return config;
         }
     }
@@ -45,7 +45,7 @@ namespace WeatherApp.Services
 
         public ObservableCollection<GeoLocation> FavouritLocations { get; set; } = new ObservableCollection<GeoLocation>();
 
-
+        public Cultures Culture { get; set; }
         public bool IsSavingTrafficModeEnabled { get; set; }
 
         public TemperatureMeasure Temperature { get; set; }

@@ -78,6 +78,7 @@ namespace WeatherApp.ViewModels
         private async Task RefreshData()
         {
             IsRefreshing = true;
+            await Task.Delay(300);
             if (ServiceManager.InternetConnectionService.IsConnectionExists)
             {
                 Forecast = await WeatherService.GetWeatherAsync(SettingsService.Configuration.SelectedLocation.Latitude, SettingsService.Configuration.SelectedLocation.Longitude, SettingsService.Configuration.SelectedLocation.Name)!;
