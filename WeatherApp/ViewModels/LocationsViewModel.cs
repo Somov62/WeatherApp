@@ -37,7 +37,11 @@ namespace WeatherApp.ViewModels
                     SearchResults = null!;
                     return;
                 }
-                Task.Run(async () => { SearchResults = await GeoCoderService.GetPosition(value); });
+                Task.Run(async () => {
+                    string search = value;
+                    await Task.Delay(700);
+                    if (search != _locationSearch) return;
+                    SearchResults = await GeoCoderService.GetPosition(value); });
             }
         }
 
