@@ -69,6 +69,9 @@
     <v:String x:Key="LightFreezingDrizzle">Light freezing drizzle</v:String>
     <v:String x:Key="DenseFreezingDrizzle">Dense dreezing drizzle</v:String>
 
+    <v:String x:Key="LightFreezingRain">Light freezing rain</v:String>
+    <v:String x:Key="HeavyFreezingRain">Heavy freezing rain</v:String>
+
     <v:String x:Key="SlightRain">Slight rain</v:String>
     <v:String x:Key="ModerateRain">Moderate rain</v:String>
     <v:String x:Key="HeavyRain">Heavy rain</v:String>

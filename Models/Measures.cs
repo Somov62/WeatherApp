@@ -27,6 +27,9 @@ namespace Models
         ModerateRain = 63,
         HeavyRain = 65,
 
+        LightFreezingRain = 66,
+        HeavyFreezingRain = 67,
+
         SlightSnowfall = 71,
         ModerateSnowfall = 73,
         HeavySnowfall = 75,

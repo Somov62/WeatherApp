@@ -53,6 +53,8 @@ namespace WeatherApp.Resources.Converters
 
                 case WeatherCodes.LightFreezingDrizzle:
                 case WeatherCodes.DenseFreezingDrizzle:
+                case WeatherCodes.LightFreezingRain:
+                case WeatherCodes.HeavyFreezingRain:
                 case WeatherCodes.SlightSnowShowers:
                 case WeatherCodes.HeavySnowShowers:
                     resourceName = "freezing-drizzle";

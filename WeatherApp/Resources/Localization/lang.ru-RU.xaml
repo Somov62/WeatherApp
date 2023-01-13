@@ -69,6 +69,9 @@
     <v:String x:Key="LightFreezingDrizzle">Ледяная морось</v:String>
     <v:String x:Key="DenseFreezingDrizzle">Сильная ледяная морось</v:String>
 
+    <v:String x:Key="LightFreezingRain">Ледяной дождь</v:String>
+    <v:String x:Key="HeavyFreezingRain">Сильный ледяной дождь</v:String>
+
     <v:String x:Key="SlightRain">Небольшой дождь</v:String>
     <v:String x:Key="ModerateRain">Дождь</v:String>
     <v:String x:Key="HeavyRain">Сильный дождь</v:String>
